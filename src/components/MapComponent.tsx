@@ -75,7 +75,7 @@ const MapComponent: React.FC<MapComponentProps> = ({ onGridClick }) => {
 
   return (
     <MapContainer
-      center={[imageDimensions.height / 2, imageDimensions.width / 2]}
+      center={[imageDimensions.height, imageDimensions.width / 2]}
       zoom={zoomLevel}
       minZoom={zoomLevel}
       maxZoom={zoomLevel}
