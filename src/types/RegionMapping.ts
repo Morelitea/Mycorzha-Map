@@ -1,131 +1,660 @@
+export interface Subsection {
+  name: string;
+  id: string;
+  content: string; // This can also be a link to a JSON data object
+  subsections?: Subsection[];
+}
+
+export interface RegionData {
+  majorContent: string;
+  subsections: Subsection[];
+}
+export interface SectionProps {
+  title: string;
+  jsonData: {
+    subSections: {
+      title: string;
+      link: string;
+    }[];
+  };
+}
+
 export interface Region {
   name: string;
-  route: string;
-  description?: string;
+  id: string;
+  bannerImage: string;
 }
 
 export interface RegionDefinition {
   xRange: [number, number];
   yRange: [number, number];
   region: Region;
+  regionData: RegionData;
 }
 
 export const regionDefinitions = [
   {
-    xRange: [600, 600],
-    yRange: [1100, 1200],
+    xRange: [600, 600] as [number, number],
+    yRange: [1100, 1200] as [number, number],
     region: {
       name: "Cove City",
-      route: "/cove-city",
-      description:
-        "The bustling heart of innovation in Mycorzha, where ideas flourish.",
+      id: "cove-city",
+      bannerImage: "/assets/banners/cove-city-banner.png",
+    },
+    regionData: {
+      majorContent:
+        "Cove City is known for its beautiful coastal views and bustling port. It's a hub of commerce and culture.",
+      subsections: [
+        {
+          name: "Culture",
+          id: "culture",
+          content: "Foo",
+          subsections: [
+            {
+              name: "Subsection 1",
+              id: "subsection-1",
+              content: "Subsection 1 content",
+            },
+            {
+              name: "Subsection 2",
+              id: "subsection-2",
+              content: "Subsection 2 content",
+            },
+          ],
+        },
+        {
+          name: "Regional Differences",
+          id: "regional-differences",
+          content: "Foo",
+        },
+        {
+          name: "Known Residents",
+          id: "known-residents",
+          content: "lunaValley.json",
+        },
+        {
+          name: "Flora and Fauna",
+          id: "flora-and-fauna",
+          content: "Foo",
+        },
+        {
+          name: "Subcultures",
+          id: "subcultures",
+          content: "Foo",
+        },
+      ],
     },
   },
   {
-    xRange: [200, 700],
-    yRange: [1500, 1600],
+    xRange: [200, 700] as [number, number],
+    yRange: [1500, 1600] as [number, number],
     region: {
       name: "Crescent Mountains and the White Plateau",
-      route: "/crescent-mountains",
-      description:
-        "A majestic range of peaks crowned with snow, offering breathtaking vistas.",
+      id: "crescent-mountains",
+      bannerImage: "/assets/banners/crescent-mountains-banner.png",
+    },
+    regionData: {
+      majorContent:
+        "Cove City is known for its beautiful coastal views and bustling port. It's a hub of commerce and culture.",
+      subsections: [
+        {
+          name: "Culture",
+          id: "culture",
+          content: "Foo",
+          subsections: [
+            {
+              name: "Subsection 1",
+              id: "subsection-1",
+              content: "Subsection 1 content",
+            },
+            {
+              name: "Subsection 2",
+              id: "subsection-2",
+              content: "Subsection 2 content",
+            },
+          ],
+        },
+        {
+          name: "Regional Differences",
+          id: "regional-differences",
+          content: "Foo",
+        },
+        {
+          name: "Known Residents",
+          id: "known-residents",
+          content: "/data/lunaValley.json",
+        },
+        {
+          name: "Flora and Fauna",
+          id: "flora-and-fauna",
+          content: "Foo",
+        },
+        {
+          name: "Subcultures",
+          id: "subcultures",
+          content: "Foo",
+        },
+      ],
     },
   },
   {
-    xRange: [300, 900],
-    yRange: [700, 1000],
+    xRange: [300, 900] as [number, number],
+    yRange: [700, 1000] as [number, number],
     region: {
       name: "Dreamer Tree and Greater Mycorzha",
-      route: "/dreamer-tree",
-      description:
-        "The central hub of Mycorzha, where the Dreamer Tree connects the realms.",
+      id: "dreamer-tree",
+      bannerImage: "/assets/banners/dreamer-tree-banner.png",
+    },
+    regionData: {
+      majorContent:
+        "Cove City is known for its beautiful coastal views and bustling port. It's a hub of commerce and culture.",
+      subsections: [
+        {
+          name: "Culture",
+          id: "culture",
+          content: "Foo",
+          subsections: [
+            {
+              name: "Subsection 1",
+              id: "subsection-1",
+              content: "Subsection 1 content",
+            },
+            {
+              name: "Subsection 2",
+              id: "subsection-2",
+              content: "Subsection 2 content",
+            },
+          ],
+        },
+        {
+          name: "Regional Differences",
+          id: "regional-differences",
+          content: "Foo",
+        },
+        {
+          name: "Known Residents",
+          id: "known-residents",
+          content: "/data/lunaValley.json",
+        },
+        {
+          name: "Flora and Fauna",
+          id: "flora-and-fauna",
+          content: "Foo",
+        },
+        {
+          name: "Subcultures",
+          id: "subcultures",
+          content: "Foo",
+        },
+      ],
     },
   },
   {
-    xRange: [1000, 1300],
-    yRange: [900, 1500],
+    xRange: [1000, 1300] as [number, number],
+    yRange: [900, 1500] as [number, number],
     region: {
       name: "Fernleaf Forest",
-      route: "/fernleaf-forest",
-      description:
-        "A lush forest teeming with vibrant flora and gentle streams.",
+      id: "fernleaf-forest",
+      bannerImage: "/assets/banners/fernleaf-forest-banner.png",
+    },
+    regionData: {
+      majorContent:
+        "Cove City is known for its beautiful coastal views and bustling port. It's a hub of commerce and culture.",
+      subsections: [
+        {
+          name: "Culture",
+          id: "culture",
+          content: "Foo",
+          subsections: [
+            {
+              name: "Subsection 1",
+              id: "subsection-1",
+              content: "Subsection 1 content",
+            },
+            {
+              name: "Subsection 2",
+              id: "subsection-2",
+              content: "Subsection 2 content",
+            },
+          ],
+        },
+        {
+          name: "Regional Differences",
+          id: "regional-differences",
+          content: "Foo",
+        },
+        {
+          name: "Known Residents",
+          id: "known-residents",
+          content: "/data/lunaValley.json",
+        },
+        {
+          name: "Flora and Fauna",
+          id: "flora-and-fauna",
+          content: "Foo",
+        },
+        {
+          name: "Subcultures",
+          id: "subcultures",
+          content: "Foo",
+        },
+      ],
     },
   },
   {
-    xRange: [1000, 1200],
-    yRange: [1600, 1800],
+    xRange: [1000, 1200] as [number, number],
+    yRange: [1600, 1800] as [number, number],
     region: {
       name: "Frostfire Forest",
-      route: "/frostfire-forest",
-      description:
-        "An enchanted forest where frost and flame coexist in eerie harmony.",
+      id: "frostfire-forest",
+      bannerImage: "/assets/banners/frostfire-forest-banner.png",
+    },
+    regionData: {
+      majorContent:
+        "Cove City is known for its beautiful coastal views and bustling port. It's a hub of commerce and culture.",
+      subsections: [
+        {
+          name: "Culture",
+          id: "culture",
+          content: "Foo",
+          subsections: [
+            {
+              name: "Subsection 1",
+              id: "subsection-1",
+              content: "Subsection 1 content",
+            },
+            {
+              name: "Subsection 2",
+              id: "subsection-2",
+              content: "Subsection 2 content",
+            },
+          ],
+        },
+        {
+          name: "Regional Differences",
+          id: "regional-differences",
+          content: "Foo",
+        },
+        {
+          name: "Known Residents",
+          id: "known-residents",
+          content: "/data/lunaValley.json",
+        },
+        {
+          name: "Flora and Fauna",
+          id: "flora-and-fauna",
+          content: "Foo",
+        },
+        {
+          name: "Subcultures",
+          id: "subcultures",
+          content: "Foo",
+        },
+      ],
     },
   },
   {
-    xRange: [400, 900],
-    yRange: [400, 600],
+    xRange: [400, 900] as [number, number],
+    yRange: [400, 600] as [number, number],
     region: {
       name: "Hazelmoss Woods",
-      route: "/hazelmoss-woods",
-      description:
-        "A dense woodland known for its mysterious, moss-covered terrain.",
+      id: "hazelmoss-woods",
+      bannerImage: "/assets/banners/hazelmoss-woods-banner.png",
+    },
+    regionData: {
+      majorContent:
+        "Cove City is known for its beautiful coastal views and bustling port. It's a hub of commerce and culture.",
+      subsections: [
+        {
+          name: "Culture",
+          id: "culture",
+          content: "Foo",
+          subsections: [
+            {
+              name: "Subsection 1",
+              id: "subsection-1",
+              content: "Subsection 1 content",
+            },
+            {
+              name: "Subsection 2",
+              id: "subsection-2",
+              content: "Subsection 2 content",
+            },
+          ],
+        },
+        {
+          name: "Regional Differences",
+          id: "regional-differences",
+          content: "Foo",
+        },
+        {
+          name: "Known Residents",
+          id: "known-residents",
+          content: "/data/lunaValley.json",
+        },
+        {
+          name: "Flora and Fauna",
+          id: "flora-and-fauna",
+          content: "Foo",
+        },
+        {
+          name: "Subcultures",
+          id: "subcultures",
+          content: "Foo",
+        },
+      ],
     },
   },
   {
-    xRange: [600, 800],
-    yRange: [1300, 1500],
+    xRange: [600, 800] as [number, number],
+    yRange: [1300, 1500] as [number, number],
     region: {
       name: "Luna Valley",
-      route: "/luna-valley",
-      description: "A serene valley that shimmers under the moonlight.",
+      id: "luna-valley",
+      bannerImage: "/assets/banners/luna-valley-banner.png",
+    },
+    regionData: {
+      majorContent:
+        "Cove City is known for its beautiful coastal views and bustling port. It's a hub of commerce and culture.",
+      subsections: [
+        {
+          name: "Culture",
+          id: "culture",
+          content: "Foo",
+          subsections: [
+            {
+              name: "Subsection 1",
+              id: "subsection-1",
+              content: "Subsection 1 content",
+            },
+            {
+              name: "Subsection 2",
+              id: "subsection-2",
+              content: "Subsection 2 content",
+            },
+          ],
+        },
+        {
+          name: "Regional Differences",
+          id: "regional-differences",
+          content: "Foo",
+        },
+        {
+          name: "Known Residents",
+          id: "known-residents",
+          content: "/data/lunaValley.json",
+        },
+        {
+          name: "Flora and Fauna",
+          id: "flora-and-fauna",
+          content: "Foo",
+        },
+        {
+          name: "Subcultures",
+          id: "subcultures",
+          content: "Foo",
+        },
+      ],
     },
   },
   {
-    xRange: [300, 500],
-    yRange: [1700, 1800],
+    xRange: [300, 500] as [number, number],
+    yRange: [1700, 1800] as [number, number],
     region: {
       name: "Mossy Cup Lagoon",
-      route: "/mossy-cup-lagoon",
-      description:
-        "A tranquil lagoon surrounded by moss-covered trees and wildlife.",
+      id: "mossy-cup-lagoon",
+      bannerImage: "/assets/banners/mossy-cup-lagoon-banner.png",
+    },
+    regionData: {
+      majorContent:
+        "Cove City is known for its beautiful coastal views and bustling port. It's a hub of commerce and culture.",
+      subsections: [
+        {
+          name: "Culture",
+          id: "culture",
+          content: "Foo",
+          subsections: [
+            {
+              name: "Subsection 1",
+              id: "subsection-1",
+              content: "Subsection 1 content",
+            },
+            {
+              name: "Subsection 2",
+              id: "subsection-2",
+              content: "Subsection 2 content",
+            },
+          ],
+        },
+        {
+          name: "Regional Differences",
+          id: "regional-differences",
+          content: "Foo",
+        },
+        {
+          name: "Known Residents",
+          id: "known-residents",
+          content: "/data/lunaValley.json",
+        },
+        {
+          name: "Flora and Fauna",
+          id: "flora-and-fauna",
+          content: "Foo",
+        },
+        {
+          name: "Subcultures",
+          id: "subcultures",
+          content: "Foo",
+        },
+      ],
     },
   },
   {
-    xRange: [200, 900],
-    yRange: [0, 200],
+    xRange: [200, 900] as [number, number],
+    yRange: [0, 200] as [number, number],
     region: {
       name: "Saffron Spore Islands",
-      route: "/saffron-spore-islands",
-      description:
-        "A cluster of vibrant islands blanketed with golden spores and rare fungi.",
+      id: "saffron-spore-islands",
+      bannerImage: "/assets/banners/saffron-spore-islands-banner.png",
+    },
+    regionData: {
+      majorContent:
+        "Cove City is known for its beautiful coastal views and bustling port. It's a hub of commerce and culture.",
+      subsections: [
+        {
+          name: "Culture",
+          id: "culture",
+          content: "Foo",
+          subsections: [
+            {
+              name: "Subsection 1",
+              id: "subsection-1",
+              content: "Subsection 1 content",
+            },
+            {
+              name: "Subsection 2",
+              id: "subsection-2",
+              content: "Subsection 2 content",
+            },
+          ],
+        },
+        {
+          name: "Regional Differences",
+          id: "regional-differences",
+          content: "Foo",
+        },
+        {
+          name: "Known Residents",
+          id: "known-residents",
+          content: "/data/lunaValley.json",
+        },
+        {
+          name: "Flora and Fauna",
+          id: "flora-and-fauna",
+          content: "Foo",
+        },
+        {
+          name: "Subcultures",
+          id: "subcultures",
+          content: "Foo",
+        },
+      ],
     },
   },
   {
-    xRange: [900, 900],
-    yRange: [1200, 1400],
+    xRange: [900, 900] as [number, number],
+    yRange: [1200, 1400] as [number, number],
     region: {
       name: "Selene Cliffs",
-      route: "/selene-cliffs",
-      description: "Rugged cliffs that overlook the vast oceans of Mycorzha.",
+      id: "selene-cliffs",
+      bannerImage: "/assets/banners/selene-cliffs-banner.png",
+    },
+    regionData: {
+      majorContent:
+        "Cove City is known for its beautiful coastal views and bustling port. It's a hub of commerce and culture.",
+      subsections: [
+        {
+          name: "Culture",
+          id: "culture",
+          content: "Foo",
+          subsections: [
+            {
+              name: "Subsection 1",
+              id: "subsection-1",
+              content: "Subsection 1 content",
+            },
+            {
+              name: "Subsection 2",
+              id: "subsection-2",
+              content: "Subsection 2 content",
+            },
+          ],
+        },
+        {
+          name: "Regional Differences",
+          id: "regional-differences",
+          content: "Foo",
+        },
+        {
+          name: "Known Residents",
+          id: "known-residents",
+          content: "/data/lunaValley.json",
+        },
+        {
+          name: "Flora and Fauna",
+          id: "flora-and-fauna",
+          content: "Foo",
+        },
+        {
+          name: "Subcultures",
+          id: "subcultures",
+          content: "Foo",
+        },
+      ],
     },
   },
   {
-    xRange: [600, 600],
-    yRange: [1400, 1400],
+    xRange: [600, 600] as [number, number],
+    yRange: [1400, 1400] as [number, number],
     region: {
       name: "Shadow Moss Caves",
-      route: "/shadow-moss-caves",
-      description: "A network of caves cloaked in darkness and glowing moss.",
+      id: "shadow-moss-caves",
+      bannerImage: "/assets/banners/shadow-moss-caves-banner.png",
+    },
+    regionData: {
+      majorContent:
+        "Cove City is known for its beautiful coastal views and bustling port. It's a hub of commerce and culture.",
+      subsections: [
+        {
+          name: "Culture",
+          id: "culture",
+          content: "Foo",
+          subsections: [
+            {
+              name: "Subsection 1",
+              id: "subsection-1",
+              content: "Subsection 1 content",
+            },
+            {
+              name: "Subsection 2",
+              id: "subsection-2",
+              content: "Subsection 2 content",
+            },
+          ],
+        },
+        {
+          name: "Regional Differences",
+          id: "regional-differences",
+          content: "Foo",
+        },
+        {
+          name: "Known Residents",
+          id: "known-residents",
+          content: "/data/lunaValley.json",
+        },
+        {
+          name: "Flora and Fauna",
+          id: "flora-and-fauna",
+          content: "Foo",
+        },
+        {
+          name: "Subcultures",
+          id: "subcultures",
+          content: "Foo",
+        },
+      ],
     },
   },
   {
-    xRange: [800, 900],
-    yRange: [1600, 1700],
+    xRange: [800, 900] as [number, number],
+    yRange: [1600, 1700] as [number, number],
     region: {
       name: "Starlit Stone Ruins",
-      route: "/starlit-stone-ruins",
-      description:
-        "Ancient ruins that glitter under the night sky, holding secrets of the past.",
+      id: "starlit-stone-ruins",
+      bannerImage: "/assets/banners/starlit-stone-ruins-banner.png",
+    },
+    regionData: {
+      majorContent:
+        "Cove City is known for its beautiful coastal views and bustling port. It's a hub of commerce and culture.",
+      subsections: [
+        {
+          name: "Culture",
+          id: "culture",
+          content: "Foo",
+          subsections: [
+            {
+              name: "Subsection 1",
+              id: "subsection-1",
+              content: "Subsection 1 content",
+            },
+            {
+              name: "Subsection 2",
+              id: "subsection-2",
+              content: "Subsection 2 content",
+            },
+          ],
+        },
+        {
+          name: "Regional Differences",
+          id: "regional-differences",
+          content: "Foo",
+        },
+        {
+          name: "Known Residents",
+          id: "known-residents",
+          content: "/data/lunaValley.json",
+        },
+        {
+          name: "Flora and Fauna",
+          id: "flora-and-fauna",
+          content: "Foo",
+        },
+        {
+          name: "Subcultures",
+          id: "subcultures",
+          content: "Foo",
+        },
+      ],
     },
   },
 ];

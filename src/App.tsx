@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import MapComponent from "./components/MapComponent";
+import RegionPage from "./components/RegionPage";
 import { Region, regionDefinitions } from "./types/RegionMapping";
 
 // Function to get region from coordinates
@@ -10,23 +11,20 @@ export const getRegionFromCoordinates = (
 ): Region | null => {
   for (const definition of regionDefinitions) {
     const { xRange, yRange, region } = definition;
+    // Ensure the region always has an `id`
     if (x >= xRange[0] && x <= xRange[1] && y >= yRange[0] && y <= yRange[1]) {
-      return region;
+      // If there's no `id`, fallback to using `route` (if needed)
+      const regionWithId: Region = {
+        ...region,
+        id: region.id || "default-id", // Ensure an `id` exists
+      };
+      return regionWithId;
     }
   }
   return null; // No matching region found
 };
 
-// Region Page Component
-const RegionPage: React.FC<{ region: Region }> = ({ region }) => (
-  <div>
-    <h1>{region.name}</h1>
-    <p>{region.description}</p>
-  </div>
-);
-
 const App: React.FC = () => {
-  const [selectedRegion, setSelectedRegion] = useState<Region | null>(null);
   const navigate = useNavigate();
 
   const handleGridClick = (gridCoordinates: { x: number; y: number }) => {
@@ -35,8 +33,7 @@ const App: React.FC = () => {
       gridCoordinates.y
     );
     if (region) {
-      setSelectedRegion(region);
-      navigate(region.route); // Navigate to the region's route
+      navigate(`/region/${region.id}`);
     } else {
       alert("No region defined for this grid cell.");
     }
@@ -53,9 +50,9 @@ const App: React.FC = () => {
       {/* Dynamically add routes for all regions */}
       {regionDefinitions.map(({ region }) => (
         <Route
-          key={region.route}
-          path={region.route}
-          element={<RegionPage region={region} />}
+          key={region.id}
+          path={`region/:regionId`}
+          element={<RegionPage />}
         />
       ))}
     </Routes>

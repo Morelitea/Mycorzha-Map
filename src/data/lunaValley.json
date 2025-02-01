@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Glinda",
+    "id": "glinda",
+    "image": "/assets/images/glinda.png",
+    "pronouns": "She/Her",
+    "comfortSnack": "Fresh Summer melon",
+    "biggestFear": "Drowning",
+    "favoriteStory": "The Washerwoman and the Crows",
+    "spotifyPlaylist": "Glinda's Daydream Playlist",
+    "quote": "These old bones have been around the Isles a time or three, and I could tell you stories until they sink back into the seas. Why don't you sit a spell and learn you something new.",
+    "emotionalTies": [
+      {
+        "name": "Soot & Cinder",
+        "relationship": "The two rapscallions that I'm raising, so help me, but I love them more than the isles and mysts both. Sure, they get into trouble, but they get themselves back out again, and they've both got good heads. Stubborn as their mama, don't I know it, heh!"
+      }
+    ],
+    "bio": "Glinda is a tortoise with a deep love for the Isles and a wealth of stories to share. Despite her stubborn nature, she has a soft spot for the ones she loves and always stands by them."
+  },
+  {
+    "name": "Jack",
+    "id": "jack",
+    "image": "/assets/images/jack.png",
+    "pronouns": "He/Him",
+    "comfortSnack": "Autumn leaves and mushrooms",
+    "biggestFear": "Being forgotten",
+    "favoriteStory": "The Tale of the Old Oak Tree",
+    "spotifyPlaylist": "Jack's Moody Midnight Tunes",
+    "quote": "I disappear into the woods when the wind howls, but I’ll be back when the night is thick enough to swallow all the shadows.",
+    "emotionalTies": [
+      {
+        "name": "Glinda",
+        "relationship": "We go way back, that one. We’ve both seen the changing seasons more times than I care to count. She’s stubborn, but there’s a quiet strength to her that I can’t ignore."
+      }
+    ],
+    "bio": "Jack is an ancient feline spirit who lives among the dark, mysterious woods. He has witnessed countless generations and is known for his tales and wisdom. Though he prefers solitude, those who earn his trust can count on him for guidance."
+  }
+]

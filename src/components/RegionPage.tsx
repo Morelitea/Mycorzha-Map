@@ -1,47 +1,126 @@
-import React from "react";
-import { useParams, Link } from "react-router-dom";
-import { regionDefinitions } from "../types/RegionMapping";
-import { Region } from "../types/RegionMapping";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import RegionHeader from "./RegionHeader";
+import VerticalNav from "./VerticalNav"; // Importing the dynamic VerticalNav component
+import {
+  RegionDefinition,
+  regionDefinitions,
+  Subsection,
+} from "../types/RegionMapping";
+import styles from "./RegionPage.module.scss";
+import { Creature } from "../types/Creatures";
 
 const RegionPage: React.FC = () => {
   const { regionId } = useParams<{ regionId: string }>();
+  const [regionData, setRegionData] = useState<RegionDefinition | null>(null);
 
-  // Find the region using the `regionId` from the URL
-  const region = regionDefinitions.find(
-    (definition) => definition.region.route === `/${regionId}`
-  )?.region;
+  useEffect(() => {
+    const region = regionDefinitions.find(
+      (region) => region.region.id === regionId
+    );
+    if (region) {
+      setRegionData(region);
+    }
+  }, [regionId]);
 
-  // If no region is found, display an error message
-  if (!region) {
-    return (
-      <div>
-        <h1>Region Not Found</h1>
-        <p>The region you are looking for does not exist or is unavailable.</p>
-        <Link to="/">Go back to the map</Link>
+  if (!regionData) {
+    return <div className={styles.loading}>Loading...</div>;
+  }
+
+  const {
+    region,
+    regionData: { majorContent, subsections },
+  } = regionData;
+
+  return (
+    <div className={styles.regionPage}>
+      <RegionHeader regionName={region.name} bannerImage={region.bannerImage} />
+      <div className={styles.regionContent}>
+        <VerticalNav />
+
+        <main className={styles.regionMainContent}>
+          <h1>{region.name}</h1>
+          <p>{majorContent}</p>
+
+          {/* Render subsection content dynamically with anchor tags */}
+          {subsections.map((section) => (
+            <SectionContent
+              key={section.id}
+              section={section} // Pass each section to be processed
+            />
+          ))}
+        </main>
       </div>
+    </div>
+  );
+};
+
+interface SectionContentProps {
+  section: Subsection;
+}
+
+const SectionContent: React.FC<SectionContentProps> = ({ section }) => {
+  const [creatures, setCreatures] = useState<Creature[]>([]);
+
+  // Fetch JSON data for creatures if section content ends with '.json'
+  useEffect(() => {
+    // Check if the content is a valid file path and ends with .json
+    if (section.content && section.content.endsWith(".json")) {
+      import(`../data/${section.content}`) // Dynamically import the JSON file
+        .then((module) => {
+          // Assuming the file exports an array of creatures
+          setCreatures(module.default);
+        })
+        .catch((error) => console.error("Error loading creature data:", error));
+    }
+  }, [section.content]);
+
+  // Render section normally if not JSON, otherwise render creature names
+  if (section.content && section.content.endsWith(".json")) {
+    return (
+      <section id={section.id} key={section.id} className={styles.section}>
+        <h2>{section.name}</h2>
+        {/* Render creature names as anchor links */}
+        {creatures.length > 0 ? (
+          <div className={styles.creatures}>
+            {creatures.map((creature) => (
+              <div
+                key={creature.id}
+                id={`${creature.id}`}
+                className={styles.creature}
+              >
+                <h3>{creature.name}</h3>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p>Loading creatures...</p>
+        )}
+      </section>
     );
   }
 
   return (
-    <div>
-      <h1>{region.name}</h1>
-      <p>{region.description}</p>
+    <section id={section.id} key={section.id} className={styles.section}>
+      <h2>{section.name}</h2>
+      <p>{section.content}</p>
 
-      {/* Add additional details or interactive elements */}
-      <section>
-        <h2>Explore {region.name}</h2>
-        <ul>
-          <li>Unique flora and fauna</li>
-          <li>Interesting landmarks</li>
-          <li>Mythical tales of the region</li>
-        </ul>
-      </section>
-
-      {/* Navigation options */}
-      <div>
-        <Link to="/">Back to Map</Link>
-      </div>
-    </div>
+      {/* Render subsections */}
+      {section.subsections && section.subsections.length > 0 && (
+        <div className={styles.subsections}>
+          {section.subsections.map((subSection) => (
+            <div
+              key={subSection.id}
+              id={subSection.id}
+              className={styles.subsection}
+            >
+              <h3>{subSection.name}</h3>
+              <p>{subSection.content}</p>
+            </div>
+          ))}
+        </div>
+      )}
+    </section>
   );
 };
 

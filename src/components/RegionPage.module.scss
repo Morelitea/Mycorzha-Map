@@ -1,0 +1,91 @@
+.regionPage {
+  display: flex;
+  flex-direction: column;
+}
+
+.regionContent {
+  display: flex;
+  margin-top: 20px;
+}
+
+.regionNav {
+  width: 250px;
+  padding-right: 20px;
+  border-right: 2px solid #ddd;
+  background-color: #f9f9f9;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .navItem {
+    margin: 10px 0;
+
+    .navLink {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      &:hover {
+        color: #007bff;
+      }
+    }
+
+    .subNav {
+      margin-left: 20px;
+
+      .navItem {
+        margin: 5px 0;
+        .navLink {
+          color: #555;
+        }
+      }
+    }
+  }
+}
+
+.regionMainContent {
+  margin-left: 30px;
+  flex: 1;
+  padding: 10px;
+
+  h1 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+  }
+
+  h3 {
+    color: #555;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
+
+  p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .subsections {
+    margin-top: 20px;
+  }
+
+  .subsection {
+    margin-left: 20px;
+  }
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #007bff;
+}
