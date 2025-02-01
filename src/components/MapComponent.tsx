@@ -18,7 +18,7 @@ const MapComponent: React.FC<MapComponentProps> = ({ onGridClick }) => {
     height: 0,
   });
   const [zoomLevel, setZoomLevel] = useState<number>(0);
-  const [gridSize, setGridSize] = useState<number>(100); // Grid cell size in pixels
+  const [gridSize] = useState<number>(100); // Grid cell size in pixels
 
   useEffect(() => {
     const img = new Image();

@@ -193,8 +193,8 @@ export const regionDefinitions = [
     xRange: [1000, 1300] as [number, number],
     yRange: [900, 1500] as [number, number],
     region: {
-      name: "Fernleaf Forest",
-      id: "fernleaf-forest",
+      name: "Fern Leaf Forest",
+      id: "fern-leaf-forest",
       bannerImage: "/assets/banners/fernleaf-forest-banner.png",
     },
     regionData: {

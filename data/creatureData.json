@@ -1,0 +1,109 @@
+{
+  "regions": [
+    {
+      "regionId": "luna-valley",
+      "creatures": [
+        {
+          "name": "Amani",
+          "id": "amani-1",
+          "image": "path/to/amani-image.png",
+          "pronouns": "She/Her",
+          "comfortSnack": "Spiced, dried berries",
+          "biggestFear": "Being trapped in a building that's on fire",
+          "favoriteStory": "The Fisher Who Pulled Up the Island",
+          "spotifyPlaylist": "Amani's Adventures",
+          "quote": "Life becomes experiences, experience becomes story, and story becomes inspiration.",
+          "emotionalTies": [
+            {
+              "name": "Parents",
+              "relationship": "While we don't agree on everything, they are my strength and support."
+            },
+            {
+              "name": "Indie",
+              "relationship": "Energy given physical form; I can always count on him to find adventure or inspiration."
+            },
+            {
+              "name": "Mycorzha",
+              "relationship": "My home, my island; it protects and shelters us, and I am thankful for it."
+            }
+          ],
+          "bio": "Amani is a dreamer, a thinker, and an artist. Growing up as a member of one of the many nomadic tribes in the inlands of Mycorzha, her childhood introduced her to the many incredible sights and experiences that are the essence of her island home. Her parents were spinners, of both tales and thread; her father creating beautiful tapestries and her mother sharing with her the epic songs and sagas of Mycorzhan life. Inheriting their artistic bent, and fascinated by the world around her, Amani still holds a deep reverence for her island home and its flora and fauna. During her many wanderings as a youngster, her daydreamings wound up being crash-landed upon by a peculiar little bird named Indie. Making fast friends with the talkative messenger, she found her horizons and interests expanding, and the next step of her life had her moving to Luna Valley, where she became a painter and pictograph artist. She loves to create in all kind of forms, and has a rich, internal life that those close to her are always joyful to participate in."
+        },
+        {
+          "name": "Glinda",
+          "id": "glinda-1",
+          "image": "path/to/glinda-image.png",
+          "pronouns": "She/Her",
+          "comfortSnack": "Fresh Summer melon",
+          "biggestFear": "Drowning",
+          "favoriteStory": "The Washerwoman and the Crows",
+          "spotifyPlaylist": "Glinda's Grove",
+          "quote": "These old bones have been around the Isles a time or three, and I could tell you stories until they sink back into the seas. Why don't you sit a spell and learn you something new.",
+          "emotionalTies": [
+            {
+              "name": "Soot & Cinder",
+              "relationship": "The two rapscallions that I'm raising, so help me, but I love them more than the isles and mysts both. Sure, they get into trouble, but they get themselves back out again, and they've both got good heads. Stubborn as their mama, don't I know it, heh!"
+            },
+            {
+              "name": "Jack",
+              "relationship": "Huff, that old sly cat. He and I used to date once, long ago, but he didn't want to settle down. I've still got a soft spot in my heart for him, despite my best efforts, but that old cat has never changed and won't be now."
+            },
+            {
+              "name": "Talia & Persephone",
+              "relationship": "Bwehe, the mischief me and that old bird would get up to! We were, and are, best friends, and her kid is just like one of my own, and no mistake."
+            },
+            {
+              "name": "Mycorzha",
+              "relationship": "Heh, the Isles are my home, and I love 'em with all the deep heart of stone and the niggling curiosity of creeping vine. I can name every flower and herb this side of the Crescent Peaks, and don't you forget it!"
+            }
+          ],
+          "bio": "A native of the Isles, Glinda wears her old age and status of 'elder' with pride. She is well known in Luna Valley, Cove City, and various parts besides; those who run in Cove City's academic circles have come across frequent publications and references to one 'Glinda Nelinsce Tortuga'. Now thoroughly retired from the distant heights of the Academy, Glinda has ensconced herself in Luna Valley and pre-occupies herself with raising her children, reading, writing, and being a general force in the community. Originally from the Hazelmoss Woods, to the south of Luna Valley, Glinda was known for her incredible knowledge of local flora and fungi. Her insatiable curiosity and drive to learn led her inevitably to acceptance in the Mystveil Academy of Sciences, where she swiftly became a rising star. Often seen in public forum and debates in the Cove City parks, she caught the interest of faculty even as her own eyes snagged on a somewhat haughty black cat, known as Jack, who was a similar force in public discourse. The two fell in together, pushing each other to further their own knowledge and expand the vast Academy archives. Flames that burn bright, burn out all too quickly, however. Glinda, always with a plan in mind, knew that she wanted a family; an idea that Jack scoffed at, not wanting to be tied down. They parted ways, and Glinda retired from public life to raise a family in the nurturing hills and fields of Luna Valley. Despite her own pronunciations that she is 'done' with academia, she has become a prolific writer of non-fiction and treatises, and her pieces are regularly published in various Cove City gazettes. She spends her days writing letters, raising her two rambunctious kids, and taking naps."
+        }
+      ]
+    },
+    {
+      "regionId": "hazelmoss-woods",
+      "creatures": []
+    },
+    {
+      "regionId": "cove-city",
+      "creatures": []
+    },
+    {
+      "regionId": "crescent-mountains",
+      "creatures": []
+    },
+    {
+      "regionId": "dreamer-tree",
+      "creatures": []
+    },
+    {
+      "regionId": "fern-leaf-forest",
+      "creatures": []
+    },
+    {
+      "regionId": "frostfire-forest",
+      "creatures": []
+    },
+    {
+      "regionId": "mossy-cup-lagoon",
+      "creatures": []
+    },
+    {
+      "regionId": "saffron-spore-islands",
+      "creatures": []
+    },
+    {
+      "regionId": "selene-cliffs",
+      "creatures": []
+    },
+    {
+      "regionId": "shadow-moss-caves",
+      "creatures": []
+    },
+    {
+      "regionId": "starlit-stone-ruins",
+      "creatures": []
+    }
+  ]
+}

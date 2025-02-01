@@ -16,3 +16,8 @@ export type Creature = {
   emotionalTies: EmotionalTie[];
   bio: string;
 };
+
+export type Creatures = {
+  regionId: string;
+  creatures: Creature[];
+};
