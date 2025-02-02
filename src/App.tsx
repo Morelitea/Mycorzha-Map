@@ -6,7 +6,7 @@ import { Region, regionDefinitions } from "./types/RegionMapping";
 import { exists, BaseDirectory, readTextFile } from "@tauri-apps/plugin-fs";
 import ImportButton from "./components/ImportButton";
 
-const DATA_FILE = "creatureData.json";
+const CREATURE_DATA_FILE = "creatureData.json";
 
 export const getRegionFromCoordinates = (
   x: number,
@@ -26,8 +26,8 @@ export const getRegionFromCoordinates = (
 
 const App: React.FC = () => {
   const navigate = useNavigate();
-  const [fileExists, setFileExists] = useState<boolean>(false); // State to track if the file exists
-  const [fileData, setFileData] = useState<any>(null); // State to store file data
+  const [creatureFileExists, setCreatureFileExists] = useState<boolean>(false); // State to track if the file exists
+  const [creatureData, setCreatureData] = useState<any>(null); // State to store file data
 
   // const handleFileChange = async (
   //   event: React.ChangeEvent<HTMLInputElement>
@@ -65,23 +65,25 @@ const App: React.FC = () => {
   // };
 
   const initialize = async () => {
-    const doesExist = await exists(DATA_FILE, {
+    const doesExist = await exists(CREATURE_DATA_FILE, {
       baseDir: BaseDirectory.AppLocalData,
     });
     if (doesExist) {
-      setFileExists(doesExist);
-      const data = await readTextFile(DATA_FILE, {
+      setCreatureFileExists(doesExist);
+      const data = await readTextFile(CREATURE_DATA_FILE, {
         baseDir: BaseDirectory.AppLocalData,
       });
-      setFileData(JSON.parse(data));
+      setCreatureData(JSON.parse(data));
     }
   };
 
+  console.log("debug: ", { creatureData });
+
   useEffect(() => {
-    if (!fileExists) {
+    if (!creatureFileExists) {
       initialize();
     }
-  }, [fileExists, initialize]);
+  }, [creatureFileExists, initialize]);
 
   const handleGridClick = (gridCoordinates: { x: number; y: number }) => {
     const region = getRegionFromCoordinates(
@@ -97,7 +99,7 @@ const App: React.FC = () => {
 
   return (
     <div>
-      {!fileExists ? (
+      {!creatureFileExists ? (
         // Display import button if file doesn't exist
         // <input type="file" accept=".json" onChange={handleFileChange} />
         <ImportButton />
@@ -112,7 +114,7 @@ const App: React.FC = () => {
             <Route
               key={region.id}
               path={`region/:regionId`}
-              element={<RegionPage />}
+              element={<RegionPage creatureData={creatureData} />}
             />
           ))}
         </Routes>

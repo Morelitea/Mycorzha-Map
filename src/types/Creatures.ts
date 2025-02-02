@@ -17,7 +17,9 @@ export type Creature = {
   bio: string;
 };
 
-export type Creatures = {
-  regionId: string;
-  creatures: Creature[];
+export type CreatureData = {
+  regions: {
+    creatures: Creature[];
+    regionId: string;
+  }[];
 };

@@ -8,11 +8,17 @@ import {
   Subsection,
 } from "../types/RegionMapping";
 import styles from "./RegionPage.module.scss";
-import { Creature } from "../types/Creatures";
+import { Creature, CreatureData } from "../types/Creatures";
 
-const RegionPage: React.FC = () => {
+interface IRegionPageProps {
+  creatureData: CreatureData;
+}
+const RegionPage: React.FC<IRegionPageProps> = ({ creatureData }) => {
   const { regionId } = useParams<{ regionId: string }>();
   const [regionData, setRegionData] = useState<RegionDefinition | null>(null);
+  const [creatures, setCreatures] = useState<Creature[]>([]);
+
+  console.log("debug: ", { regionId });
 
   useEffect(() => {
     const region = regionDefinitions.find(
@@ -20,6 +26,12 @@ const RegionPage: React.FC = () => {
     );
     if (region) {
       setRegionData(region);
+    }
+    const regionCreatures = creatureData.regions.find(
+      (region) => region.regionId === regionId
+    );
+    if (regionCreatures) {
+      setCreatures(regionCreatures.creatures);
     }
   }, [regionId]);
 
@@ -36,8 +48,6 @@ const RegionPage: React.FC = () => {
     <div className={styles.regionPage}>
       <RegionHeader regionName={region.name} bannerImage={region.bannerImage} />
       <div className={styles.regionContent}>
-        <VerticalNav />
-
         <main className={styles.regionMainContent}>
           <h1>{region.name}</h1>
           <p>{majorContent}</p>
@@ -47,9 +57,11 @@ const RegionPage: React.FC = () => {
             <SectionContent
               key={section.id}
               section={section} // Pass each section to be processed
+              creatures={creatures}
             />
           ))}
         </main>
+        <VerticalNav creatureData={creatureData} />
       </div>
     </div>
   );
@@ -57,23 +69,27 @@ const RegionPage: React.FC = () => {
 
 interface SectionContentProps {
   section: Subsection;
+  creatures: Creature[];
 }
 
-const SectionContent: React.FC<SectionContentProps> = ({ section }) => {
-  const [creatures, setCreatures] = useState<Creature[]>([]);
+const SectionContent: React.FC<SectionContentProps> = ({
+  section,
+  creatures,
+}) => {
+  // const [creatures, setCreatures] = useState<Creature[]>([]);
 
   // Fetch JSON data for creatures if section content ends with '.json'
-  useEffect(() => {
-    // Check if the content is a valid file path and ends with .json
-    if (section.content && section.content.endsWith(".json")) {
-      import(`../data/${section.content}`) // Dynamically import the JSON file
-        .then((module) => {
-          // Assuming the file exports an array of creatures
-          setCreatures(module.default);
-        })
-        .catch((error) => console.error("Error loading creature data:", error));
-    }
-  }, [section.content]);
+  // useEffect(() => {
+  //   // Check if the content is a valid file path and ends with .json
+  //   if (section.content && section.content.endsWith(".json")) {
+  //     import(`../data/${section.content}`) // Dynamically import the JSON file
+  //       .then((module) => {
+  //         // Assuming the file exports an array of creatures
+  //         setCreatures(module.default);
+  //       })
+  //       .catch((error) => console.error("Error loading creature data:", error));
+  //   }
+  // }, [section.content]);
 
   // Render section normally if not JSON, otherwise render creature names
   if (section.content && section.content.endsWith(".json")) {

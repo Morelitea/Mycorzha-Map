@@ -6,12 +6,16 @@ import {
   regionDefinitions,
   Subsection,
 } from "../types/RegionMapping";
-import { Creature } from "../types/Creatures";
+import { Creature, CreatureData } from "../types/Creatures";
 
-// No API call needed, we will directly load the data from the file.
-const VerticalNav: React.FC = () => {
+interface IVerticalNavProps {
+  creatureData: CreatureData;
+}
+
+const VerticalNav: React.FC<IVerticalNavProps> = ({ creatureData }) => {
   const { regionId } = useParams<{ regionId: string }>();
   const [regionData, setRegionData] = useState<RegionDefinition | null>(null);
+  const [creatures, setCreatures] = useState<Creature[]>([]);
 
   useEffect(() => {
     const region = regionDefinitions.find(
@@ -19,6 +23,12 @@ const VerticalNav: React.FC = () => {
     );
     if (region) {
       setRegionData(region);
+    }
+    const regionCreatures = creatureData.regions.find(
+      (region) => region.regionId === regionId
+    );
+    if (regionCreatures) {
+      setCreatures(regionCreatures.creatures);
     }
   }, [regionId]);
 
@@ -33,28 +43,17 @@ const VerticalNav: React.FC = () => {
       </div>
       <ul className={styles.navList}>
         {regionData.regionData.subsections.map((section) => (
-          <Section key={section.id} section={section} />
+          <Section key={section.id} section={section} creatures={creatures} />
         ))}
       </ul>
     </nav>
   );
 };
 
-const Section: React.FC<{ section: Subsection }> = ({ section }) => {
-  const [creatures, setCreatures] = useState<Creature[]>([]);
-
-  useEffect(() => {
-    // Check if the content is a valid file path and ends with .json
-    if (section.content && section.content.endsWith(".json")) {
-      import(`../data/${section.content}`) // Dynamically import the JSON file
-        .then((module) => {
-          // Assuming the file exports an array of creatures
-          setCreatures(module.default);
-        })
-        .catch((error) => console.error("Error loading creature data:", error));
-    }
-  }, [section.content]);
-
+const Section: React.FC<{ section: Subsection; creatures: Creature[] }> = ({
+  section,
+  creatures,
+}) => {
   // Ensure subsections is treated as an array
   const subsections = section.subsections || [];
 
