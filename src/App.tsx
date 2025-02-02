@@ -77,8 +77,6 @@ const App: React.FC = () => {
     }
   };
 
-  console.log("debug: ", { creatureData });
-
   useEffect(() => {
     if (!creatureFileExists) {
       initialize();

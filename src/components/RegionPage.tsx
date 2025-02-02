@@ -18,8 +18,6 @@ const RegionPage: React.FC<IRegionPageProps> = ({ creatureData }) => {
   const [regionData, setRegionData] = useState<RegionDefinition | null>(null);
   const [creatures, setCreatures] = useState<Creature[]>([]);
 
-  console.log("debug: ", { regionId });
-
   useEffect(() => {
     const region = regionDefinitions.find(
       (region) => region.region.id === regionId
