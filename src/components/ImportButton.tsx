@@ -25,7 +25,7 @@ const ImportButton: React.FC = () => {
             // Optionally, save this data in Tauri's local storage or a file
             try {
               await writeTextFile("creatureData.json", JSON.stringify(data), {
-                baseDir: BaseDirectory.Home, // Or try other directories
+                baseDir: BaseDirectory.AppLocalData, // Or try other directories
               });
               setCreatureData(data);
               setError(null); // Clear any previous errors

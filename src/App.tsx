@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import MapComponent from "./components/MapComponent";
 import RegionPage from "./components/RegionPage";
 import { Region, regionDefinitions } from "./types/RegionMapping";
-import { exists, BaseDirectory, writeTextFile } from "@tauri-apps/plugin-fs";
+import { exists, BaseDirectory, readTextFile } from "@tauri-apps/plugin-fs";
+import ImportButton from "./components/ImportButton";
+
+const DATA_FILE = "creatureData.json";
 
 export const getRegionFromCoordinates = (
   x: number,
@@ -24,42 +27,61 @@ export const getRegionFromCoordinates = (
 const App: React.FC = () => {
   const navigate = useNavigate();
   const [fileExists, setFileExists] = useState<boolean>(false); // State to track if the file exists
-  const [setFileData] = useState<any>(null); // State to store file data
+  const [fileData, setFileData] = useState<any>(null); // State to store file data
 
-  const handleFileChange = async (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    const file = event.target.files?.[0];
+  // const handleFileChange = async (
+  //   event: React.ChangeEvent<HTMLInputElement>
+  // ) => {
+  //   const file = event.target.files?.[0];
 
-    if (file) {
-      const reader = new FileReader();
+  //   if (file) {
+  //     const reader = new FileReader();
 
-      reader.onload = async () => {
-        const fileContent = reader.result as string;
-        try {
-          // Optionally save this content to a file (e.g., avatar.png)
-          await writeTextFile("creatureData.json", fileContent, {
-            baseDir: BaseDirectory.Home,
-          });
+  //     reader.onload = async () => {
+  //       const fileContent = reader.result as string;
+  //       try {
+  //         // Optionally save this content to a file (e.g., avatar.png)
+  //         await writeTextFile("creatureData.json", fileContent, {
+  //           baseDir: BaseDirectory.Home,
+  //         });
 
-          // Check if the file exists in AppData directory
-          const fileExistsResult = await exists("creatureData.json", {
-            baseDir: BaseDirectory.Home,
-          });
-          setFileExists(fileExistsResult); // Update state based on file existence
-          setFileData(fileContent); // Optionally store the file data
-        } catch (err) {
-          console.error("Error processing the file:", err);
-        }
-      };
+  //         // Check if the file exists in AppData directory
+  //         const fileExistsResult = await exists("creatureData.json", {
+  //           baseDir: BaseDirectory.Home,
+  //         });
+  //         setFileExists(fileExistsResult); // Update state based on file existence
+  //         setFileData(fileContent); // Optionally store the file data
+  //       } catch (err) {
+  //         console.error("Error processing the file:", err);
+  //       }
+  //     };
 
-      reader.onerror = () => {
-        console.error("Error reading the file.");
-      };
+  //     reader.onerror = () => {
+  //       console.error("Error reading the file.");
+  //     };
 
-      reader.readAsText(file);
+  //     reader.readAsText(file);
+  //   }
+  // };
+
+  const initialize = async () => {
+    const doesExist = await exists(DATA_FILE, {
+      baseDir: BaseDirectory.AppLocalData,
+    });
+    if (doesExist) {
+      setFileExists(doesExist);
+      const data = await readTextFile(DATA_FILE, {
+        baseDir: BaseDirectory.AppLocalData,
+      });
+      setFileData(JSON.parse(data));
     }
   };
+
+  useEffect(() => {
+    if (!fileExists) {
+      initialize();
+    }
+  }, [fileExists, initialize]);
 
   const handleGridClick = (gridCoordinates: { x: number; y: number }) => {
     const region = getRegionFromCoordinates(
@@ -77,7 +99,8 @@ const App: React.FC = () => {
     <div>
       {!fileExists ? (
         // Display import button if file doesn't exist
-        <input type="file" accept=".json" onChange={handleFileChange} />
+        // <input type="file" accept=".json" onChange={handleFileChange} />
+        <ImportButton />
       ) : (
         // If the file exists, render the map
         <Routes>
