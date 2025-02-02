@@ -56,7 +56,6 @@ const Section: React.FC<{ section: Subsection; creatures: Creature[] }> = ({
 }) => {
   // Ensure subsections is treated as an array
   const subsections = section.subsections || [];
-
   return (
     <li className={styles.sectionItem}>
       <div>
@@ -73,13 +72,16 @@ const Section: React.FC<{ section: Subsection; creatures: Creature[] }> = ({
               </Link>
             </li>
           ))}
-          {creatures.map(({ name, id }) => (
-            <li key={id}>
-              <Link to={`#${id}`} className={styles.subLink}>
-                {name}
-              </Link>
-            </li>
-          ))}
+
+          {section.content &&
+            section.content.endsWith(".json") &&
+            creatures.map(({ name, id }) => (
+              <li key={id}>
+                <Link to={`#${id}`} className={styles.subLink}>
+                  {name}
+                </Link>
+              </li>
+            ))}
         </ul>
       ) : null}
     </li>
