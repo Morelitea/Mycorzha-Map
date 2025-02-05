@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { ArrowBack } from "@mui/icons-material";
+import Button from "@mui/material/Button";
 import styles from "./RegionHeader.module.scss";
 import defaultBanner from "../assets/banners/banner.png";
-import backArrow from "../assets/back.png";
+// import backArrow from "../assets/back.png";
 
 interface RegionHeaderProps {
   regionName: string;
@@ -31,9 +33,18 @@ const RegionHeader: React.FC<RegionHeaderProps> = ({
       />
 
       {/* Back button */}
-      <Link to="/" className={styles.backButton}>
+      {/* <Link to="/" className={styles.backButton}>
         <img src={backArrow} alt="Back" /> <span>Back</span>
-      </Link>
+      </Link> */}
+      <Button
+        component={Link}
+        to="/"
+        startIcon={<ArrowBack />}
+        className={styles.backButton}
+        variant="contained"
+      >
+        Back
+      </Button>
 
       <div className={styles.regionTitle}>
         <h1>{regionName}</h1>

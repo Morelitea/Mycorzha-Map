@@ -33,29 +33,30 @@
     position: fixed;
     top: 20px;
     left: 20px;
-    background-color: rgba(255, 255, 255, 0.7);
-    border: none;
-    border-radius: 40px;
-    width: 90px;
-    height: 40px;
-    padding: 0;
-    font-size: 18px;
-    color: #333;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.3s ease;
+    z-index: 2;
+    // background-color: rgba(255, 255, 255, 0.7);
+    // border: none;
+    // border-radius: 40px;
+    // width: 90px;
+    // height: 40px;
+    // padding: 0;
+    // font-size: 18px;
+    // color: #333;
+    // text-decoration: none;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // transition: background-color 0.3s ease;
 
-    &:hover {
-      background-color: rgba(255, 255, 255, 0.9);
-    }
+    // &:hover {
+    //   background-color: rgba(255, 255, 255, 0.9);
+    // }
 
-    img {
-      width: 20px;
-      height: 20px;
-      margin-right: 5px;
-    }
+    // img {
+    //   width: 20px;
+    //   height: 20px;
+    //   margin-right: 5px;
+    // }
   }
 
   .regionTitle {
