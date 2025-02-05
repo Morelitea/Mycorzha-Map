@@ -1,3 +1,52 @@
+@font-face {
+  font-family: "Cabin";
+  src: url("/fonts/Cabin-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cabin";
+  src: url("/fonts/Cabin-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cabin";
+  src: url("/fonts/Cabin-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Cabin";
+  src: url("/fonts/Cabin-BoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "LibreBaskerville";
+  src: url("/fonts/LibreBaskerville-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "LibreBaskerville";
+  src: url("/fonts/LibreBaskerville-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "LibreBaskerville";
+  src: url("/fonts/LibreBaskerville-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
 *,
 *::before,
 *::after {
@@ -7,7 +56,7 @@
 }
 
 body {
-  font-family: "Arial", sans-serif;
+  font-family: "Cabin", "Arial", sans-serif;
   line-height: 1.6;
   background-color: #fefae0;
   color: #333;
@@ -24,4 +73,11 @@ body,
 #root,
 .appContainer {
   height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "LibreBaskerville", serif;
 }
