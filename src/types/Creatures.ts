@@ -12,7 +12,7 @@ export type TCreature = {
   comfortSnack: string;
   biggestFear: string;
   favoriteStory: string;
-  spotifyPlaylist: string;
+  spotifyPlaylist?: string;
   quote: string;
   emotionalTies: EmotionalTie[];
   bio: string;

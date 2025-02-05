@@ -31,7 +31,7 @@ export const Creature: React.FC<ICreatureProps> = ({ creature }) => {
     spotifyPlaylist,
   } = creature;
   const imagePath = `/images/creatures/${image}`;
-  const spotifyPath = `images/spotify/${spotifyPlaylist}`;
+  const spotifyPath = `/images/spotify/${spotifyPlaylist}`;
 
   return (
     <Paper
@@ -106,18 +106,26 @@ export const Creature: React.FC<ICreatureProps> = ({ creature }) => {
                 <TableCell>
                   <strong>Favorite Story</strong>
                 </TableCell>
-                <TableCell>
-                  <strong>Spotify Playlist</strong>
-                </TableCell>
+                {spotifyPlaylist && (
+                  <TableCell>
+                    <strong>Spotify Playlist</strong>
+                  </TableCell>
+                )}
               </TableRow>
             </TableHead>
             <TableBody>
               <TableRow>
                 <TableCell>{biggestFear}</TableCell>
                 <TableCell>{favoriteStory}</TableCell>
-                <TableCell>
-                  <img src={spotifyPath} alt={`${id} spotify playlist code`} />
-                </TableCell>
+                {spotifyPlaylist && (
+                  <TableCell>
+                    <img
+                      src={spotifyPath}
+                      alt={`${id} spotify playlist code`}
+                      className={styles.spotifyCode}
+                    />
+                  </TableCell>
+                )}
               </TableRow>
             </TableBody>
           </Table>
