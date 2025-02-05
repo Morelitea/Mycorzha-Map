@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
+import Box from "@mui/material/Box";
+import Paper from "@mui/material/Paper";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
 import RegionHeader from "./RegionHeader";
 import VerticalNav from "./VerticalNav"; // Importing the dynamic VerticalNav component
 import Creature from "./Creature";
@@ -49,7 +54,7 @@ const RegionPage: React.FC<IRegionPageProps> = ({ creatureData }) => {
       <div className={styles.regionContent}>
         <main className={styles.regionMainContent}>
           {/* <h1>{region.name}</h1> */}
-          <p>{majorContent}</p>
+          <ReactMarkdown>{majorContent}</ReactMarkdown>
 
           {/* Render subsection content dynamically with anchor tags */}
           {subsections.map((section) => (
@@ -66,6 +71,39 @@ const RegionPage: React.FC<IRegionPageProps> = ({ creatureData }) => {
   );
 };
 
+interface SubsectionTabPanelProps {
+  children?: React.ReactNode;
+  index: number;
+  value: number;
+}
+
+const SubsectionTabPanel = (props: SubsectionTabPanelProps) => {
+  const { children, value, index, ...other } = props;
+
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`subsection-tabpanel-${index}`}
+      aria-labelledby={`subsection-tab-${index}`}
+      {...other}
+    >
+      {value === index && (
+        <Paper elevation={1} sx={{ mb: 2 }}>
+          <Box sx={{ p: 3 }}>{children}</Box>
+        </Paper>
+      )}
+    </div>
+  );
+};
+
+function a11yProps(index: number) {
+  return {
+    id: `subsection-tab-${index}`,
+    "aria-controls": `subsection-tabpanel-${index}`,
+  };
+}
+
 interface SectionContentProps {
   section: Subsection;
   creatures: TCreature[];
@@ -75,6 +113,12 @@ const SectionContent: React.FC<SectionContentProps> = ({
   section,
   creatures,
 }) => {
+  const [value, setValue] = useState(0);
+
+  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+    setValue(newValue);
+  };
+
   // Render section normally if not JSON, otherwise render creature names
   if (section.content && section.content.endsWith(".json")) {
     return (
@@ -94,20 +138,26 @@ const SectionContent: React.FC<SectionContentProps> = ({
   return (
     <section id={section.id} key={section.id} className={styles.section}>
       <h2>{section.name}</h2>
-      <p>{section.content}</p>
+      <ReactMarkdown>{section.content}</ReactMarkdown>
 
       {/* Render subsections */}
       {section.subsections && section.subsections.length > 0 && (
         <div className={styles.subsections}>
-          {section.subsections.map((subSection) => (
-            <div
-              key={subSection.id}
-              id={subSection.id}
-              className={styles.subsection}
-            >
-              <h3>{subSection.name}</h3>
-              <p>{subSection.content}</p>
-            </div>
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            variant="scrollable"
+            scrollButtons
+            allowScrollButtonsMobile
+          >
+            {section.subsections.map((subsection, index) => (
+              <Tab label={subsection.name} {...a11yProps(index)} />
+            ))}
+          </Tabs>
+          {section.subsections.map((subsection, index) => (
+            <SubsectionTabPanel value={value} index={index}>
+              <ReactMarkdown>{subsection.content}</ReactMarkdown>
+            </SubsectionTabPanel>
           ))}
         </div>
       )}

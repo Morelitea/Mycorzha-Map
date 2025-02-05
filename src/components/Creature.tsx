@@ -63,7 +63,7 @@ export const Creature: React.FC<ICreatureProps> = ({ creature }) => {
             <h4>Emotional Ties:</h4>
             <ul className={styles.emotionalTies}>
               {emotionalTies.map((et) => (
-                <li>
+                <li key={et.name}>
                   <strong>{et.name}:</strong> {et.relationship}
                 </li>
               ))}
