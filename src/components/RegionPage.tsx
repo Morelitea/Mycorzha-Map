@@ -74,21 +74,6 @@ const SectionContent: React.FC<SectionContentProps> = ({
   section,
   creatures,
 }) => {
-  // const [creatures, setCreatures] = useState<Creature[]>([]);
-
-  // Fetch JSON data for creatures if section content ends with '.json'
-  // useEffect(() => {
-  //   // Check if the content is a valid file path and ends with .json
-  //   if (section.content && section.content.endsWith(".json")) {
-  //     import(`../data/${section.content}`) // Dynamically import the JSON file
-  //       .then((module) => {
-  //         // Assuming the file exports an array of creatures
-  //         setCreatures(module.default);
-  //       })
-  //       .catch((error) => console.error("Error loading creature data:", error));
-  //   }
-  // }, [section.content]);
-
   // Render section normally if not JSON, otherwise render creature names
   if (section.content && section.content.endsWith(".json")) {
     return (

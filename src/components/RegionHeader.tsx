@@ -32,7 +32,7 @@ const RegionHeader: React.FC<RegionHeaderProps> = ({
 
       {/* Back button */}
       <Link to="/" className={styles.backButton}>
-        <img src={backArrow} alt="Back" />
+        <img src={backArrow} alt="Back" /> <span>Back</span>
       </Link>
 
       <div className={styles.regionTitle}>

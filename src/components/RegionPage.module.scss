@@ -1,11 +1,12 @@
 .regionPage {
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .regionContent {
   display: flex;
-  // margin-top: 20px;
+  height: 100%;
 }
 
 .regionNav {

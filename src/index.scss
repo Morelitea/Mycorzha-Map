@@ -9,7 +9,7 @@
 body {
   font-family: "Arial", sans-serif;
   line-height: 1.6;
-  background-color: #fafafa;
+  background-color: #fefae0;
   color: #333;
   font-size: 16px;
   min-height: 100vh;
@@ -17,4 +17,11 @@ body {
 
 html {
   font-size: 100%;
+}
+
+html,
+body,
+#root,
+.appContainer {
+  height: 100%;
 }
