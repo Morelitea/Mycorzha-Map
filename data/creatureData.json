@@ -6,7 +6,7 @@
         {
           "name": "Amani",
           "id": "amani-1",
-          "image": "path/to/amani-image.png",
+          "image": "amani.png",
           "pronouns": "She/Her",
           "comfortSnack": "Spiced, dried berries",
           "biggestFear": "Being trapped in a building that's on fire",
@@ -32,7 +32,7 @@
         {
           "name": "Glinda",
           "id": "glinda-1",
-          "image": "path/to/glinda-image.png",
+          "image": "glinda.png",
           "pronouns": "She/Her",
           "comfortSnack": "Fresh Summer melon",
           "biggestFear": "Drowning",
