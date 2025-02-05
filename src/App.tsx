@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
+import { exists, BaseDirectory, readTextFile } from "@tauri-apps/plugin-fs";
+import { ThemeProvider } from "@mui/material/styles";
 import MapComponent from "./components/MapComponent";
 import RegionPage from "./components/RegionPage";
 import { Region, regionDefinitions } from "./types/RegionMapping";
-import { exists, BaseDirectory, readTextFile } from "@tauri-apps/plugin-fs";
+import { CreatureData } from "./types/Creatures";
 import ImportButton from "./components/ImportButton";
+import sampleData from "./data/creatureData.json";
+import theme from "./theme";
 
 const CREATURE_DATA_FILE = "creatureData.json";
+const { DEV } = import.meta.env;
 
 export const getRegionFromCoordinates = (
   x: number,
@@ -27,53 +32,25 @@ export const getRegionFromCoordinates = (
 const App: React.FC = () => {
   const navigate = useNavigate();
   const [creatureFileExists, setCreatureFileExists] = useState<boolean>(false); // State to track if the file exists
-  const [creatureData, setCreatureData] = useState<any>(null); // State to store file data
-
-  // const handleFileChange = async (
-  //   event: React.ChangeEvent<HTMLInputElement>
-  // ) => {
-  //   const file = event.target.files?.[0];
-
-  //   if (file) {
-  //     const reader = new FileReader();
-
-  //     reader.onload = async () => {
-  //       const fileContent = reader.result as string;
-  //       try {
-  //         // Optionally save this content to a file (e.g., avatar.png)
-  //         await writeTextFile("creatureData.json", fileContent, {
-  //           baseDir: BaseDirectory.Home,
-  //         });
-
-  //         // Check if the file exists in AppData directory
-  //         const fileExistsResult = await exists("creatureData.json", {
-  //           baseDir: BaseDirectory.Home,
-  //         });
-  //         setFileExists(fileExistsResult); // Update state based on file existence
-  //         setFileData(fileContent); // Optionally store the file data
-  //       } catch (err) {
-  //         console.error("Error processing the file:", err);
-  //       }
-  //     };
-
-  //     reader.onerror = () => {
-  //       console.error("Error reading the file.");
-  //     };
-
-  //     reader.readAsText(file);
-  //   }
-  // };
+  const [creatureData, setCreatureData] = useState<CreatureData>({
+    regions: [],
+  }); // State to store file data
 
   const initialize = async () => {
-    const doesExist = await exists(CREATURE_DATA_FILE, {
-      baseDir: BaseDirectory.AppLocalData,
-    });
-    if (doesExist) {
-      setCreatureFileExists(doesExist);
-      const data = await readTextFile(CREATURE_DATA_FILE, {
+    if (DEV) {
+      setCreatureFileExists(true);
+      setCreatureData(sampleData);
+    } else {
+      const doesExist = await exists(CREATURE_DATA_FILE, {
         baseDir: BaseDirectory.AppLocalData,
       });
-      setCreatureData(JSON.parse(data));
+      if (doesExist) {
+        setCreatureFileExists(doesExist);
+        const data = await readTextFile(CREATURE_DATA_FILE, {
+          baseDir: BaseDirectory.AppLocalData,
+        });
+        setCreatureData(JSON.parse(data));
+      }
     }
   };
 
@@ -96,27 +73,29 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="appContainer">
-      {!creatureFileExists ? (
-        // Display import button if file doesn't exist
-        <ImportButton />
-      ) : (
-        // If the file exists, render the map
-        <Routes>
-          <Route
-            path="/"
-            element={<MapComponent onGridClick={handleGridClick} />}
-          />
-          {regionDefinitions.map(({ region }) => (
+    <ThemeProvider theme={theme}>
+      <div className="appContainer">
+        {!creatureFileExists ? (
+          // Display import button if file doesn't exist
+          <ImportButton />
+        ) : (
+          // If the file exists, render the map
+          <Routes>
             <Route
-              key={region.id}
-              path={`region/:regionId`}
-              element={<RegionPage creatureData={creatureData} />}
+              path="/"
+              element={<MapComponent onGridClick={handleGridClick} />}
             />
-          ))}
-        </Routes>
-      )}
-    </div>
+            {regionDefinitions.map(({ region }) => (
+              <Route
+                key={region.id}
+                path={`region/:regionId`}
+                element={<RegionPage creatureData={creatureData} />}
+              />
+            ))}
+          </Routes>
+        )}
+      </div>
+    </ThemeProvider>
   );
 };
 
