@@ -8,6 +8,7 @@ export type TCreature = {
   id: string;
   image: string;
   pronouns: string;
+  size: string;
   comfortSnack: string;
   biggestFear: string;
   favoriteStory: string;
