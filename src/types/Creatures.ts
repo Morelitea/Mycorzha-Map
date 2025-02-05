@@ -3,7 +3,7 @@ export type EmotionalTie = {
   relationship: string;
 };
 
-export type Creature = {
+export type TCreature = {
   name: string;
   id: string;
   image: string;
@@ -19,7 +19,7 @@ export type Creature = {
 
 export type CreatureData = {
   regions: {
-    creatures: Creature[];
+    creatures: TCreature[];
     regionId: string;
   }[];
 };

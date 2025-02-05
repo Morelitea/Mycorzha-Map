@@ -6,7 +6,7 @@ import {
   regionDefinitions,
   Subsection,
 } from "../types/RegionMapping";
-import { Creature, CreatureData } from "../types/Creatures";
+import { TCreature, CreatureData } from "../types/Creatures";
 
 interface IVerticalNavProps {
   creatureData: CreatureData;
@@ -15,7 +15,7 @@ interface IVerticalNavProps {
 const VerticalNav: React.FC<IVerticalNavProps> = ({ creatureData }) => {
   const { regionId } = useParams<{ regionId: string }>();
   const [regionData, setRegionData] = useState<RegionDefinition | null>(null);
-  const [creatures, setCreatures] = useState<Creature[]>([]);
+  const [creatures, setCreatures] = useState<TCreature[]>([]);
 
   useEffect(() => {
     const region = regionDefinitions.find(
@@ -50,7 +50,7 @@ const VerticalNav: React.FC<IVerticalNavProps> = ({ creatureData }) => {
   );
 };
 
-const Section: React.FC<{ section: Subsection; creatures: Creature[] }> = ({
+const Section: React.FC<{ section: Subsection; creatures: TCreature[] }> = ({
   section,
   creatures,
 }) => {

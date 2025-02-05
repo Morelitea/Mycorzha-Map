@@ -99,7 +99,6 @@ const App: React.FC = () => {
     <div className="appContainer">
       {!creatureFileExists ? (
         // Display import button if file doesn't exist
-        // <input type="file" accept=".json" onChange={handleFileChange} />
         <ImportButton />
       ) : (
         // If the file exists, render the map

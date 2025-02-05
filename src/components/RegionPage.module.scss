@@ -1,12 +1,11 @@
 .regionPage {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 100vh;
 }
 
 .regionContent {
   display: flex;
-  height: 100%;
 }
 
 .regionNav {
@@ -89,4 +88,9 @@
   text-align: center;
   font-size: 1.5rem;
   color: #007bff;
+}
+
+.creatures {
+  display: flex;
+  flex-wrap: wrap;
 }
