@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import classNames from "classnames";
+import ReactMarkdown from "react-markdown";
 import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -56,7 +57,7 @@ export const Creature: React.FC<ICreatureProps> = ({ creature }) => {
         <blockquote>&ldquo;{quote}&rdquo;</blockquote>
 
         <h4>Bio:</h4>
-        <p>{bio}</p>
+        <ReactMarkdown>{bio}</ReactMarkdown>
 
         {emotionalTies.length && (
           <>
