@@ -1,4 +1,4 @@
-import { RegionData } from "../RegionTypes";
+import { RegionData } from "../../types/Regions";
 
 export const seleneCliffs: RegionData = {
   majorContent:

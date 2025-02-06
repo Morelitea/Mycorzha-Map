@@ -8,8 +8,8 @@ import Tab from "@mui/material/Tab";
 import RegionHeader from "./RegionHeader";
 import VerticalNav from "./VerticalNav"; // Importing the dynamic VerticalNav component
 import Creature from "./Creature";
-import { regionDefinitions } from "../types/RegionMapping";
-import { RegionDefinition, Subsection } from "../types/RegionTypes";
+import { regionDefinitions } from "../data/regionDefinitions";
+import { RegionDefinition, Subsection } from "../types/Regions";
 import styles from "./RegionPage.module.scss";
 import { TCreature, CreatureData } from "../types/Creatures";
 

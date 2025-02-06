@@ -1,8 +1,8 @@
-import { RegionDefinition } from "./RegionTypes";
+import { RegionDefinition } from "../types/Regions";
 import coveCity from "./regionData/coveCity";
 import crescentMountains from "./regionData/crescentMountains";
 import dreamerTree from "./regionData/dreamerTree";
-import fernLeafForest from "./regionData/fernleafForest";
+import fernLeafForest from "./regionData/fernLeafForest";
 import frostfireForest from "./regionData/frostfireForest";
 import hazelmossWoods from "./regionData/hazelmossWoods";
 import lunaValley from "./regionData/lunaValley";
