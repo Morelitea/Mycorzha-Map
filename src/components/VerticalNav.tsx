@@ -50,6 +50,17 @@ const VerticalNav: React.FC<IVerticalNavProps> = ({ creatureData }) => {
   );
 };
 
+const handleClick = (ev: React.SyntheticEvent, id: string): void => {
+  ev.preventDefault();
+  const element = document.getElementById(id);
+  if (element) {
+    window.scrollTo({
+      top: element.offsetTop - 20,
+      behavior: "smooth",
+    });
+  }
+};
+
 const Section: React.FC<{ section: Subsection; creatures: TCreature[] }> = ({
   section,
   creatures,
@@ -59,7 +70,11 @@ const Section: React.FC<{ section: Subsection; creatures: TCreature[] }> = ({
   return (
     <li className={styles.sectionItem}>
       <div>
-        <Link to={`#${section.id}`} className={styles.mainLink}>
+        <Link
+          to={`#${section.id}`}
+          className={styles.mainLink}
+          onClick={(ev) => handleClick(ev, section.id)}
+        >
           {section.name}
         </Link>
       </div>
@@ -67,18 +82,26 @@ const Section: React.FC<{ section: Subsection; creatures: TCreature[] }> = ({
         <ul className={styles.subSectionList}>
           {subsections.map((subSection) => (
             <li key={subSection.id}>
-              <Link to={`#${subSection.id}`} className={styles.subLink}>
+              <Link
+                to={`#${subSection.id}`}
+                className={styles.subLink}
+                onClick={(ev) => handleClick(ev, subSection.id)}
+              >
                 {subSection.name}
               </Link>
             </li>
           ))}
 
-          {section.content &&
-            section.content.endsWith(".json") &&
-            creatures.map(({ name, id }) => (
-              <li key={id}>
-                <Link to={`#${id}`} className={styles.subLink}>
-                  {name}
+          {section.subsectionType &&
+            section.subsectionType == "creature" &&
+            creatures.map((creature) => (
+              <li key={creature.id}>
+                <Link
+                  to={`#${creature.id}`}
+                  className={styles.subLink}
+                  onClick={(ev) => handleClick(ev, creature.id)}
+                >
+                  {creature.name}
                 </Link>
               </li>
             ))}
