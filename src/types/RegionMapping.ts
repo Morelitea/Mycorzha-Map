@@ -456,7 +456,7 @@ export const regionDefinitions: RegionDefinition[] = [
               name: "Selene Cliffs",
               id: "selene-cliffs",
               link: "/region/selene-cliffs",
-              // image: "selene-cliffs.png",
+              image: "selene-cliffs.png",
               content:
                 "Surrounding cliffs often populated by the birds of the Isles.",
             },
