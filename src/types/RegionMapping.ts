@@ -2,6 +2,9 @@ export interface Subsection {
   name: string;
   id: string;
   content: string; // This can also be a link to a JSON data object
+  image?: string;
+  link?: string;
+  subsectionType?: "table" | "creature" | "subculture";
   subsections?: Subsection[];
 }
 
@@ -39,7 +42,7 @@ export const regionDefinitions: RegionDefinition[] = [
     region: {
       name: "Cove City",
       id: "cove-city",
-      bannerImage: "/assets/banners/cove-city-banner.png",
+      bannerImage: "/images/banners/cove-city-banner.png",
     },
     regionData: {
       majorContent:
@@ -91,7 +94,7 @@ export const regionDefinitions: RegionDefinition[] = [
     region: {
       name: "Crescent Mountains and the White Plateau",
       id: "crescent-mountains",
-      bannerImage: "/assets/banners/crescent-mountains-banner.png",
+      bannerImage: "/images/banners/crescent-mountains-banner.png",
     },
     regionData: {
       majorContent:
@@ -143,7 +146,7 @@ export const regionDefinitions: RegionDefinition[] = [
     region: {
       name: "Dreamer Tree and Greater Mycorzha",
       id: "dreamer-tree",
-      bannerImage: "/assets/banners/dreamer-tree-banner.png",
+      bannerImage: "/images/banners/dreamer-tree-banner.png",
     },
     regionData: {
       majorContent:
@@ -195,7 +198,7 @@ export const regionDefinitions: RegionDefinition[] = [
     region: {
       name: "Fern Leaf Forest",
       id: "fern-leaf-forest",
-      bannerImage: "/assets/banners/fernleaf-forest-banner.png",
+      bannerImage: "/images/banners/fernleaf-forest-banner.png",
     },
     regionData: {
       majorContent:
@@ -247,7 +250,7 @@ export const regionDefinitions: RegionDefinition[] = [
     region: {
       name: "Frostfire Forest",
       id: "frostfire-forest",
-      bannerImage: "/assets/banners/frostfire-forest-banner.png",
+      bannerImage: "/images/banners/frostfire-forest-banner.png",
     },
     regionData: {
       majorContent:
@@ -299,7 +302,7 @@ export const regionDefinitions: RegionDefinition[] = [
     region: {
       name: "Hazelmoss Woods",
       id: "hazelmoss-woods",
-      bannerImage: "/assets/banners/hazelmoss-woods-banner.png",
+      bannerImage: "/images/banners/hazelmoss-woods-banner.png",
     },
     regionData: {
       majorContent:
@@ -351,7 +354,7 @@ export const regionDefinitions: RegionDefinition[] = [
     region: {
       name: "Luna Valley",
       id: "luna-valley",
-      bannerImage: "/assets/banners/luna-valley-banner.png",
+      bannerImage: "/images/banners/luna-valley-banner.png",
     },
     regionData: {
       majorContent:
@@ -360,6 +363,7 @@ export const regionDefinitions: RegionDefinition[] = [
         {
           name: "Known Residents",
           id: "known-residents",
+          subsectionType: "creature",
           content: "/data/lunaValley.json",
         },
         {
@@ -372,6 +376,7 @@ export const regionDefinitions: RegionDefinition[] = [
           id: "regional-differences",
           content:
             "Each region of Mycorzha has many shared beliefs and values, but all the same each have aspects that make them unique.",
+          subsectionType: "table",
           subsections: [
             {
               name: "Dialect",
@@ -406,6 +411,7 @@ export const regionDefinitions: RegionDefinition[] = [
           id: "flora-and-fauna",
           content:
             "The Isles of Mycorzha share the climate of the Northern Americas. While they have some unique plants or mushrooms that only grow on the Isles you might know a few of these plants. Maybe you can find them where you live?\n\nIf you find some share your photos with us on Instagram by tagging us @morelitea! Remember to take nothing but photos and leave nothing but footprints.",
+          subsectionType: "table",
           subsections: [
             {
               name: "Mushrooms",
@@ -442,7 +448,19 @@ export const regionDefinitions: RegionDefinition[] = [
         {
           name: "Subcultures",
           id: "subcultures",
-          content: "Foo",
+          content:
+            "Luna valley is large enough that some of it's subcultures are also considered regions.",
+          subsectionType: "subculture",
+          subsections: [
+            {
+              name: "Selene Cliffs",
+              id: "selene-cliffs",
+              link: "/region/selene-cliffs",
+              // image: "selene-cliffs.png",
+              content:
+                "Surrounding cliffs often populated by the birds of the Isles.",
+            },
+          ],
         },
       ],
     },
@@ -453,7 +471,7 @@ export const regionDefinitions: RegionDefinition[] = [
     region: {
       name: "Mossy Cup Lagoon",
       id: "mossy-cup-lagoon",
-      bannerImage: "/assets/banners/mossy-cup-lagoon-banner.png",
+      bannerImage: "/images/banners/mossy-cup-lagoon-banner.png",
     },
     regionData: {
       majorContent:
@@ -505,7 +523,7 @@ export const regionDefinitions: RegionDefinition[] = [
     region: {
       name: "Saffron Spore Islands",
       id: "saffron-spore-islands",
-      bannerImage: "/assets/banners/saffron-spore-islands-banner.png",
+      bannerImage: "/images/banners/saffron-spore-islands-banner.png",
     },
     regionData: {
       majorContent:
@@ -557,7 +575,7 @@ export const regionDefinitions: RegionDefinition[] = [
     region: {
       name: "Selene Cliffs",
       id: "selene-cliffs",
-      bannerImage: "/assets/banners/selene-cliffs-banner.png",
+      bannerImage: "/images/banners/selene-cliffs-banner.png",
     },
     regionData: {
       majorContent:
@@ -609,7 +627,7 @@ export const regionDefinitions: RegionDefinition[] = [
     region: {
       name: "Shadow Moss Caves",
       id: "shadow-moss-caves",
-      bannerImage: "/assets/banners/shadow-moss-caves-banner.png",
+      bannerImage: "/images/banners/shadow-moss-caves-banner.png",
     },
     regionData: {
       majorContent:
@@ -661,7 +679,7 @@ export const regionDefinitions: RegionDefinition[] = [
     region: {
       name: "Starlit Stone Ruins",
       id: "starlit-stone-ruins",
-      bannerImage: "/assets/banners/starlit-stone-ruins-banner.png",
+      bannerImage: "/images/banners/starlit-stone-ruins-banner.png",
     },
     regionData: {
       majorContent:

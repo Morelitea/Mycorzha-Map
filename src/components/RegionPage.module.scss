@@ -6,6 +6,7 @@
 
 .regionContent {
   display: flex;
+  justify-content: center;
 }
 
 .regionNav {
@@ -48,7 +49,8 @@
 .regionMainContent {
   margin-left: 30px;
   flex: 1;
-  padding: 10px;
+  padding: 20px;
+  max-width: 1000px;
 
   h1 {
     color: #333;
@@ -100,4 +102,23 @@
 .creatures {
   display: flex;
   flex-wrap: wrap;
+}
+
+.subcultures {
+  display: flex;
+  flex-wrap: wrap;
+
+  .subculture {
+    width: 260px;
+    // padding: 20px;
+    margin: 0 20px 20px 0;
+    text-align: center;
+
+    .subcultureImage {
+      width: 100px;
+      height: 100px;
+      border-radius: 100%;
+      object-fit: cover;
+    }
+  }
 }

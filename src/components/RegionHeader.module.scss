@@ -18,7 +18,7 @@
     background: linear-gradient(
       180deg,
       rgba(254, 250, 224, 0) 0%,
-      rgba(254, 250, 224, 1) 100%
+      rgba(254, 250, 224, 1) 90%
     );
   }
 
@@ -34,34 +34,11 @@
     top: 20px;
     left: 20px;
     z-index: 2;
-    // background-color: rgba(255, 255, 255, 0.7);
-    // border: none;
-    // border-radius: 40px;
-    // width: 90px;
-    // height: 40px;
-    // padding: 0;
-    // font-size: 18px;
-    // color: #333;
-    // text-decoration: none;
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
-    // transition: background-color 0.3s ease;
-
-    // &:hover {
-    //   background-color: rgba(255, 255, 255, 0.9);
-    // }
-
-    // img {
-    //   width: 20px;
-    //   height: 20px;
-    //   margin-right: 5px;
-    // }
   }
 
   .regionTitle {
     position: relative;
     font-size: 2em;
-    text-shadow: #fefae0 0px 0px 30px;
+    text-shadow: #fefae0 0 0 24px, #fefae0 0 0 8px;
   }
 }

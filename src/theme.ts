@@ -6,6 +6,12 @@ export const theme = createTheme({
       main: "#606c38",
     },
   },
+  shape: {
+    borderRadius: 10,
+  },
+  typography: {
+    fontFamily: "'Cabin', 'Roboto', 'Helvetica', 'Arial', sans-serif",
+  },
 });
 
 export default theme;

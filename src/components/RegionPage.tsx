@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
@@ -120,7 +120,7 @@ const SectionContent: React.FC<SectionContentProps> = ({
   };
 
   // Render section normally if not JSON, otherwise render creature names
-  if (section.content && section.content.endsWith(".json")) {
+  if (section.subsectionType && section.subsectionType === "creature") {
     return (
       creatures.length > 0 && (
         <section id={section.id} key={section.id} className={styles.section}>
@@ -132,6 +132,45 @@ const SectionContent: React.FC<SectionContentProps> = ({
           </div>
         </section>
       )
+    );
+  }
+
+  if (section.subsectionType && section.subsectionType === "subculture") {
+    return (
+      <section id={section.id} className={styles.section}>
+        <h2>{section.name}</h2>
+        <ReactMarkdown>{section.content}</ReactMarkdown>
+
+        {section.subsections && section.subsections.length > 0 && (
+          <div className={styles.subcultures}>
+            {section.subsections.map((subsection) => {
+              const { name, id, image, content, link } = subsection;
+              const imagePath = image
+                ? `/images/regions/${image}`
+                : `/images/regions/map.png`;
+              const El = link ? Link : "div";
+              return (
+                <div
+                  // elevation={1}
+                  key={id}
+                  id={id}
+                  className={styles.subculture}
+                >
+                  <El to={`/region/${id}`}>
+                    <img
+                      src={imagePath}
+                      alt={name}
+                      className={styles.subcultureImage}
+                    />
+                    <h3>{name}</h3>
+                  </El>
+                  <ReactMarkdown>{content}</ReactMarkdown>
+                </div>
+              );
+            })}
+          </div>
+        )}
+      </section>
     );
   }
 
@@ -151,11 +190,15 @@ const SectionContent: React.FC<SectionContentProps> = ({
             allowScrollButtonsMobile
           >
             {section.subsections.map((subsection, index) => (
-              <Tab label={subsection.name} {...a11yProps(index)} />
+              <Tab
+                key={subsection.id}
+                label={subsection.name}
+                {...a11yProps(index)}
+              />
             ))}
           </Tabs>
           {section.subsections.map((subsection, index) => (
-            <SubsectionTabPanel value={value} index={index}>
+            <SubsectionTabPanel key={subsection.id} value={value} index={index}>
               <ReactMarkdown>{subsection.content}</ReactMarkdown>
             </SubsectionTabPanel>
           ))}

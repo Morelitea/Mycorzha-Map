@@ -68,7 +68,7 @@ const App: React.FC = () => {
     if (region) {
       navigate(`/region/${region.id}`);
     } else {
-      alert("No region defined for this grid cell.");
+      // alert("No region defined for this grid cell.");
     }
   };
 
