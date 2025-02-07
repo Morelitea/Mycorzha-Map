@@ -2,10 +2,8 @@ name: "publish"
 
 on:
   push:
-    tags:
-      - "v*" # Runs only when a tag starting with 'v' is pushed
     branches:
-      - main  # Ensures it only triggers when the tag is on 'main'
+      - release # Ensures it only triggers when the tag is on 'main'
 
 # This is the example from the readme.
 # On each push to the `release` branch it will create or update a GitHub release, build your app, and upload the artifacts to the release.
