@@ -26,7 +26,7 @@ As the birds of Mycorzha live naturally a mix of both nomadic and permanent resi
       id: "regional-differences",
       content:
         "Each region of Mycorzha has many shared beliefs and values, but all the same each have aspects that make them unique.",
-      subsectionType: "table",
+      subsectionType: "tabs",
       subsections: [
         {
           name: "Dialect",
@@ -66,7 +66,7 @@ As the birds of Mycorzha live naturally a mix of both nomadic and permanent resi
       id: "flora-and-fauna",
       content:
         "The Isles of Mycorzha share the climate of the Northern Americas. While they have some unique plants or mushrooms that only grow on the Isles you might know a few of these plants. Maybe you can find them where you live?\n\nIf you find some share your photots with us on Instagram by tagging us @morelitea! Remember to take nothing but photos and leave nothing but footprints.",
-      subsectionType: "table",
+      subsectionType: "tabs",
       subsections: [
         {
           name: "Mushrooms",

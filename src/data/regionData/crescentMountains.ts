@@ -24,7 +24,7 @@ Locals here heavily value "doers" and so many here create primarily functional a
       id: "regional-differences",
       content:
         "Each region of Mycorzha has many shared beliefs and values, but all the same each have aspects that make them unique.",
-      subsectionType: "table",
+      subsectionType: "tabs",
       subsections: [
         {
           name: "Dialect",
@@ -59,7 +59,7 @@ Locals here heavily value "doers" and so many here create primarily functional a
       id: "flora-and-fauna",
       content:
         "The Isles of Mycorzha share the climate of the Northern Americas. While they have some unique plants or mushrooms that only grow on the Isles you might know a few of these plants. Maybe you can find them where you live?\n\nIf you find some share your photos with us on Instagram by tagging us @morelitea! Remember to take nothing but photos and leave nothing but footprints.",
-      subsectionType: "table",
+      subsectionType: "tabs",
       subsections: [
         {
           name: "Mushrooms",

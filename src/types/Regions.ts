@@ -4,7 +4,7 @@ export interface Subsection {
   content: string; // This can also be a link to a JSON data object
   image?: string;
   link?: string;
-  subsectionType?: "table" | "creature" | "subculture";
+  subsectionType?: "tabs" | "accordion" | "creature" | "subculture";
   subsections?: Subsection[];
 }
 
