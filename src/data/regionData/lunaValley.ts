@@ -109,6 +109,14 @@ Locals here heavily value "doers" and so many here create primarily functional a
             "Surrounding cliffs often populated by the birds of the Isles.",
         },
         {
+          name: "Cove City",
+          id: "cove-city",
+          link: "/region/cove-city",
+          image: "cove-city.png",
+          content:
+            "Bustling with vibrant energy, Cove City thrives in bold hues of every color you could imagine.",
+        },
+        {
           name: "Shadow Moss Caves",
           id: "shadow-moss",
           link: "/region/shadow-moss-caves",
