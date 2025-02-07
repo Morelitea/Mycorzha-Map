@@ -4,6 +4,7 @@ import styles from "./VerticalNav.module.scss";
 import { regionDefinitions } from "../data/regionDefinitions";
 import { RegionDefinition, Subsection } from "../types/Regions";
 import { TCreature, CreatureData } from "../types/Creatures";
+import handleScrollClick from "../utils/handleScrollClick";
 
 interface IVerticalNavProps {
   creatureData: CreatureData;
@@ -47,17 +48,6 @@ const VerticalNav: React.FC<IVerticalNavProps> = ({ creatureData }) => {
   );
 };
 
-const handleClick = (ev: React.SyntheticEvent, id: string): void => {
-  ev.preventDefault();
-  const element = document.getElementById(id);
-  if (element) {
-    window.scrollTo({
-      top: element.offsetTop - 20,
-      behavior: "smooth",
-    });
-  }
-};
-
 const Section: React.FC<{ section: Subsection; creatures: TCreature[] }> = ({
   section,
   creatures,
@@ -70,7 +60,7 @@ const Section: React.FC<{ section: Subsection; creatures: TCreature[] }> = ({
         <Link
           to={`#${section.id}`}
           className={styles.mainLink}
-          onClick={(ev) => handleClick(ev, section.id)}
+          onClick={handleScrollClick}
         >
           {section.name}
         </Link>
@@ -82,7 +72,7 @@ const Section: React.FC<{ section: Subsection; creatures: TCreature[] }> = ({
               <Link
                 to={`#${subSection.id}`}
                 className={styles.subLink}
-                onClick={(ev) => handleClick(ev, subSection.id)}
+                onClick={handleScrollClick}
               >
                 {subSection.name}
               </Link>
@@ -96,7 +86,7 @@ const Section: React.FC<{ section: Subsection; creatures: TCreature[] }> = ({
                 <Link
                   to={`#${creature.id}`}
                   className={styles.subLink}
-                  onClick={(ev) => handleClick(ev, creature.id)}
+                  onClick={handleScrollClick}
                 >
                   {creature.name}
                 </Link>

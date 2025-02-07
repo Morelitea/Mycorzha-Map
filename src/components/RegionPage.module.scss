@@ -99,26 +99,8 @@
   color: #007bff;
 }
 
-.creatures {
-  display: flex;
-  flex-wrap: wrap;
-}
-
+.creatures,
 .subcultures {
   display: flex;
   flex-wrap: wrap;
-
-  .subculture {
-    width: 260px;
-    // padding: 20px;
-    margin: 0 20px 20px 0;
-    text-align: center;
-
-    .subcultureImage {
-      width: 100px;
-      height: 100px;
-      border-radius: 100%;
-      object-fit: cover;
-    }
-  }
 }
