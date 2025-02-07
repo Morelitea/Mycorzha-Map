@@ -10,6 +10,7 @@ import styles from "./RegionPage.module.scss";
 import { TCreature, CreatureData } from "../types/Creatures";
 import Subculture from "./Subculture";
 import SubsectionTabs from "./SubsectionTabs";
+import SubsectionAccordion from "./SubsectionAccordion";
 
 interface IRegionPageProps {
   creatureData: CreatureData;
@@ -76,7 +77,7 @@ const SectionContent: React.FC<SectionContentProps> = ({
   creatures,
 }) => {
   // Render section normally if not JSON, otherwise render creature names
-  if (section.subsectionType && section.subsectionType === "creature") {
+  if (section.subsectionType === "creature") {
     return (
       creatures.length > 0 && (
         <section id={section.id} key={section.id} className={styles.section}>
@@ -91,7 +92,7 @@ const SectionContent: React.FC<SectionContentProps> = ({
     );
   }
 
-  if (section.subsectionType && section.subsectionType === "subculture") {
+  if (section.subsectionType === "subculture") {
     return (
       <section id={section.id} className={styles.section}>
         <h2>{section.name}</h2>
@@ -108,7 +109,7 @@ const SectionContent: React.FC<SectionContentProps> = ({
     );
   }
 
-  if (section.subsectionType && section.subsectionType === "tabs") {
+  if (section.subsectionType === "tabs") {
     return (
       <section id={section.id} key={section.id} className={styles.section}>
         <h2>{section.name}</h2>
@@ -118,6 +119,22 @@ const SectionContent: React.FC<SectionContentProps> = ({
         {section.subsections && section.subsections.length > 0 && (
           <div className={styles.subsections}>
             <SubsectionTabs section={section} />
+          </div>
+        )}
+      </section>
+    );
+  }
+
+  if (section.subsectionType === "accordion") {
+    return (
+      <section id={section.id} key={section.id} className={styles.section}>
+        <h2>{section.name}</h2>
+        <ReactMarkdown>{section.content}</ReactMarkdown>
+
+        {/* Render subsections */}
+        {section.subsections && section.subsections.length > 0 && (
+          <div className={styles.subsections}>
+            <SubsectionAccordion section={section} />
           </div>
         )}
       </section>
