@@ -1,7 +1,6 @@
 export const handleScrollClick = (
   ev: React.MouseEvent<HTMLAnchorElement>
 ): void => {
-  console.log("debug: ", { ev });
   const target = ev.currentTarget as HTMLAnchorElement;
   if (target?.hash) {
     ev.preventDefault();
