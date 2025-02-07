@@ -108,6 +108,14 @@ Locals here heavily value "doers" and so many here create primarily functional a
           content:
             "Surrounding cliffs often populated by the birds of the Isles.",
         },
+        {
+          name: "Shadow Moss Caves",
+          id: "shadow-moss",
+          link: "/region/shadow-moss-caves",
+          image: "shadow-moss-caves.png",
+          content:
+            "A deep cave network home to many of the nocturnal creatures of the Isles, such as bats and cave swallows.",
+        },
       ],
     },
   ],

@@ -22,12 +22,7 @@ export const Subculture: React.FC<ISubcultureProps> = ({ subsection }) => {
     : `/images/regions/${image}`;
 
   return (
-    <div
-      // elevation={1}
-      key={id}
-      id={id}
-      className={styles.subculture}
-    >
+    <div key={id} id={id} className={styles.subculture}>
       {link ? (
         <Link to={link} onClick={handleScrollClick}>
           <img
