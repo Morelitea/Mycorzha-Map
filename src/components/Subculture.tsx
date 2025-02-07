@@ -17,7 +17,9 @@ export const Subculture: React.FC<ISubcultureProps> = ({ subsection }) => {
   };
 
   const { name, id, image, content, link } = subsection;
-  const imageSrc = imageError ? "/images/regions/map.png" : image;
+  const imageSrc = imageError
+    ? "/images/regions/map.png"
+    : `/images/regions/${image}`;
 
   return (
     <div
