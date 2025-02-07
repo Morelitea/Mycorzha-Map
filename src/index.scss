@@ -27,21 +27,21 @@
 }
 
 @font-face {
-  font-family: "LibreBaskerville";
+  font-family: "Libre Baskerville";
   src: url("/fonts/LibreBaskerville-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "LibreBaskerville";
+  font-family: "Libre Baskerville";
   src: url("/fonts/LibreBaskerville-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "LibreBaskerville";
+  font-family: "Libre Baskerville";
   src: url("/fonts/LibreBaskerville-Italic.ttf") format("truetype");
   font-weight: normal;
   font-style: italic;
@@ -62,7 +62,7 @@ html {
 }
 
 body {
-  font-family: "Cabin", "Arial", sans-serif;
+  font-family: "Cabin", "Roboto", "Helvetica", "Arial", sans-serif;
   line-height: 1.6;
   background-color: #fefae0;
   color: #333;
@@ -81,5 +81,5 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: "LibreBaskerville", serif;
+  font-family: "Libre Baskerville", serif;
 }
