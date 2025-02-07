@@ -24,6 +24,7 @@ export const SubsectionAccordion: React.FC<ISubsectionAccordionProps> = ({
     <div>
       {section.subsections?.map((subsection) => (
         <Accordion
+          key={subsection.id}
           id={subsection.id}
           expanded={expanded === subsection.id}
           onChange={handleChange(subsection.id)}

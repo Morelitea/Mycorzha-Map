@@ -66,7 +66,7 @@ body {
   line-height: 1.6;
   background-color: #fefae0;
   color: #333;
-  font-size: 16px;
+  font-size: 18px;
   min-height: 100vh;
 }
 
@@ -82,4 +82,51 @@ h2,
 h3,
 h4 {
   font-family: "Libre Baskerville", serif;
+}
+
+ul,
+ol {
+  padding-left: 1.5em;
+
+  li {
+    &:not(:first-child) {
+      margin-top: 0.5em;
+    }
+  }
+}
+
+ul,
+ol,
+p,
+h1,
+h2,
+h3,
+h4 {
+  &:not(:first-child) {
+    margin-top: 1em;
+  }
+  &:not(:last-child) {
+    margin-bottom: 0.5em;
+  }
+}
+
+h1 {
+  color: #222;
+  font-size: 2em;
+}
+
+h2 {
+  color: #222;
+  font-size: 1.5em;
+}
+
+h3 {
+  color: #555;
+  font-size: 1.2em;
+}
+
+p {
+  color: #444;
+  font-size: 1em;
+  line-height: 1.6;
 }
