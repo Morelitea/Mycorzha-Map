@@ -69,7 +69,101 @@
     },
     {
       "regionId": "cove-city",
-      "creatures": []
+      "creatures": [
+        {
+          "name": "Rhys",
+          "id": "rhys-1",
+          "image": "rhys.png",
+          "pronouns": "She/They",
+          "size": "Small",
+          "comfortSnack": "Anchovy Pizza",
+          "biggestFear": "Spiders",
+          "favoriteStory": "The Three Foxes & the Flood",
+          "spotifyPlaylist": "rhys-spotify.svg",
+          "quote": "Ain't no time like the present! Daydreaming didn't get anyone nowhere, and she who seals the deal, gets the goods! By which I mean, of course, me! Now, welcome to my shop, and what can I get you?",
+          "emotionalTies": [
+            {
+              "name": "Fiona",
+              "relationship": "You'll never find two peas from one pod less alike than me and my sister! She was always the girly girl, you know? I was all scraped knees and scuff marks, while she was flowers and perfume. Pfahahaha! Fools the best of 'em, doesn't she? She's a wily devil, with her flowers and her bees, though you didn't hear that from me. I visit her often, although she never comes up thisaway. Her loss!"
+            },
+            {
+              "name": "Jack",
+              "relationship": "That old cat! Hah, I've known him since he was fresh arrived in the City! Yeaaaah, he was one of the folks, you know? Let him crash a time or two and all, like you do, and we swapped talk. Had a lot of crazy ideas then, same as he does now, only he ain't no city cat, so off he went. We meet and talk shop, you know, when he shows; always gives me the first look, for old time's sake!"
+            },
+            {
+              "name": "Cove City",
+              "relationship": "Aaaaah, the City! Ain't no place like it, and never will be here or anywhere Beyond! The sights, the smells - breathe deep now, don't choke! - this here hustle and bustle settles my bones. Wherever I go, Cove City has my black and shriveled heart, pahaha!"
+            },
+            {
+              "name": "Mycorzha",
+              "relationship": "The Isles are fierce, mysterious, and all that claptrap, sure. But they're also full of potential, and a smart business-fox can turn that potential into opportunity! From north to south, there's folks wanting for something, and you better believe that Rhys is going to make sure they get it!"
+            }
+          ],
+          "bio": "Born in the shade of the great trees of Hazelmoss Woods, Rhys spent her youth climbing, leaping, a flash of motion and a shouted remark to her sister's quiet yet steady reply. Rhys always felt a little bit out of place in Hazelmoss, wanting to push beyond the bounds of quiet life. She had acquired a reputation for disruption by the time she decided to visit an old friend, and fell head over heels for the bustle and sights of Cove City.\n\nRhys immediately moved herself northward, with all of her usual spontaneity and much to the absolute chagrin of her family. She set up shop, as it were, on a street corner selling packs of cards and souvenirs to whoever passed her by. Her keen eyes (and keener nose) led her to markets all across Cove City, where she perused wares, haggled, and networked until suddenly all the traders and merchants knew her, and her spice shop opened its doors - or hatches, rather - as if it had always existed, a cornerstone of the Docks neighborhood and a draw for merchants from all points Beyond. Rhys quickly expanded her inventory and regular customers, and was one of the first to jump on opportunities presented by a certain dramatic feline who was becoming the talk of the town.\n\nOperating out of a houseboat has its perks, and as her horizons grew, Rhys eyed new markets and new potential all across the Isles. She regularly undocks and roves out to trade at other harbors across Mycorzha, somehow arriving at meets she has no business knowing about, nor being able to reach in time from where she started. If this puzzles some, they shake their head and mark it down to the old fox's business sense and connections, because, well, what else could it be?"
+        },
+        {
+          "name": "Preston",
+          "id": "preston-1",
+          "image": "preston.png",
+          "pronouns": "He/They",
+          "size": "Small",
+          "comfortSnack": "Shoot, I forgot to eat again. Chips!",
+          "biggestFear": "Being forgotten",
+          "favoriteStory": "City Magic",
+          "spotifyPlaylist": "preston-spotify.svg",
+          "quote": "Aren't ideas just the most wonderful things? Also sometimes frustrating, yes, it's a shame about the whole sleeping thing, alas. But let me tell you about my newest invention!",
+          "emotionalTies": [
+            {
+              "name": "Glinda",
+              "relationship": "Oh, I absolutely love receiving missives and essays from Ms. Tortuga! She doesn't write as frequently anymore - I think she moved out of the City? But yes, always lovely to share ideas with!"
+            },
+            {
+              "name": "Mystveil Academy",
+              "relationship": "I owe everything to the Academy, and if my work and my ideas can brighten the lives of the students there, support them and bring them joy, then I will be the happiest raccoon on the Isles."
+            },
+            {
+              "name": "Cove City",
+              "relationship": "My home! It is a wonderful place, full of so many sights, and sounds. And you can get anything here, anything! Which reminds me, I still need some spare lumber, andand a copper tube, and..."
+            },
+            {
+              "name": "Mycorzha",
+              "relationship": "The Isles! I hear great things, yes, marvelous things! The stories, the discoveries! All very exciting to read about! I have a number of papers in the works, you know."
+            }
+          ],
+          "bio": "A native of Cove City, Preston grew up amidst a pile of blocks, spare parts, and a general air of puttering from even the youngest age. Preston's fixation with his tinkering and inattentiveness to his surroundings were both very notable, and his attendance at the Academy was all but assumed by his family and those around him. Preston's brilliance did not disappoint, and it was with breath-taking excitement that he started attending his first classes.\n\nPreston absolutely shone during his studies at the Academy, his radical thinking and fixation on detail catapulting his ideas into the spotlight. Meanwhile, the academic structure and the support of the faculty provided Preston with much needed insight into who he was and what he needed in order to feel at ease with himself and others. Preston thrived, and his inventions, if small, began making big waves both within the Academy and without.\n\nNow graduated, Preston devotes much of his time to study and tinkering, absent-mindedly collecting and discarding ideas as the whimsy strikes him. Foremost in his mind is always the Academy however, and many of his projects are designed to help the institution and its students, whom he loves deeply. Preston's latest studies have been focused on accessibility, and the needs of the many other students who, like him, either move, sense, or think differently; the recent invention of his \"press\" has caused an absolute uproar in academic circles. This has led to Preston gaining quite a bit of prominence in Cove City, a fact which he, seemingly, is unaware of. He spends his time \"pressing\" every book, treatise, and essay he can get his paws on, tinkering on his inventions, and rummaging through local garbage bins, on the hunt for parts and materials for whatever he's cooking up next."
+        },
+        {
+          "name": "Nalin",
+          "id": "nalin-1",
+          "image": "nalin.png",
+          "pronouns": "They/Them",
+          "size": "Small",
+          "comfortSnack": "Ants-on-a-log",
+          "biggestFear": "The ocean",
+          "favoriteStory": "The City of Starlight and Shadow",
+          "spotifyPlaylist": "nalin-spotify.svg",
+          "quote": "In our busy lives, it is easy to become distracted, disconnected from the world around us. Take a moment in the present; not looking forward, or behind, but here, at this tree, this flower. Share this moment with me, and allow yourself to feel the peace of the Isles.",
+          "emotionalTies": [
+            {
+              "name": "Amani",
+              "relationship": "I first encountered Amani during one of her visits to the Parks, curled up beneath one of my favorite trees and quietly sketching the spring landscape. I sat down nearby, and we shared a quiet, pleasant morning over tea and silent companionship. I very much look forward to our next meeting."
+            },
+            {
+              "name": "Preston",
+              "relationship": "Oh sure, I've seen him around. Always hurrying, like everyone else in this city, involved in whatever's in his head. I've tried to convince him to take some time in the parks, that it'll be good for him, but off he goes again, on the move. Ah well, perhaps some other time."
+            },
+            {
+              "name": "Cove City",
+              "relationship": "The City That Is Never Asleep, or so they term themselves. I can vouch for it, having been here long enough to know that there's always hustle and bustle going on no matter the hour. As overwhelming as it can be, the City folks love the Parks as much as any Mycorzhan loves the Isles, and it gladdens me. And it's my job to make sure that their connection to the Isles, to nature, remains even in this busy city."
+            },
+            {
+              "name": "Mycorzha",
+              "relationship": "The Isles are our home, all of us; they shelter us, nurture us, keep us fed, housed, and uplifted in spirit. We all know this, although some of us need occasional reminders, lest we become disconnected from the living nature all around us."
+            }
+          ],
+          "bio": "A lover of nature, Nalin grew up surrounded by the natural beauty of the Isles. A child of the Isles, adopted into one of the nomadic clans who move about Mycorzha's interior, the young rabbit was awe-struck at diversity and vibrancy of the world around them. As they grew and learned, they also taught, shepherding the younger children and pointing out aspects of flora and fungi, re-telling the stories of the clan, and guiding their charges as best they could. As the clan moved, and Nalin came into contact with other, less transitory denizens of the Isles, they began to puzzle over questions; how did other young children learn, so tied to one place as they were? Did they understand the vast web of life that encompassed the Isles? Nalin had discovered a quiet joy in teaching, both the children in their care as well as others who sought them out for counsel or advice. Always seeking to go where they felt most needed, when Cove City sent out a call for creatures who truly knew the Isles, Nalin decided to answer, packing up and heading to the place where the connection to the nature of the Isles was most tenuous. Upon arriving, the Cove City Council detailed an incredibly ambitious plan – to design and build the seven Great Parks, to bring the wonder of the land to the citizens. Nalin was awed at the shear scale of the project, but set themselves to work.\n\nThe rural rabbit was quickly overwhelmed by the hustle and bustle of Cove City, finding themselves anxious, on edge, jumping at sudden noises and strange smells. Only in their work on the great city Parks did they feel at peace, and with their usual quiet enthusiasm they poured themselves and their love for the Isles into every inch of them. Once completed, the Parks filled them with the same wonder they always felt, but also mild dismay - the Parks lacked for caretakers who truly knew and understood them, and while some few knew the land and its growing things, fewer still could teach the city-dwelling children of their heritage, or guide them in the ways of the Isles. Without care and patience, the Parks would become mere attractions, entertaining but pale reflections of the Isles. Filled with resolve, Nalin set to the task.\n\nNow, Nalin is one of the most well known, and most sought, natural guides and caretakers of the Parks. They teach children and adults alike the love of nature, and the care that citizens of the Isles must show their home in order to nurture and support it, as it does them. Often found sitting in quiet contemplation, Nalin encourages all who come to them to take time to pause, to breathe, to let go the worries and cares of tomorrow to find quiet joy in the now."
+        }
+      ]
     },
     {
       "regionId": "crescent-mountains",

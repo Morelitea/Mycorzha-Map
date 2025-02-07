@@ -65,7 +65,8 @@ const Section: React.FC<{ section: Subsection; creatures: TCreature[] }> = ({
           {section.name}
         </Link>
       </div>
-      {subsections.length > 0 || creatures.length > 0 ? (
+      {(subsections.length > 0 || creatures.length > 0) &&
+      section.subsectionType !== "tabs" ? (
         <ul className={styles.subSectionList}>
           {subsections.map((subSection) => (
             <li key={subSection.id}>
