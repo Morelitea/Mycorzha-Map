@@ -1,6 +1,6 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "mycorzha-map",
+  "productName": "Mycorzha Map",
   "version": "0.1.0",
   "identifier": "com.mycorzha-map.app",
   "build": {
@@ -13,9 +13,9 @@
     "withGlobalTauri": true,
     "windows": [
       {
-        "title": "mycorzha-map",
-        "width": 800,
-        "height": 600
+        "title": "Mycorzha Map",
+        "width": 1920,
+        "height": 1080
       }
     ],
     "security": {
