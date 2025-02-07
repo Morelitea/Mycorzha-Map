@@ -69,7 +69,10 @@ const App: React.FC = () => {
     if (region) {
       navigate(`/region/${region.id}`);
     } else {
-      // alert("No region defined for this grid cell.");
+      navigate(`/region/dreamer-tree`); // Default navigate to Dreamer Tree and Greater Mycorzha
+      // alert(
+      //   `No region defined for this grid cell. X: ${gridCoordinates.x}, Y: ${gridCoordinates.y}`
+      // );
     }
   };
 
