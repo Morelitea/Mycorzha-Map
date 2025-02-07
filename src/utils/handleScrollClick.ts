@@ -1,10 +1,9 @@
-import { replace } from "react-router-dom";
-
 export const handleScrollClick = (
   ev: React.MouseEvent<HTMLAnchorElement>
 ): void => {
   const target = ev.currentTarget as HTMLAnchorElement;
   if (target?.hash) {
+    ev.preventDefault();
     const id = target.hash.substring(1);
     const element = document.getElementById(id);
     if (element) {
