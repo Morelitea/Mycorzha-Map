@@ -59,6 +59,11 @@ const Section: React.FC<{ section: Subsection; creatures: TCreature[] }> = ({
 }) => {
   // Ensure subsections is treated as an array
   const subsections = section.subsections || [];
+
+  // Don't show Known Residents if there are no creatures
+  if (section.subsectionType === "creature" && creatures.length < 1) {
+    return;
+  }
   return (
     <li className={styles.sectionItem}>
       <div>
