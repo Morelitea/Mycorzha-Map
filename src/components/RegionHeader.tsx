@@ -8,11 +8,13 @@ import defaultBanner from "../assets/banners/banner.png";
 
 interface RegionHeaderProps {
   regionName: string;
+  regionId: string;
   bannerImage: string;
 }
 
 const RegionHeader: React.FC<RegionHeaderProps> = ({
   regionName,
+  regionId,
   bannerImage,
 }) => {
   const [imageError, setImageError] = useState(false);
@@ -33,7 +35,7 @@ const RegionHeader: React.FC<RegionHeaderProps> = ({
   };
 
   return (
-    <div className={styles.headerContainer}>
+    <div className={styles.headerContainer} id={regionId}>
       <img
         src={imageSrc}
         alt={regionName}

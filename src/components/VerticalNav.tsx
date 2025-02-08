@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import Paper from "@mui/material/Paper";
 import styles from "./VerticalNav.module.scss";
 import { regionDefinitions } from "../data/regionDefinitions";
 import { RegionDefinition, Subsection } from "../types/Regions";
@@ -35,16 +36,20 @@ const VerticalNav: React.FC<IVerticalNavProps> = ({ creatureData }) => {
   }
 
   return (
-    <nav className={styles.navContainer}>
-      <div className={styles.navHeader}>
-        <h2>{regionData.region.name}</h2>
-      </div>
-      <ul className={styles.navList}>
-        {regionData.regionData.subsections.map((section) => (
-          <Section key={section.id} section={section} creatures={creatures} />
-        ))}
-      </ul>
-    </nav>
+    <Paper className={styles.navContainer} elevation={3}>
+      <nav>
+        <div className={styles.navHeader}>
+          <Link to={`#${regionId}`} onClick={handleScrollClick}>
+            <h2>{regionData.region.name}</h2>
+          </Link>
+        </div>
+        <ul className={styles.navList}>
+          {regionData.regionData.subsections.map((section) => (
+            <Section key={section.id} section={section} creatures={creatures} />
+          ))}
+        </ul>
+      </nav>
+    </Paper>
   );
 };
 

@@ -46,7 +46,11 @@ const RegionPage: React.FC<IRegionPageProps> = ({ creatureData }) => {
 
   return (
     <div className={styles.regionPage}>
-      <RegionHeader regionName={region.name} bannerImage={region.bannerImage} />
+      <RegionHeader
+        regionName={region.name}
+        regionId={region.id}
+        bannerImage={region.bannerImage}
+      />
       <div className={styles.regionContent}>
         <main className={styles.regionMainContent}>
           {/* <h1>{region.name}</h1> */}
