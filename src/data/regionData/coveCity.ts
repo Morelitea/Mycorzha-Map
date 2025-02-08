@@ -146,6 +146,14 @@ The Council, having mostly grown up in the city and away from much of the land, 
           content:
             "Dedicated service to the Goddess of waters - seen as the source of all life and a motherly protector",
         },
+        {
+          name: "The International District",
+          id: "international-district-subculture",
+          link: "#international-district",
+          image: "international-district.png",
+          content:
+            "Beyonder's often live here either permanently or temporarily for trade.",
+        },
       ],
     },
     {
@@ -261,6 +269,39 @@ The Council, having mostly grown up in the city and away from much of the land, 
           name: "Common Activities and Interests",
           id: "common-activities-and-interests",
           content: `Speakers when not tending to the tree, helping worshipers to give offerings, or recording blessings often spend a great deal of time in meditation or plant cultivation. Indeed a great many innovative plants have been made by Speakers that have since been spread among the Isles including a cultivation of grasses that developed into corn.`,
+        },
+      ],
+    },
+    {
+      name: "The International District",
+      id: "international-district",
+      content: `The Mysts bring many to the Isles, some with ease, but sometimes individuals find themselves on the isles confused as to how they arrived and equally unable to find their way back through the Mysts to where they came from. Over time a collection of these individuals amassed and with such little understanding of the Isles seemed to often find themselves int trouble. The Mycorzhan's determined that supports needed to be put in place, and so they built the district to provide shelter to traders and stranded travelers alike. Much of the housing here was built haphazardly to ensure there was enough housing for everyone in short order. Over time those in the international district have built on the original buildings to create additional supports, overlaying these beams with art and depictions of home. This hodpodge of culture creates a completely unique area on the Isles with buildings being more square and the creation of a centralized market where temporary stalls are created for trading all kinds of this both from the Isles and the Beyond. The City Council building was built just outside the market, a system of government that originally formed to help figure out what to do with the many stranded Beyonders as well as the rapidly expanding city itself.  Thanks to the formal pictograph system the Council created there is now plenty of support to help Beyonders who land on their shores.`,
+      subsectionType: "tabs",
+      subsections: [
+        {
+          name: "Dialect",
+          id: "dialect",
+          content: `Most here do not speak the Mycorzhian language - or even the language of their neighbor. Communication as a result is mostly done through pictographs which you can also find on tiles all throughout the City. Everyone carries a slate tablet on them for simple sketches to get around.`,
+        },
+        {
+          name: "Spirituality",
+          id: "spirituality",
+          content: `Those in the International district often have their own beliefs, but you will find no monuments to the Isles or the Mysts here. You may however find other religious or spiritual symbology. Those in the international district tend to celebrate and somewhat cling to their beliefs from back home, as many here find themselves with no way to return to where they came from.`,
+        },
+        {
+          name: "Art",
+          id: "art",
+          content: `Due to the many pictographs art is on every stair, dusty corner, and rug. Often geometric and colorful much like the pictograph tiles themselves the art depicts everything from plant life to the homes some of those in the international district came from and often now miss.`,
+        },
+        {
+          name: "Holidays",
+          id: "holidays",
+          content: `While the international district doesn't follow the major holidays the place is usually celebrating something! A mix of creatures from all over all bring their own culture to celebrate, often times their own traditions overlapping with the seasonal holidays of the Mycorzhians.`,
+        },
+        {
+          name: "Common Activities and Interests",
+          id: "common-activities-and-interests",
+          content: `Most are here because they are explorers, and so many gather to go on adventures together through the city, particularly enjoying the Grand Parks for a great time.`,
         },
       ],
     },
