@@ -2,7 +2,7 @@ import { RegionData } from "../../types/Regions";
 
 export const lunaValley: RegionData = {
   majorContent:
-    "In Luna Valley, delicate pastel blossoms sway in the breeze, and every tea captures the spirit of tranquil meadows and sunlit springs. From floral motifs to soft hues of pink, lavender, and pale gold, Luna Valley’s wares reflect its peaceful charm and serene beauty. Made from fertile volcanic soil fed by streams from the surrounding mountain range Luna Valley has endless food and comfortable weather year round that makes it the most populated area in the Isles next to Cove City itself.",
+    "In Luna Valley, delicate pastel blossoms sway in the breeze, and every tea captures the spirit of tranquil meadows and sunlit springs. From floral motifs to soft hues of pink, lavender, and pale gold, Luna Valley’s wares reflect its peaceful charm and serene beauty. Made from fertile volcanic soil fed by streams from the surrounding mountain range Luna Valley has endless food and comfortable weather year round that makes it the most populated area in the Isles next to [Cove City](/region/cove-city) itself.",
   subsections: [
     {
       name: "Known Residents",
