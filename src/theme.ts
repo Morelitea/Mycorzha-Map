@@ -11,6 +11,7 @@ export const theme = createTheme({
   },
   typography: {
     fontFamily: "'Cabin', 'Roboto', 'Helvetica', 'Arial', sans-serif",
+    fontSize: 16,
   },
 });
 
