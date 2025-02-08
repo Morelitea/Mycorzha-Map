@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ArrowBack } from "@mui/icons-material";
 import Button from "@mui/material/Button";
 import styles from "./RegionHeader.module.scss";
