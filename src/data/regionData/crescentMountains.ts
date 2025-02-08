@@ -2,22 +2,22 @@ import { RegionData } from "../../types/Regions";
 
 export const crescentMountains: RegionData = {
   majorContent:
-    "In Luna Valley, delicate pastel blossoms sway in the breeze, and every tea captures the spirit of tranquil meadows and sunlit springs. From floral motifs to soft hues of pink, lavender, and pale gold, Luna Valley’s wares reflect its peaceful charm and serene beauty. Made from fertile volcanic soil fed by streams from the surrounding mountain range Luna Valley has endless food and comfortable weather year round that makes it the most populated area in the Isles next to Cove City itself.",
+    "A never ending winter the plateau is defined by the white, blue, and silver tones of ice. The White Plateau is in the far north west of the Isles where creatures do not travel for nothing grows here and the harsh cold winds never cease. Beneath snow is but more white, the ground a rough pumice like stone drained of all color. The outer edge a harsh cliff to the ocean beneath makes access to the waters below impossible. The mountains themselves have scant plant life to survive on, covered mostly in deadly glaciers and a snow bank covering the western slopes due to the winds. The eastern slopes of the mountains have some richness still to them, protected by the evergreens from the Fern Leaf Forest, what little plant life remains grows under patches of snow until reaching the edge of the glaciers.",
   subsections: [
     {
       name: "Known Residents",
       id: "known-residents",
       subsectionType: "creature",
-      content: "/data/lunaValley.json",
+      content: "",
     },
     {
       name: "Culture",
       id: "culture",
-      content: `Luna Valley rests in the crater like cliffs that are at the edge of the crescent mountains. The huge glacial peaks surrounding it do well at preventing bad weather, and so there is rarely a stormy night to worry about, with the sun shining 300+ days of the year overhead. The volcanic soil from the mountains surrounding it is filled with nutrients and food grows here freely and with great ease. Because of this most of the population of the Isles resides here or in Cove City nearby. So as not to disturb the top soil many who live here burrow underground to build permanent residences, finding the cool break from the sun refreshing, and the smell of the earth a comfort at the end of a long day. Much of the valley is covered in wild grasses and flowers, with a constant buzz of honey bees working away. Small pockets of fruit trees and bushes are interspersed throughout. There are many small creeks which stream throughout the area, all feeding into the main river network.
+      content: `The creatures who live in the Plateau are nearly all one of the Banished. Many live as close as possible to the edge, along the border watched by guards separating them from Luna Valley and the south of the Isles. Here the Banished have built a walled home for their community to protect from the harsh winds and sometimes even harsher creatures, for some are Banished for crimes that make them undesirable even for survival in such a desolate place. Many who reside in the walled encampments hope to work towards reentry to Greater Mycorzha and an easier life once again, but some choose to stay having found themselves a new life here. Stranger still are those who choose to live in the mountains and plateau simply because they find things a little easier when left to themselves, and it is one of the few places on the Isles that will guarantee you will not be disturbed by pesky things like neighbors or "making friends".
 
-Fable falls, where the water feeds the river from the glaciers, is a sight to behold. Huge and roaring, anything nearby is covered in a fine mist, the river below deep from centuries of the raging water pounding against the ground. Luna Valley is deceptively large, and traveling from one end to the other takes 4-5 days so those who live this far upstream place trade goods in tight water weaved baskets and send them down to Coral Cap Cove to be retrieved and traded for them in exchange for whatever they indicate on the conveniently naturally waterproof mushroom paper. A pully system is erected along the rivers, which brings the baskets back up on hooks filled with the traded goods. The vine ropes holding the baskets are pulled along with a simple water wheel (think like a ski lift system). Occasionally mischievous little ones try to ride in the baskets, a fun past time until you stay in one a little too long and get lost. Some of the creeks through the valley are large enough to carry smaller baskets, which those who live along the riverbed will transfer into the heavier duty baskets to send along for trade. A few creatures do this full time, hiking to deliver the traded goods back to those who live on the edges of the valley.
+Survival here unlike the rest of the Isles depends on daily hard and often intense work. Without rich soil to grow on or warm weather safe from frost any food here either comes through trade on the Black Market, difficult foraging trecks to the mountain range for minimal plant life, or from the painstakingly built and cared for greenhouses in the Banished encampments. If you don't work, you don't eat, plain as that.
 
-Locals here heavily value "doers" and so many here create primarily functional arts: blankets, baskets, pictography tiles, and so on. There is abundant natural clay, along with permanent settlements, and so brick and pottery is common. Due to the large river there are many river creatures in the area and a favorite food here is fish. The culture results in many desiring to find a problem and "solve it", with many tool inventors finding ways to work with the land and build creative new solutions. This can get out of hand with the young ones, who don't always value the traditional ways in which the elderly here tell them to temper their greed. Certainly after they invent the next amazing whosamawatsit they will all see that we are just making things *more efficient*.`,
+The challenge of survival is only made more difficult as those among the Banished are not known for their community building skills. Landing here is a last resort for the Isles, a punishment only fit for those who refused all teachings and caused serious harm to either others or the Isles itself. Birds guard day and night so that one may not return to the south. Even so, for those who work hard in the communities here and show a change of heart creatures can petition to revoke their banishment.`,
     },
     {
       name: "Regional Differences",
@@ -30,27 +30,27 @@ Locals here heavily value "doers" and so many here create primarily functional a
           name: "Dialect",
           id: "dialect",
           content:
-            "Not much of a strong accent due to the constant moving buzz that comes with being in a place like Luna Valley. A lot of words are borrowed from the Beyonders, making their way into local slang and confusing folks that aren't from around there.",
+            "Rough and fast-paced speech blends with the many different accents, slang, and grammar from the Banished who come from all over the Isles. Words often twisting together sound almost like slurred speech. Insults are a friendly greeting, and coded phrases are used to discuss things like the Black Market or other questionable behaviors.",
         },
         {
           name: "Spirituality",
           id: "spirituality",
-          content: `Luna Valley is a less spiritual part of the land, due in part to the blended cultures, but also because it can be more disconnected from natures cycles in the ever plentiful valley. That said, one would never take a mushroom without telling the land thank you for its blessings, even though at this point its as normal as saying "bless you" after a sneeze. Like many cultures which rely on a key water source funerals are held by boat crafts sent out to sea. Creatures are wrapped in a clean mushroom cloth and adorned with their favorite teas, flowers, and other things from life. The River goddess is believed to carry you down Luna and into the mysts, a place "in between" which cannot be accessed by the living. The River creatures of Luna Valley have a unique religious belief you can learn more about under their subculture section.`,
+          content: `The Banished are placed here at the judgement of the Speakers of the Isles at the Cove City Temple. After first trying volunteer service or other methods of teaching one becomes Banished only when the Speakers determine one has failed to uphold community. As such the judgement of the Isles is ever present here, both cursed and revered as a potential savior from the desolate wastes.`,
         },
         {
           name: "Art",
           id: "art",
-          content: `Art here is heavily influenced by the city, colorful and bright with distinct geometric patterns throughout, but the tones are softened into pastels to blend with the flower fields that cover much of the valley. Creatures that live here tend to value symmetry and practicality to their designs. Clutter is generally frowned upon and so grand ornate designs are seen as rather eccentric. As one of the few places with permanent residences, some going back many generations in one family, the homes found here tend to be very self expressive from the many years of careful cultivation. Simple braids made from old vines pulled from the river shores are used as accents, and river baskets that once carried trade goods but sprung a leak are reused as plant pots where many grow delightful herbs and flowers not from the valley for year round enjoyment.`,
+          content: `Crude depictions of plants that are now nothing but a memory spatter various tools and surfaces in no particular order or fashion. Occasionally vulgar drawings are scratched into the surfaces of snow or buildings and then quickly scratched out leaving scuffs along surfaces looking worn.`,
         },
         {
           name: "Holidays",
           id: "holidays",
-          content: `Like all of the land Luna Valley celebrates the 4 major turns of the season. Holidays here are HUGE, with each day celebrating the turn of the season often having the burrows and nests adorned with natural seasonal decor, and community feasts held outside where people share their personal food and teas with others freely. Some of the more competitive individuals go all out and try to create new and artistic food presentations for these to wow their neighbors, even planning for just one holiday for a whole year to pull this off.Those who are religious or spiritual, and many who just culturally feel its a little whimsical, will make these foods from the blessed objects of that given holiday. Traditionally in Luna valley a blessing is baked (or steeped) into the dishes you prepare and thought to bring good (or bad...) luck to those who partake in your food. This is mostly taken as a silly thought, but its not abnormal to blame a bit of bad luck on your neighbors cooking in a playful jab. Those who are trying to impress the parents of a lover would always be sure to say that the parents food was to blame for all their recent success.`,
+          content: `With no way to mark the seasons here the 4 holidays are still celebrated, but haphazardly and sometimes many times a year. The Banished may declare a particularly good plant harvest in the greenhouse cause for a Lumeanar feast, while a lucky acquirement of resources might justify that day as Arda and in need of a bonfire to warm the soul.`,
         },
         {
           name: "Common Activities and Interests",
           id: "common-activities-and-interests",
-          content: `Luna valley is a bit more fast paced than most of the land, with people who really enjoy exploring, river tubing, and creating community events to celebrate holidays or simple play some games together that keeps people out and about. It is not uncommon here for people to create hobby groups that meet just to do a shared activity like painting, trivia nights, or creating tea blends together. The blend of cultures and creatures through the area means most people have friends of all types, and the shared hobbies help them to build the closer bonds that are more common for the less populated areas.`,
+          content: `Work defines life here from sun up to sun down and there is little time for hobbies. The Banished get by by singing songs or short simple games made with random object like rocks.`,
         },
       ],
     },
@@ -64,49 +64,80 @@ Locals here heavily value "doers" and so many here create primarily functional a
         {
           name: "Mushrooms",
           id: "mushrooms",
-          content:
-            "✦ Fairy Ring (Marasmius oreades) ✦ Field Mushroom (Agaricus campestris) ✦ Shaggy Ink Cap (Coprinus comatus) ✦ False Parasol (Chlorophyllum molybdites) ✦ White Dunce Cap (Conocybe apala) ✦ Weeping Widow (Lacrymaria velutina) ✦ Parasol Mushroom (Macrolepiota procera) ✦ Scruffy Twiglet Mushroom (Tubaria furfuracea) ✦ Common Brown Morel (Morchella esculenta) ✦ Destroying Angel (Amanita bisporigera) ✦ Puffball (Calvatia gigantea) ✦ Basket Stinkhorn (Lysurus cruciatus) ✦ Pinwheel (Marasmius rotula) ✦ White Dapperling (Leucoagaricus leucothites) ✦ Fly Agaric (Amanita muscaria) – Known for its iconic red-and-white cap.",
+          content: `Growing on the eastern slopes only:
+
+✦ Snowbank False Morel (Gyromitra montana)
+
+✦ Alpine Brown Cup (Discina perlata)
+
+✦ Mountain Pine Bolete (Boletus rex-veris)
+
+✦ Snowbank Button Mushroom (Agaricus lilaceps)
+
+✦ Snowbank fairy helmet (Mycena overholtsii)`,
         },
         {
           name: "Flowers",
           id: "flowers",
-          content:
-            "✦ Echinacea (Echinacea purpurea) – Purple coneflower, loved by pollinators. ✦ Gloriosa Daisy (Rudbeckia hirta) – Bright yellow petals with dark centers. ✦ False Indigo (Baptisia australis) – Tall blue flowers in early summer. ✦ Aromatic Aster (Symphyotrichum oblongifolium) – Pale lavender flowers, blooming in fall. ✦ False Sunflower (Heliopsis helianthoides) – Bright yellow flowers resembling true sunflowers. ✦ Butterfly Weed (Asclepias tuberosa) – Bright orange flowers, a favorite of monarch butterflies. ✦ Wild Bergamot (Monarda fistulosa) – Light purple flowers with a strong fragrance, attracting bees and butterflies.",
+          content: `Growing on the eastern slopes only:
+
+
+✦ Snow Buttercup (Ranunculus nivalis)
+
+✦ Alpine Forget-Me-Not (Eritrichium nanum)
+
+✦ Western Pasqueflower (Anemone occidentalis)
+
+✦ Alpine Avens (Geum rossii)
+
+✦ Dwarf Fireweed (Chamerion latifolium)
+
+✦ Purple Saxifrage (Saxifraga oppositifolia)`,
         },
         {
-          name: "Fruits",
-          id: "fruits",
-          content:
-            "✦ Chokeberries (Aronia melanocarpa) – Produces small, dark, antioxidant-rich berries. ✦ Persimmons (Diospyros virginiana) – Small, sweet fruits that ripen in the fall. ✦ Wild Grapes (Vitis riparia) – Vines that produce small, tart grapes, often found climbing trees. ✦ Pawpaws (Asimina triloba) – Edible tropical-like fruit with custardy texture. ✦ Purple Passionfruit (Passiflora incarnata) – Vining plant with edible fruits and beautiful purple flowers.",
+          name: "Trees",
+          id: "trees",
+          content: `Growing on the eastern slopes only:
+
+✦ Douglas Fir (Pseudotsuga menziesii)
+
+✦ Western Red Cedar (Thuja plicata)
+
+✦ Whitebark Pine (Pinus albicaulis)
+
+✦ Subalpine Fir (Abies lasiocarpa)
+
+✦ Bristlecone Pine (Pinus longaeva)
+
+✦ Dwarf Birch (Betula glandulosa)
+
+✦ Mountain Alder (Alnus incana subsp. tenuifolia)`,
         },
         {
           name: "Grasses and Shrubs",
           id: "grasses-and-shrubs",
-          content:
-            "✦ Wild Oat (Chasmanthium latifolium) – A tough, graceful grass with arching seed heads. ✦ Little Bluestem (Schizachyrium scoparium) – A tall, clumping grass often found in open woodlands. ✦ Switchgrass (Panicum virgatum) – Tolerates poor soils and provides excellent cover for wildlife. ✦ Indian Grass (Sorghastrum nutans) – Tall, golden grass found in dry, sunny woodland meadows. ✦ Eastern Redbud (Cercis canadensis) – A small, understory tree with bright pink flowers in the spring, often found along woodland edges. ✦ American Hazelnut (Corylus americana) – A shrub with edible nuts, growing in sunny, open spaces of woodlands. ✦ New Jersey Tea (Ceanothus americanus) – A low, deciduous shrub with white flowers, thriving in dry, rocky soils along the cliff edges of the valley. ✦ Witch Hazel (Hamamelis virginiana) – A shrub with yellow flowers in the fall, known for its medicinal properties. ✦ Ninebark (Physocarpus opulifolius) – A tough shrub with peeling bark, found in rocky or sandy soils, providing cover for wildlife.",
+          content: `Growing on the eastern slopes only:
+
+✦ Bearberry (Arctostaphylos alpina)
+
+✦ Silver Buffaloberry (Shepherdia argentea)
+
+✦ Tufted Hairgrass (Deschampsia cespitosa)
+
+✦ Snow Sedge (Carex nivalis)
+
+✦ Crowberry (Empetrum nigrum)`,
         },
         {
           name: "Other Plants",
           id: "other-plants",
-          content:
-            "✦ Bur Oak (Quercus macrocarpa) – A drought-tolerant oak, often found in savannas and open woodlands. ✦ Shagbark Hickory (Carya ovata) – A tall, open-grown tree with peeling bark, thriving in well-drained soils. ✦ Black Walnut (Juglans nigra) – Often found along streams or in fertile soils, providing dappled shade. ✦ Hackberry (Celtis occidentalis) – Tolerant of poor soils and windy conditions, with small fruits that attract wildlife.",
-        },
-      ],
-    },
-    {
-      name: "Subcultures",
-      id: "subcultures",
-      content:
-        "Luna valley is large enough that some of it's subcultures are also considered regions.",
-      subsectionType: "subculture",
-      subsections: [
-        {
-          name: "Selene Cliffs",
-          id: "selene-cliffs",
-          link: "/region/selene-cliffs",
-          image: "selene-cliffs.png",
-          content:
-            "Surrounding cliffs often populated by the birds of the Isles.",
+          content: `Growing on the eastern slopes only:
+
+✦ Alpine Moss (Racomitrium lanuginosum)
+
+✦ Mountain Sorrel (Oxyria digyna)
+
+✦ Alpine Strawberry (Fragaria vesca)`,
         },
       ],
     },
