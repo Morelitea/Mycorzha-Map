@@ -5,7 +5,7 @@
       "creatures": [
         {
           "name": "Amani",
-          "id": "amani-1",
+          "id": "amani",
           "image": "amani.png",
           "pronouns": "She/Her",
           "size": "Medium",
@@ -32,7 +32,7 @@
         },
         {
           "name": "Glinda",
-          "id": "glinda-1",
+          "id": "glinda",
           "image": "glinda.png",
           "pronouns": "She/Her",
           "size": "Small",
@@ -65,14 +65,46 @@
     },
     {
       "regionId": "hazelmoss-woods",
-      "creatures": []
+      "creatures": [
+        {
+          "name": "Fiona",
+          "id": "fiona",
+          "image": "fiona.png",
+          "pronouns": "She/Her",
+          "size": "Small",
+          "comfortSnack": "Egg & Cress Tea Sandwiches",
+          "biggestFear": "Being kidnapped away from everyone she knows",
+          "favoriteStory": "A Farewell on Faelivrin",
+          "spotifyPlaylist": "fiona-spotify.svg",
+          "quote": "We’re all a little bit like gardens, darling, in that yes, we could just let them grow all higgledy piggle, and they’d do fine – Isle knows that the flowers don’t need us. But a spot of water here, a bit of pruning there, and everything blooms that much brighter!",
+          "emotionalTies": [
+            {
+              "name": "Rhys",
+              "relationship": "By branch and bough, I love my sister more dearly than anything… but she can be absolutely infuriating when the mood strikes her. Galloping off on wild adventures, settling down in the city of all places. Doesn’t she know how much she could be, to our family?"
+            },
+            {
+              "name": "Midge",
+              "relationship": "Grammama Spikey, I used to call her. And still there are days where she still feels the same, taking me to her knee and teaching me something new, something even in all my seasons I had yet to think of. The local matriarch of the Wood, and her guidance still steers me well."
+            },
+            {
+              "name": "Hercules",
+              "relationship": "Poor, dear Herc! We’ve had him and his lovely partner over several times of late, and it’s all I can bear to see the worry behind his eyes. He really has no need of it; I just know he and Nellis will make fine parents, and so does everyone else in the Wood. I shall have to send them some flowers and honey."
+            },
+            {
+              "name": "Mycorzha",
+              "relationship": "Ask me about our Isles, and I find I have little to say beyond the boughs of the Wood. Ask me about home though, and, why we shall have to sit over tea, if I am to ever find the time. How can one put the concept of “home” into just a few words?"
+            }
+          ],
+          "bio": "“The quiet one,” is how many referred to Fiona, during her childhood in Hazelmoss, and indeed compared to her sister she generally was. Something about the woods and the fields spoke to her, and where her sister was headstrong and brash, Fiona quickly learned how to listen – to the woods, to her family and those around her. Where Rhys found herself pulled away from the Wood, Fiona found herself drawn back towards it.\n\nWhen Rhys left, Fiona of course knew it was a long time in coming, and was there to soothe the upset and the concern of the greater family and relations. With her older sister now on poor terms with her relatives, everyone started to look to Fiona to take up the mantle of the family, and she settled into it with a comfortable grace, directing the care of the ancestral wood with skill and patience. Under her care, her family’s tending of the woodland flowers and beehives bloomed and blossomed – quite literally! – and the hives buzzed with activity just the same as her homestead.\n\nNow firmly settled into her budding role of the next family matriarch, Fiona finds herself musing more and more on what it means to be family. Despite concerns she has reached out to her sister once again, their relationship a tumultuous but loving one, and Rhys has even visited a time or two, tempting Fiona to do the same. Fiona has thus far declined, unsure of herself and her place beyond the woods in which she has lived her entire life. Here she moves with confidence and surety in herself and her place in things, and shows just as much cunning as her sister ever has, deftly hidden behind the blooms and blossoms of her personality."
+        }
+      ]
     },
     {
       "regionId": "cove-city",
       "creatures": [
         {
           "name": "Rhys",
-          "id": "rhys-1",
+          "id": "rhys",
           "image": "rhys.png",
           "pronouns": "She/They",
           "size": "Small",
@@ -103,7 +135,7 @@
         },
         {
           "name": "Preston",
-          "id": "preston-1",
+          "id": "preston",
           "image": "preston.png",
           "pronouns": "He/They",
           "size": "Small",
@@ -134,7 +166,7 @@
         },
         {
           "name": "Nalin",
-          "id": "nalin-1",
+          "id": "nalin",
           "image": "nalin.png",
           "pronouns": "They/Them",
           "size": "Small",
@@ -179,7 +211,39 @@
     },
     {
       "regionId": "frostfire-forest",
-      "creatures": []
+      "creatures": [
+        {
+          "name": "Jack",
+          "id": "jack",
+          "image": "jack.png",
+          "pronouns": "He/Him",
+          "size": "Small",
+          "comfortSnack": "Cheese crackers & lox",
+          "biggestFear": "Losing his mind",
+          "favoriteStory": "The Hungering Shadows",
+          "spotifyPlaylist": "jack-spotify.svg",
+          "quote": "Once there was a cunning cat,\nwho smiled and chatted on this and that.\nMuch he learned, and much he said,\nand all of it went to his head.\nOne day he headed out to see\njust what the world was meant to be.\nHe found what he was looking for;\nnow naught is as it was before.",
+          "emotionalTies": [
+            {
+              "name": "Glinda",
+              "relationship": "Aaaagh, the old woman is still the only one who can keep up with me, and doesn't that just curl my whiskers. She could be one of the foremost voices at the Academy, but she's busy with them kids. Pah!"
+            },
+            {
+              "name": "Soot & Cinder",
+              "relationship": "Them kids, as I did say. All energy and games and enthusiasm. Pah! If I'm not careful, they could wind up warming this old heart of mine. It is fun to scare 'em with a spook story or two, bwahaha!"
+            },
+            {
+              "name": "Frostfire Forest",
+              "relationship": "Lookee here, you. I'm gonna tell you this once, and only once. Ask me no questions, and I'll tell you no lies, and it's best you don't ask."
+            },
+            {
+              "name": "Mycorzha",
+              "relationship": "The Isles are full of wonderful and terrible things, and most aren't ready to even dip their paw into the thick of it. Better to stay huddled around their lanterns and fires, then to find out what lies below."
+            }
+          ],
+          "bio": "The public forums of Cove City are renown Isles over for their spirited discourse, open debates, and their rapid-fire exchange of ideas and commentary on any and all topics. And to this day, academic scuttle-butt tells stories of the black cat who exploded suddenly onto the scene but a generation ago. Freshly arrived from the Fern  Leaf Forest, Jack never formally applied to the Academy, nor any of the other institutions of learning in the City. Nevertheless, his ideas found fertile ground, and library doors were thrown open to him in an effort to woo his attendance. Jack mostly kept his own council, for a time, but his eye was caught fast by another up and coming student. Glinda and he struck a spark which roared into a dancing inferno of companionship, study, and treatises which rocked the City's academic circles for nearly two years.\n\nAs fast as he had come though, Jack seemingly vanished once again. He and Glinda had a falling out, their relationship collapsing like a spring-time avalanche; Jack ignored letters, failed to attend lectures and salon gatherings, and eventually simply... disappeared. Rumors swirled of an expedition mounted to the north, to prove a stubbornly held theory on the formation of the Isles. As winter settled in, many figured Jack lost to the ice and snows of the northern plains. So it was to the surprise of all when, nearly a year later, Jack appeared suddenly once again in their midst, tugging a load of glowing mushrooms and refusing to share where he'd been. As soon as he had sold his cargo and re-supplied, he disappeared again, as mysteriously as he had arrived.\n\nWherever Jack goes, he re-appears like a bad habit every autumn-time, pulling a cargo of glowcaps, jack-o-lanterns, and other strange fungi from the north and full of spooky stories to scare off any of the curious. He keeps tight lipped about where he spends the rest of his time, and none who have attempted to follow him out of town when he leaves have managed to track him beyond a few miles."
+        }
+      ]
     },
     {
       "regionId": "mossy-cup-lagoon",
@@ -194,7 +258,7 @@
       "creatures": [
         {
           "name": "Indie",
-          "id": "indie-1",
+          "id": "indie",
           "image": "indie.png",
           "pronouns": "He/Him",
           "size": "Tiny",
