@@ -49,7 +49,7 @@ export const regionDefinitions: RegionDefinition[] = [
     region: {
       name: "Fern Leaf Forest",
       id: "fern-leaf-forest",
-      bannerImage: "/images/banners/fernleaf-forest-banner.png",
+      bannerImage: "/images/banners/fern-leaf-forest-banner.png",
     },
     regionData: fernLeafForest,
   },

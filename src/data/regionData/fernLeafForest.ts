@@ -8,7 +8,7 @@ export const fernLeafForest: RegionData = {
       name: "Known Residents",
       id: "known-residents",
       subsectionType: "creature",
-      content: "/data/lunaValley.json",
+      content: "",
     },
     {
       name: "Culture",
