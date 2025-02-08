@@ -2,22 +2,22 @@ import { RegionData } from "../../types/Regions";
 
 export const dreamerTree: RegionData = {
   majorContent:
-    "In Luna Valley, delicate pastel blossoms sway in the breeze, and every tea captures the spirit of tranquil meadows and sunlit springs. From floral motifs to soft hues of pink, lavender, and pale gold, Luna Valley’s wares reflect its peaceful charm and serene beauty. Made from fertile volcanic soil fed by streams from the surrounding mountain range Luna Valley has endless food and comfortable weather year round that makes it the most populated area in the Isles next to Cove City itself.",
+    "The Dreamer Tree stands tall at the heart of the Isles, its roots stretching deep beside the serene waters of Dreamer's Lake, where the glacial runoff creates an ethereal blue hue. In the summer, the plains of Mycorzha come alive with a blanket of purple, blue, and pink flowers that bloom in a soft, dreamlike haze. The landscape seems to shimmer under the glow of fireflies, their soft light casting a peaceful, magical aura across the open fields.",
   subsections: [
     {
       name: "Known Residents",
       id: "known-residents",
       subsectionType: "creature",
-      content: "/data/lunaValley.json",
+      content: "",
     },
     {
       name: "Culture",
       id: "culture",
-      content: `Luna Valley rests in the crater like cliffs that are at the edge of the crescent mountains. The huge glacial peaks surrounding it do well at preventing bad weather, and so there is rarely a stormy night to worry about, with the sun shining 300+ days of the year overhead. The volcanic soil from the mountains surrounding it is filled with nutrients and food grows here freely and with great ease. Because of this most of the population of the Isles resides here or in Cove City nearby. So as not to disturb the top soil many who live here burrow underground to build permanent residences, finding the cool break from the sun refreshing, and the smell of the earth a comfort at the end of a long day. Much of the valley is covered in wild grasses and flowers, with a constant buzz of honey bees working away. Small pockets of fruit trees and bushes are interspersed throughout. There are many small creeks which stream throughout the area, all feeding into the main river network.
+      content: `Greater Mycorzha is a general name for most of the Isles – from the Southern Hills, the Western Plains, and all the way up to Fern Leaf Forest much of Mycorzha is temperate grassland. Given it is such a large area how much food is available for harvest often depends on seasonal crops, leaving much of Greater Mycorzha uninhabited by any permanent residents. This does not mean the land is untouched, the lands are still cultivated and maintained by the many nomadic clans that live on the Isles moving from place to place depending on the season and available crops. The clans all have their own unique cultures and traditions - far too extensive to list here - but every year during high summer they all find themselves at the center of the Isles for the cool glacial water of Dreamer Lake. Here stands a lone tree of immense size which can be seen from far into the Plains, which became known as the Dreamer Tree. Over time the clans began to meet under this tree for trade, simply because it was easy to spot, and eventually the high summer holiday of Arda was born. A time for bonfires, gift exchanges, trade, dancing, and cultural exchange among the clans to celebrate each other as a larger community.
 
-Fable falls, where the water feeds the river from the glaciers, is a sight to behold. Huge and roaring, anything nearby is covered in a fine mist, the river below deep from centuries of the raging water pounding against the ground. Luna Valley is deceptively large, and traveling from one end to the other takes 4-5 days so those who live this far upstream place trade goods in tight water weaved baskets and send them down to Coral Cap Cove to be retrieved and traded for them in exchange for whatever they indicate on the conveniently naturally waterproof mushroom paper. A pully system is erected along the rivers, which brings the baskets back up on hooks filled with the traded goods. The vine ropes holding the baskets are pulled along with a simple water wheel (think like a ski lift system). Occasionally mischievous little ones try to ride in the baskets, a fun past time until you stay in one a little too long and get lost. Some of the creeks through the valley are large enough to carry smaller baskets, which those who live along the riverbed will transfer into the heavier duty baskets to send along for trade. A few creatures do this full time, hiking to deliver the traded goods back to those who live on the edges of the valley.
+The Plains are interspersed with beautiful patches of blue and purple flowers that can look akin to the sea when all in bloom. Individuals in the various clans began harvesting and drying the flowers long ago originally perhaps for medicinal properties but over time many individuals began to make satchels of the brightly colored flowers to give for Arda. This eventually evolved into the tea trade all throughout the Isles.  Knowledge of foraging and cultivation is central to the nomadic clans to ensure that there are more plants for the future. All the clan residents have immense knowledge of each region of the Isles - at least those south of the mountains. No one goes to the bitter cold north where nothing is said to grow.
 
-Locals here heavily value "doers" and so many here create primarily functional arts: blankets, baskets, pictography tiles, and so on. There is abundant natural clay, along with permanent settlements, and so brick and pottery is common. Due to the large river there are many river creatures in the area and a favorite food here is fish. The culture results in many desiring to find a problem and "solve it", with many tool inventors finding ways to work with the land and build creative new solutions. This can get out of hand with the young ones, who don't always value the traditional ways in which the elderly here tell them to temper their greed. Certainly after they invent the next amazing whosamawatsit they will all see that we are just making things *more efficient*.`,
+Now nearly all the creatures of the Isles make their own blend of herbs, leaves, spices, and flavors to share as a way to say hello, thank you, or a simple happy Arda. Blends are all seen as a personal signature of sorts, a way to share yourself with others that is both personable but open. Herbs and dried plants of all kinds are perhaps perceived as the most valuable commodity on the Isles. Many of the seasonal traders noticed the Mycorzhian's strong interest in various dried plants and began bringing them each harvest season to the delight of the locals.`,
     },
     {
       name: "Regional Differences",
@@ -30,27 +30,27 @@ Locals here heavily value "doers" and so many here create primarily functional a
           name: "Dialect",
           id: "dialect",
           content:
-            "Not much of a strong accent due to the constant moving buzz that comes with being in a place like Luna Valley. A lot of words are borrowed from the Beyonders, making their way into local slang and confusing folks that aren't from around there.",
+            "Speech is often deliberate and measured, with pauses that reflect the storytelling traditions of the culture here. Not usually in a rush but instead flowing with the slow and rhythmic pattern of the land's natural growth cycle. Some words and phrases use expressive repetition for emphasis.",
         },
         {
           name: "Spirituality",
           id: "spirituality",
-          content: `Luna Valley is a less spiritual part of the land, due in part to the blended cultures, but also because it can be more disconnected from natures cycles in the ever plentiful valley. That said, one would never take a mushroom without telling the land thank you for its blessings, even though at this point its as normal as saying "bless you" after a sneeze. Like many cultures which rely on a key water source funerals are held by boat crafts sent out to sea. Creatures are wrapped in a clean mushroom cloth and adorned with their favorite teas, flowers, and other things from life. The River goddess is believed to carry you down Luna and into the mysts, a place "in between" which cannot be accessed by the living. The River creatures of Luna Valley have a unique religious belief you can learn more about under their subculture section.`,
+          content: `The clans often have distinct interpretations, but in general the clans believe the Mysts and Isles to hold wisdom they must listen to and follow. Each harvest a blessing from the Isles, each storm a kindness from the Mysts.`,
         },
         {
           name: "Art",
           id: "art",
-          content: `Art here is heavily influenced by the city, colorful and bright with distinct geometric patterns throughout, but the tones are softened into pastels to blend with the flower fields that cover much of the valley. Creatures that live here tend to value symmetry and practicality to their designs. Clutter is generally frowned upon and so grand ornate designs are seen as rather eccentric. As one of the few places with permanent residences, some going back many generations in one family, the homes found here tend to be very self expressive from the many years of careful cultivation. Simple braids made from old vines pulled from the river shores are used as accents, and river baskets that once carried trade goods but sprung a leak are reused as plant pots where many grow delightful herbs and flowers not from the valley for year round enjoyment.`,
+          content: `Art is on every surface and often depicts stories shared by the clan. The home of a clan member who is a leader in their community for carving might feature various trees along the cloth side of their nomadic home, while one who is know for being a skilled fisher may feature various fish or depictions of netting.`,
         },
         {
           name: "Holidays",
           id: "holidays",
-          content: `Like all of the land Luna Valley celebrates the 4 major turns of the season. Holidays here are HUGE, with each day celebrating the turn of the season often having the burrows and nests adorned with natural seasonal decor, and community feasts held outside where people share their personal food and teas with others freely. Some of the more competitive individuals go all out and try to create new and artistic food presentations for these to wow their neighbors, even planning for just one holiday for a whole year to pull this off.Those who are religious or spiritual, and many who just culturally feel its a little whimsical, will make these foods from the blessed objects of that given holiday. Traditionally in Luna valley a blessing is baked (or steeped) into the dishes you prepare and thought to bring good (or bad...) luck to those who partake in your food. This is mostly taken as a silly thought, but its not abnormal to blame a bit of bad luck on your neighbors cooking in a playful jab. Those who are trying to impress the parents of a lover would always be sure to say that the parents food was to blame for all their recent success.`,
+          content: `Each season is celebrated just like all on the Isles, but Arda is central to the way of life for the clans. Many practice dances or work on art and tea blends for Arda all year. Those of a clan hoping to meet a sweetheart will not usually seek relationships among their own clan, as they are often small groupings, so Arda also means a chance for romance. As such young adults often spend long hours over the year preparing outfits or skills to showcase themselves and their clan during Arda.`,
         },
         {
           name: "Common Activities and Interests",
           id: "common-activities-and-interests",
-          content: `Luna valley is a bit more fast paced than most of the land, with people who really enjoy exploring, river tubing, and creating community events to celebrate holidays or simple play some games together that keeps people out and about. It is not uncommon here for people to create hobby groups that meet just to do a shared activity like painting, trivia nights, or creating tea blends together. The blend of cultures and creatures through the area means most people have friends of all types, and the shared hobbies help them to build the closer bonds that are more common for the less populated areas.`,
+          content: `Too broad of a region to really point to anything specific, clans often each share certain specialties and skills from passed down wisdom that result in shared activities with those in the clan.`,
         },
       ],
     },
@@ -64,49 +64,67 @@ Locals here heavily value "doers" and so many here create primarily functional a
         {
           name: "Mushrooms",
           id: "mushrooms",
-          content:
-            "✦ Fairy Ring (Marasmius oreades) ✦ Field Mushroom (Agaricus campestris) ✦ Shaggy Ink Cap (Coprinus comatus) ✦ False Parasol (Chlorophyllum molybdites) ✦ White Dunce Cap (Conocybe apala) ✦ Weeping Widow (Lacrymaria velutina) ✦ Parasol Mushroom (Macrolepiota procera) ✦ Scruffy Twiglet Mushroom (Tubaria furfuracea) ✦ Common Brown Morel (Morchella esculenta) ✦ Destroying Angel (Amanita bisporigera) ✦ Puffball (Calvatia gigantea) ✦ Basket Stinkhorn (Lysurus cruciatus) ✦ Pinwheel (Marasmius rotula) ✦ White Dapperling (Leucoagaricus leucothites) ✦ Fly Agaric (Amanita muscaria) – Known for its iconic red-and-white cap.",
+          content: `✦ Morel (Morchella spp.)
+
+✦ Lion’s Mane (Hericium erinaceus)
+
+✦ Shaggy Mane (Coprinus comatus)
+
+✦ Puffball (Calvatia gigantea)
+
+✦ Turkey Tail (Trametes versicolor)`,
         },
         {
           name: "Flowers",
           id: "flowers",
-          content:
-            "✦ Echinacea (Echinacea purpurea) – Purple coneflower, loved by pollinators. ✦ Gloriosa Daisy (Rudbeckia hirta) – Bright yellow petals with dark centers. ✦ False Indigo (Baptisia australis) – Tall blue flowers in early summer. ✦ Aromatic Aster (Symphyotrichum oblongifolium) – Pale lavender flowers, blooming in fall. ✦ False Sunflower (Heliopsis helianthoides) – Bright yellow flowers resembling true sunflowers. ✦ Butterfly Weed (Asclepias tuberosa) – Bright orange flowers, a favorite of monarch butterflies. ✦ Wild Bergamot (Monarda fistulosa) – Light purple flowers with a strong fragrance, attracting bees and butterflies.",
+          content: `✦ Black-eyed Susan (Rudbeckia hirta)
+
+✦ Purple Coneflower (Echinacea purpurea)
+
+✦ Indian Paintbrush (Castilleja spp.)
+
+✦ Blanket Flower (Gaillardia pulchella)
+
+✦ Prairie Sage (Artemisia ludoviciana)
+
+✦ Blue Cornflower (Centaurea cyanus)`,
         },
         {
-          name: "Fruits",
-          id: "fruits",
-          content:
-            "✦ Chokeberries (Aronia melanocarpa) – Produces small, dark, antioxidant-rich berries. ✦ Persimmons (Diospyros virginiana) – Small, sweet fruits that ripen in the fall. ✦ Wild Grapes (Vitis riparia) – Vines that produce small, tart grapes, often found climbing trees. ✦ Pawpaws (Asimina triloba) – Edible tropical-like fruit with custardy texture. ✦ Purple Passionfruit (Passiflora incarnata) – Vining plant with edible fruits and beautiful purple flowers.",
+          name: "Trees",
+          id: "trees",
+          content: `✦ Bur Oak (Quercus macrocarpa)
+
+✦ Boxelder (Acer negundo)
+
+✦ Black Willow (Salix nigra)
+
+✦ Cottonwood (Populus deltoides)`,
         },
         {
           name: "Grasses and Shrubs",
           id: "grasses-and-shrubs",
-          content:
-            "✦ Wild Oat (Chasmanthium latifolium) – A tough, graceful grass with arching seed heads. ✦ Little Bluestem (Schizachyrium scoparium) – A tall, clumping grass often found in open woodlands. ✦ Switchgrass (Panicum virgatum) – Tolerates poor soils and provides excellent cover for wildlife. ✦ Indian Grass (Sorghastrum nutans) – Tall, golden grass found in dry, sunny woodland meadows. ✦ Eastern Redbud (Cercis canadensis) – A small, understory tree with bright pink flowers in the spring, often found along woodland edges. ✦ American Hazelnut (Corylus americana) – A shrub with edible nuts, growing in sunny, open spaces of woodlands. ✦ New Jersey Tea (Ceanothus americanus) – A low, deciduous shrub with white flowers, thriving in dry, rocky soils along the cliff edges of the valley. ✦ Witch Hazel (Hamamelis virginiana) – A shrub with yellow flowers in the fall, known for its medicinal properties. ✦ Ninebark (Physocarpus opulifolius) – A tough shrub with peeling bark, found in rocky or sandy soils, providing cover for wildlife.",
+          content: `✦ Big Bluestem (Andropogon gerardii)
+
+✦ Switchgrass (Panicum virgatum)
+
+✦ Little Bluestem (Schizachyrium scoparium)
+
+✦ Buffalo Grass (Bouteloua dactyloides)
+
+✦ Prairie Dropseed (Sporobolus heterolepis)
+
+✦ Chokecherry (Prunus virginiana)
+
+✦ Rabbitbrush (Chrysothamnus nauseosus)`,
         },
         {
           name: "Other Plants",
           id: "other-plants",
-          content:
-            "✦ Bur Oak (Quercus macrocarpa) – A drought-tolerant oak, often found in savannas and open woodlands. ✦ Shagbark Hickory (Carya ovata) – A tall, open-grown tree with peeling bark, thriving in well-drained soils. ✦ Black Walnut (Juglans nigra) – Often found along streams or in fertile soils, providing dappled shade. ✦ Hackberry (Celtis occidentalis) – Tolerant of poor soils and windy conditions, with small fruits that attract wildlife.",
-        },
-      ],
-    },
-    {
-      name: "Subcultures",
-      id: "subcultures",
-      content:
-        "Luna valley is large enough that some of it's subcultures are also considered regions.",
-      subsectionType: "subculture",
-      subsections: [
-        {
-          name: "Selene Cliffs",
-          id: "selene-cliffs",
-          link: "/region/selene-cliffs",
-          image: "selene-cliffs.png",
-          content:
-            "Surrounding cliffs often populated by the birds of the Isles.",
+          content: `✦ Prairie Clover (Dalea spp.)
+
+✦ Sagebrush (Artemisia tridentata)
+
+✦ Leadplant (Amorpha canescens)`,
         },
       ],
     },
