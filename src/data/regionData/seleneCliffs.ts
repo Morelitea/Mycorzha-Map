@@ -71,32 +71,69 @@ As the birds of Mycorzha live naturally a mix of both nomadic and permanent resi
         {
           name: "Mushrooms",
           id: "mushrooms",
-          content:
-            "✦ Scaly Pholiota (Pholiota squarrosa) – Grows at the base of trees or on deadwood along rocky, exposed areas. ✦ Orange Mycena (Mycena leaiana) – Bright orange mushrooms that thrive in damp, shaded areas of cliff edges. ✦ Aspicilia cinerea – Gray, patchy fungus that thrives on dry, exposed rocks, commonly found along high cliff edges. ✦ Umbilicaria americana (Rock Tripe) – Leathery, dark brown patches of fungi found on steep rock faces in exposed areas, surviving in extreme conditions. ✦ Endocarpon pusillum – Black, flat crust that inhabits the cracks and small depressions in cliff surfaces, often in dry areas. ✦ Stereocaulon saxatile – Whitish-gray, shrubby fungi that grow on rocky slopes and cliffs, especially in alpine or cold environments.",
+          content: `✦ Scaly Pholiota (Pholiota squarrosa) – Grows at the base of trees or on deadwood along rocky, exposed areas.
+
+✦ Orange Mycena (Mycena leaiana) – Bright orange mushrooms that thrive in damp, shaded areas of cliff edges.
+
+✦ Aspicilia cinerea – Gray, patchy fungus that thrives on dry, exposed rocks, commonly found along high cliff edges.
+
+✦ Umbilicaria americana (Rock Tripe) – Leathery, dark brown patches of fungi found on steep rock faces in exposed areas, surviving in extreme conditions.
+
+✦ Endocarpon pusillum – Black, flat crust that inhabits the cracks and small depressions in cliff surfaces, often in dry areas.
+
+✦ Stereocaulon saxatile – Whitish-gray, shrubby fungi that grow on rocky slopes and cliffs, especially in alpine or cold environments.`,
         },
         {
           name: "Flowers",
           id: "flowers",
-          content:
-            "✦ Columbine (Aquilegia canadensis) – Often grows in rocky outcrops and cliff faces, known for its delicate, nodding red and yellow flowers. ✦ Cliff Goldenrod (Solidago sciaphila) – A hardy, yellow-flowering plant found on cliffs and rocky outcrops. ✦ Eastern Red Columbine (Aquilegia canadensis) – Another columbine species known for growing in crevices of rocky cliffs. ✦ Fireweed (Chamerion angustifolium) – Vibrant pink flowers that grow in disturbed, rocky areas. ✦ Wild Bleeding Heart (Dicentra eximia) – Prefers rocky, shaded slopes, often found on cliffsides. ✦ Hairy Beardtongue (Penstemon hirsutus) – A native flower with purple blooms, growing in rocky and dry environments. ✦ Cliff Maiden (Leptodactylon pungens) – Small white-pink flowers found in rocky, cliff environments. ✦ Rockcress (Arabis lyrata) – White flowers that cling to rock faces and cliffsides.",
+          content: `✦ Columbine (Aquilegia canadensis) – Often grows in rocky outcrops and cliff faces, known for its delicate, nodding red and yellow flowers.
+
+✦ Cliff Goldenrod (Solidago sciaphila) – A hardy, yellow-flowering plant found on cliffs and rocky outcrops.
+
+✦ Eastern Red Columbine (Aquilegia canadensis) – Another columbine species known for growing in crevices of rocky cliffs.
+
+✦ Fireweed (Chamerion angustifolium) – Vibrant pink flowers that grow in disturbed, rocky areas.
+
+✦ Wild Bleeding Heart (Dicentra eximia) – Prefers rocky, shaded slopes, often found on cliffsides.
+
+✦ Hairy Beardtongue (Penstemon hirsutus) – A native flower with purple blooms, growing in rocky and dry environments.
+
+✦ Cliff Maiden (Leptodactylon pungens) – Small white-pink flowers found in rocky, cliff environments.
+
+✦ Rockcress (Arabis lyrata) – White flowers that cling to rock faces and cliffsides.`,
         },
         {
           name: "Fruits",
           id: "fruits",
-          content:
-            "✦ Serviceberries (Amelanchier alnifolia) – Small trees or shrubs that grow in rocky areas and produce sweet, edible berries. ✦ Gooseberries (Ribes missouriense) – A resilient shrub that can cling to rocky slopes and cliffs, producing tart berries. ✦ Wild Strawberries (Fragaria virginiana) – Hardy ground plants that grow in rocky crevices and produce small, flavorful berries. ✦ Prickly Pear Cactus (Opuntia humifusa) – Though more commonly associated with deserts, this cactus can also thrive on rocky, sun-exposed cliffs and produces edible fruit. ✦ Sumac (Rhus typhina) – Found growing along rocky slopes, producing clusters of red, edible berries.",
+          content: `✦ Serviceberries (Amelanchier alnifolia) – Small trees or shrubs that grow in rocky areas and produce sweet, edible berries.
+
+✦ Gooseberries (Ribes missouriense) – A resilient shrub that can cling to rocky slopes and cliffs, producing tart berries.
+
+✦ Wild Strawberries (Fragaria virginiana) – Hardy ground plants that grow in rocky crevices and produce small, flavorful berries.
+
+✦ Prickly Pear Cactus (Opuntia humifusa) – Though more commonly associated with deserts, this cactus can also thrive on rocky, sun-exposed cliffs and produces edible fruit.
+
+✦ Sumac (Rhus typhina) – Found growing along rocky slopes, producing clusters of red, edible berries.`,
         },
         {
           name: "Grasses and Shrubs",
           id: "grasses-and-shrubs",
-          content:
-            "✦ Little Bluestem (Schizachyrium scoparium) – A drought-tolerant, native grass that thrives in rocky, dry conditions. ✦ Indian Grass (Sorghastrum nutans) – Hardy grass with deep roots, often found in rocky, exposed areas. ✦ Switchgrass (Panicum virgatum) – Grows well on rocky slopes and helps stabilize cliffside soils. ✦ Bearberry (Arctostaphylos uva-ursi) – A low-growing shrub found in rocky areas, with small red berries and tough evergreen leaves. ✦ Cliff Fendlerbush (Fendlera rupicola) – A shrub found clinging to rocky cliff sides with white blooms and tough leaves.",
+          content: `✦ Little Bluestem (Schizachyrium scoparium) – A drought-tolerant, native grass that thrives in rocky, dry conditions.
+
+✦ Indian Grass (Sorghastrum nutans) – Hardy grass with deep roots, often found in rocky, exposed areas.
+
+✦ Switchgrass (Panicum virgatum) – Grows well on rocky slopes and helps stabilize cliffside soils.
+
+✦ Bearberry (Arctostaphylos uva-ursi) – A low-growing shrub found in rocky areas, with small red berries and tough evergreen leaves.
+
+✦ Cliff Fendlerbush (Fendlera rupicola) – A shrub found clinging to rocky cliff sides with white blooms and tough leaves.`,
         },
         {
           name: "Other Plants",
           id: "other-plants",
-          content:
-            "✦ Yucca (Yucca filamentosa) – Adapted to rocky and sandy soils, this plant thrives on exposed cliffs with poor nutrients. ✦ Virginia Creeper (Parthenocissus quinquefolia) – A climbing vine that clings to cliff faces with its tendrils.",
+          content: `✦ Yucca (Yucca filamentosa) – Adapted to rocky and sandy soils, this plant thrives on exposed cliffs with poor nutrients.
+
+✦ Virginia Creeper (Parthenocissus quinquefolia) – A climbing vine that clings to cliff faces with its tendrils.`,
         },
       ],
     },

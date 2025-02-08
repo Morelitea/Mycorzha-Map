@@ -64,32 +64,97 @@ Locals here heavily value "doers" and so many here create primarily functional a
         {
           name: "Mushrooms",
           id: "mushrooms",
-          content:
-            "✦ Fairy Ring (Marasmius oreades) ✦ Field Mushroom (Agaricus campestris) ✦ Shaggy Ink Cap (Coprinus comatus) ✦ False Parasol (Chlorophyllum molybdites) ✦ White Dunce Cap (Conocybe apala) ✦ Weeping Widow (Lacrymaria velutina) ✦ Parasol Mushroom (Macrolepiota procera) ✦ Scruffy Twiglet Mushroom (Tubaria furfuracea) ✦ Common Brown Morel (Morchella esculenta) ✦ Destroying Angel (Amanita bisporigera) ✦ Puffball (Calvatia gigantea) ✦ Basket Stinkhorn (Lysurus cruciatus) ✦ Pinwheel (Marasmius rotula) ✦ White Dapperling (Leucoagaricus leucothites) ✦ Fly Agaric (Amanita muscaria) – Known for its iconic red-and-white cap.",
+          content: `✦ Fairy Ring (Marasmius oreades)
+
+✦ Field Mushroom (Agaricus campestris)
+
+✦ Shaggy Ink Cap (Coprinus comatus)
+
+✦ False Parasol (Chlorophyllum molybdites)
+
+✦ White Dunce Cap (Conocybe apala)
+
+✦ Weeping Widow (Lacrymaria velutina)
+
+✦ Parasol Mushroom (Macrolepiota procera)
+
+✦ Scruffy Twiglet Mushroom (Tubaria furfuracea)
+
+✦ Common Brown Morel (Morchella esculenta)
+
+✦ Destroying Angel (Amanita bisporigera)
+
+✦ Puffball (Calvatia gigantea)
+
+✦ Basket Stinkhorn (Lysurus cruciatus)
+
+✦ Pinwheel (Marasmius rotula)
+
+✦ White Dapperling (Leucoagaricus leucothites)
+
+✦ Fly Agaric (Amanita muscaria) – Known for its iconic red-and-white cap.`,
         },
         {
           name: "Flowers",
           id: "flowers",
-          content:
-            "✦ Echinacea (Echinacea purpurea) – Purple coneflower, loved by pollinators. ✦ Gloriosa Daisy (Rudbeckia hirta) – Bright yellow petals with dark centers. ✦ False Indigo (Baptisia australis) – Tall blue flowers in early summer. ✦ Aromatic Aster (Symphyotrichum oblongifolium) – Pale lavender flowers, blooming in fall. ✦ False Sunflower (Heliopsis helianthoides) – Bright yellow flowers resembling true sunflowers. ✦ Butterfly Weed (Asclepias tuberosa) – Bright orange flowers, a favorite of monarch butterflies. ✦ Wild Bergamot (Monarda fistulosa) – Light purple flowers with a strong fragrance, attracting bees and butterflies.",
+          content: `✦ Echinacea (Echinacea purpurea) – Purple coneflower, loved by pollinators.
+
+✦ Gloriosa Daisy (Rudbeckia hirta) – Bright yellow petals with dark centers.
+
+✦ False Indigo (Baptisia australis) – Tall blue flowers in early summer.
+
+✦ Aromatic Aster (Symphyotrichum oblongifolium) – Pale lavender flowers, blooming in fall.
+
+✦ False Sunflower (Heliopsis helianthoides) – Bright yellow flowers resembling true sunflowers.
+
+✦ Butterfly Weed (Asclepias tuberosa) – Bright orange flowers, a favorite of monarch butterflies.
+
+✦ Wild Bergamot (Monarda fistulosa) – Light purple flowers with a strong fragrance, attracting bees and butterflies.`,
         },
         {
           name: "Fruits",
           id: "fruits",
-          content:
-            "✦ Chokeberries (Aronia melanocarpa) – Produces small, dark, antioxidant-rich berries. ✦ Persimmons (Diospyros virginiana) – Small, sweet fruits that ripen in the fall. ✦ Wild Grapes (Vitis riparia) – Vines that produce small, tart grapes, often found climbing trees. ✦ Pawpaws (Asimina triloba) – Edible tropical-like fruit with custardy texture. ✦ Purple Passionfruit (Passiflora incarnata) – Vining plant with edible fruits and beautiful purple flowers.",
+          content: `✦ Chokeberries (Aronia melanocarpa) – Produces small, dark, antioxidant-rich berries.
+
+✦ Persimmons (Diospyros virginiana) – Small, sweet fruits that ripen in the fall.
+
+✦ Wild Grapes (Vitis riparia) – Vines that produce small, tart grapes, often found climbing trees.
+
+✦ Pawpaws (Asimina triloba) – Edible tropical-like fruit with custardy texture.
+
+✦ Purple Passionfruit (Passiflora incarnata) – Vining plant with edible fruits and beautiful purple flowers.`,
         },
         {
           name: "Grasses and Shrubs",
           id: "grasses-and-shrubs",
-          content:
-            "✦ Wild Oat (Chasmanthium latifolium) – A tough, graceful grass with arching seed heads. ✦ Little Bluestem (Schizachyrium scoparium) – A tall, clumping grass often found in open woodlands. ✦ Switchgrass (Panicum virgatum) – Tolerates poor soils and provides excellent cover for wildlife. ✦ Indian Grass (Sorghastrum nutans) – Tall, golden grass found in dry, sunny woodland meadows. ✦ Eastern Redbud (Cercis canadensis) – A small, understory tree with bright pink flowers in the spring, often found along woodland edges. ✦ American Hazelnut (Corylus americana) – A shrub with edible nuts, growing in sunny, open spaces of woodlands. ✦ New Jersey Tea (Ceanothus americanus) – A low, deciduous shrub with white flowers, thriving in dry, rocky soils along the cliff edges of the valley. ✦ Witch Hazel (Hamamelis virginiana) – A shrub with yellow flowers in the fall, known for its medicinal properties. ✦ Ninebark (Physocarpus opulifolius) – A tough shrub with peeling bark, found in rocky or sandy soils, providing cover for wildlife.",
+          content: `✦ Wild Oat (Chasmanthium latifolium) – A tough, graceful grass with arching seed heads.
+
+✦ Little Bluestem (Schizachyrium scoparium) – A tall, clumping grass often found in open woodlands.
+
+✦ Switchgrass (Panicum virgatum) – Tolerates poor soils and provides excellent cover for wildlife.
+
+✦ Indian Grass (Sorghastrum nutans) – Tall, golden grass found in dry, sunny woodland meadows.
+
+✦ Eastern Redbud (Cercis canadensis) – A small, understory tree with bright pink flowers in the spring, often found along woodland edges.
+
+✦ American Hazelnut (Corylus americana) – A shrub with edible nuts, growing in sunny, open spaces of woodlands.
+
+✦ New Jersey Tea (Ceanothus americanus) – A low, deciduous shrub with white flowers, thriving in dry, rocky soils along the cliff edges of the valley.
+
+✦ Witch Hazel (Hamamelis virginiana) – A shrub with yellow flowers in the fall, known for its medicinal properties.
+
+✦ Ninebark (Physocarpus opulifolius) – A tough shrub with peeling bark, found in rocky or sandy soils, providing cover for wildlife.`,
         },
         {
           name: "Other Plants",
           id: "other-plants",
-          content:
-            "✦ Bur Oak (Quercus macrocarpa) – A drought-tolerant oak, often found in savannas and open woodlands. ✦ Shagbark Hickory (Carya ovata) – A tall, open-grown tree with peeling bark, thriving in well-drained soils. ✦ Black Walnut (Juglans nigra) – Often found along streams or in fertile soils, providing dappled shade. ✦ Hackberry (Celtis occidentalis) – Tolerant of poor soils and windy conditions, with small fruits that attract wildlife.",
+          content: `✦ Bur Oak (Quercus macrocarpa) – A drought-tolerant oak, often found in savannas and open woodlands.
+
+✦ Shagbark Hickory (Carya ovata) – A tall, open-grown tree with peeling bark, thriving in well-drained soils.
+
+✦ Black Walnut (Juglans nigra) – Often found along streams or in fertile soils, providing dappled shade.
+
+✦ Hackberry (Celtis occidentalis) – Tolerant of poor soils and windy conditions, with small fruits that attract wildlife.`,
         },
       ],
     },
