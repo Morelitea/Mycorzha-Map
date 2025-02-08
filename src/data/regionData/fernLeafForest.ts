@@ -139,23 +139,6 @@ The same geothermal forces that nurture this glowing algae also feeds the hot sp
         },
       ],
     },
-    {
-      name: "Subcultures",
-      id: "subcultures",
-      content:
-        "Luna valley is large enough that some of it's subcultures are also considered regions.",
-      subsectionType: "subculture",
-      subsections: [
-        {
-          name: "Selene Cliffs",
-          id: "selene-cliffs",
-          link: "/region/selene-cliffs",
-          image: "selene-cliffs.png",
-          content:
-            "Surrounding cliffs often populated by the birds of the Isles.",
-        },
-      ],
-    },
   ],
 };
 
