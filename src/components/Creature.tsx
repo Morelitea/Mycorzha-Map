@@ -46,7 +46,11 @@ export const Creature: React.FC<ICreatureProps> = ({ creature }) => {
       >
         <h3 className={styles.creatureName}>{name}</h3>
         <img src={imagePath} alt={name} className={styles.creatureImage} />
-        {showMore ? <p>Tap to hide info.</p> : <p>Tap to show more info.</p>}
+        {showMore ? (
+          <span>Tap to hide info.</span>
+        ) : (
+          <span>Tap to show more info.</span>
+        )}
       </div>
       <div
         className={classNames(
