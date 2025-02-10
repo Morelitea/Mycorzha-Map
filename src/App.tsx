@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
-import { exists, BaseDirectory, readTextFile } from "@tauri-apps/plugin-fs";
+import { exists, readTextFile } from "@tauri-apps/plugin-fs";
 import { ThemeProvider } from "@mui/material/styles";
 import MapComponent from "./components/MapComponent";
 import RegionPage from "./components/RegionPage";
@@ -9,9 +9,9 @@ import { Region } from "./types/Regions";
 import { CreatureData } from "./types/Creatures";
 import ImportButton from "./components/ImportButton";
 import sampleData from "./data/creatureData.json";
+import { BASE_DIR, CREATURE_DATA_FILE } from "./data/consts";
 import theme from "./theme";
 
-const CREATURE_DATA_FILE = "creatureData.json";
 const { DEV } = import.meta.env;
 
 export const getRegionFromCoordinates = (
@@ -42,13 +42,11 @@ const App: React.FC = () => {
       setCreatureFileExists(true);
       setCreatureData(sampleData);
     } else {
-      const doesExist = await exists(CREATURE_DATA_FILE, {
-        baseDir: BaseDirectory.AppLocalData,
-      });
+      const doesExist = await exists(CREATURE_DATA_FILE, { baseDir: BASE_DIR });
       if (doesExist) {
         setCreatureFileExists(doesExist);
         const data = await readTextFile(CREATURE_DATA_FILE, {
-          baseDir: BaseDirectory.AppLocalData,
+          baseDir: BASE_DIR,
         });
         setCreatureData(JSON.parse(data));
       }

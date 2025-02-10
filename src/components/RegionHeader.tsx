@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { ArrowBack } from "@mui/icons-material";
+import { Link } from "react-router-dom";
+import { Map } from "@mui/icons-material";
 import Button from "@mui/material/Button";
 import styles from "./RegionHeader.module.scss";
 import defaultBanner from "../assets/banners/banner.png";
@@ -18,21 +18,12 @@ const RegionHeader: React.FC<RegionHeaderProps> = ({
   bannerImage,
 }) => {
   const [imageError, setImageError] = useState(false);
-  const navigate = useNavigate();
 
   const handleImageError = () => {
     setImageError(true); // If there's an error, use the default banner
   };
 
   const imageSrc = imageError ? defaultBanner : bannerImage;
-
-  const handleBackClick = () => {
-    if (window.history?.length && window.history.length > 1) {
-      navigate(-1);
-    } else {
-      navigate("/", { replace: true });
-    }
-  };
 
   return (
     <div className={styles.headerContainer} id={regionId}>
@@ -45,12 +36,13 @@ const RegionHeader: React.FC<RegionHeaderProps> = ({
 
       {/* Back button */}
       <Button
-        onClick={handleBackClick}
-        startIcon={<ArrowBack />}
+        component={Link}
+        to="/"
+        startIcon={<Map />}
         className={styles.backButton}
         variant="contained"
       >
-        Back
+        Back to Map
       </Button>
 
       <div className={styles.regionTitle}>
