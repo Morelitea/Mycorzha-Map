@@ -97,7 +97,7 @@ export const regionDefinitions: RegionDefinition[] = [
     xRange: [200, 900] as [number, number],
     yRange: [0, 200] as [number, number],
     region: {
-      name: "Saffron Spore Islands",
+      name: "Saffron Spore Islands and the Morel Marsh",
       id: "saffron-spore-islands",
       bannerImage: "/images/banners/saffron-spore-islands-banner.png",
     },
