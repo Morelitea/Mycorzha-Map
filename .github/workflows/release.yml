@@ -1,4 +1,4 @@
-name: "publish"
+name: "Publish x86_64 Windows and Linux build"
 
 on:
   push:
@@ -26,10 +26,6 @@ jobs:
             args: ""
             target: ""
 
-          - platform: "ubuntu-22.04" # ARM64 build
-            args: "--target aarch64-unknown-linux-gnu"
-            target: "aarch64-unknown-linux-gnu"
-
           - platform: "windows-latest"
             args: ""
 
@@ -49,33 +45,14 @@ jobs:
           targets: ${{ matrix.target }}
 
       - name: install dependencies (ubuntu only)
-        if: startsWith(matrix.platform, 'ubuntu')
+        if: matrix.platform == 'ubuntu-22.04' # This must match the platform value defined above.
         run: |
           sudo apt-get update
-          sudo apt-get install -y \
-            libwebkit2gtk-4.1-dev \
-            libappindicator3-dev \
-            librsvg2-dev \
-            patchelf \
-            pkg-config \
-            gcc-aarch64-linux-gnu \
-            g++-aarch64-linux-gnu \
-            qemu-user \
-            meson \
-            ninja-build \
-            libglib2.0-dev \
-            libgdk-pixbuf2.0-dev
-
-      - name: Set up cross-compilation environment (ARM64 only)
-        if: matrix.target == 'aarch64-unknown-linux-gnu'
-        run: |
-          SYSROOT=/usr/aarch64-linux-gnu
-          echo "PKG_CONFIG_PATH=$SYSROOT/lib/pkgconfig:$SYSROOT/usr/lib/pkgconfig:$SYSROOT/usr/share/pkgconfig" >> $GITHUB_ENV
-          echo "PKG_CONFIG_SYSROOT_DIR=$SYSROOT" >> $GITHUB_ENV
-          echo "CC=aarch64-linux-gnu-gcc" >> $GITHUB_ENV
-          echo "CXX=aarch64-linux-gnu-g++" >> $GITHUB_ENV
-          echo "CARGO_TARGET_AARCH64_UNKNOWN_LINUX_GNU_LINKER=aarch64-linux-gnu-gcc" >> $GITHUB_ENV
-          echo "RUSTFLAGS=-C linker=aarch64-linux-gnu-gcc --sysroot=$SYSROOT" >> $GITHUB_ENV
+          sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf
+          # Additional dependencies for cross-compilation
+          sudo apt-get install -y gcc-aarch64-linux-gnu
+        # webkitgtk 4.0 is for Tauri v1 - webkitgtk 4.1 is for Tauri v2.
+        # You can remove the one that doesn't apply to your app to speed up the workflow a bit.
 
       - name: install frontend dependencies
         run: npm install # change this to npm, pnpm or bun depending on which one you use.
