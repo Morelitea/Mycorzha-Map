@@ -14,8 +14,8 @@ import starlitStoneRuins from "./regionData/starlitStoneRuins";
 
 export const regionDefinitions: RegionDefinition[] = [
   {
-    xRange: [600, 600] as [number, number],
-    yRange: [1100, 1200] as [number, number],
+    xRange: [800, 1000] as [number, number],
+    yRange: [2600, 2700] as [number, number],
     region: {
       name: "Cove City",
       id: "cove-city",
@@ -24,8 +24,8 @@ export const regionDefinitions: RegionDefinition[] = [
     regionData: coveCity,
   },
   {
-    xRange: [200, 700] as [number, number],
-    yRange: [1500, 1600] as [number, number],
+    xRange: [0, 700] as [number, number],
+    yRange: [3200, 3400] as [number, number],
     region: {
       name: "Crescent Mountains and the White Plateau",
       id: "crescent-mountains",
@@ -34,8 +34,8 @@ export const regionDefinitions: RegionDefinition[] = [
     regionData: crescentMountains,
   },
   {
-    xRange: [300, 900] as [number, number],
-    yRange: [700, 1000] as [number, number],
+    xRange: [1000, 1200] as [number, number],
+    yRange: [2000, 2200] as [number, number],
     region: {
       name: "Dreamer Tree and Greater Mycorzha",
       id: "dreamer-tree",
@@ -44,8 +44,8 @@ export const regionDefinitions: RegionDefinition[] = [
     regionData: dreamerTree,
   },
   {
-    xRange: [1000, 1300] as [number, number],
-    yRange: [900, 1500] as [number, number],
+    xRange: [1500, 2100] as [number, number],
+    yRange: [2600, 3200] as [number, number],
     region: {
       name: "Fern Leaf Forest",
       id: "fern-leaf-forest",
@@ -54,8 +54,8 @@ export const regionDefinitions: RegionDefinition[] = [
     regionData: fernLeafForest,
   },
   {
-    xRange: [1000, 1200] as [number, number],
-    yRange: [1600, 1800] as [number, number],
+    xRange: [1400, 2100] as [number, number],
+    yRange: [3300, 3900] as [number, number],
     region: {
       name: "Frostfire Forest",
       id: "frostfire-forest",
@@ -64,8 +64,8 @@ export const regionDefinitions: RegionDefinition[] = [
     regionData: frostfireForest,
   },
   {
-    xRange: [400, 900] as [number, number],
-    yRange: [400, 600] as [number, number],
+    xRange: [400, 1300] as [number, number],
+    yRange: [1300, 1800] as [number, number],
     region: {
       name: "Hazelmoss Woods",
       id: "hazelmoss-woods",
@@ -74,8 +74,8 @@ export const regionDefinitions: RegionDefinition[] = [
     regionData: hazelmossWoods,
   },
   {
-    xRange: [600, 800] as [number, number],
-    yRange: [1300, 1500] as [number, number],
+    xRange: [800, 1200] as [number, number],
+    yRange: [2800, 3000] as [number, number],
     region: {
       name: "Luna Valley",
       id: "luna-valley",
@@ -84,8 +84,8 @@ export const regionDefinitions: RegionDefinition[] = [
     regionData: lunaValley,
   },
   {
-    xRange: [300, 500] as [number, number],
-    yRange: [1700, 1800] as [number, number],
+    xRange: [300, 600] as [number, number],
+    yRange: [3500, 3800] as [number, number],
     region: {
       name: "Mossy Cup Lagoon",
       id: "mossy-cup-lagoon",
@@ -94,8 +94,8 @@ export const regionDefinitions: RegionDefinition[] = [
     regionData: mossyCupLagoon,
   },
   {
-    xRange: [200, 900] as [number, number],
-    yRange: [0, 200] as [number, number],
+    xRange: [100, 1400] as [number, number],
+    yRange: [700, 1200] as [number, number],
     region: {
       name: "Saffron Spore Islands and the Morel Marsh",
       id: "saffron-spore-islands",
@@ -104,8 +104,8 @@ export const regionDefinitions: RegionDefinition[] = [
     regionData: saffronSporeIslands,
   },
   {
-    xRange: [900, 900] as [number, number],
-    yRange: [1200, 1400] as [number, number],
+    xRange: [1300, 1400] as [number, number],
+    yRange: [2700, 3100] as [number, number],
     region: {
       name: "Selene Cliffs",
       id: "selene-cliffs",
@@ -114,8 +114,8 @@ export const regionDefinitions: RegionDefinition[] = [
     regionData: seleneCliffs,
   },
   {
-    xRange: [600, 600] as [number, number],
-    yRange: [1400, 1400] as [number, number],
+    xRange: [800, 900] as [number, number],
+    yRange: [3100, 3100] as [number, number],
     region: {
       name: "Shadow Moss Caves",
       id: "shadow-moss-caves",
@@ -124,8 +124,8 @@ export const regionDefinitions: RegionDefinition[] = [
     regionData: shadowMossCaves,
   },
   {
-    xRange: [800, 900] as [number, number],
-    yRange: [1600, 1700] as [number, number],
+    xRange: [1200, 1300] as [number, number],
+    yRange: [3500, 3600] as [number, number],
     region: {
       name: "Starlit Stone Ruins",
       id: "starlit-stone-ruins",
