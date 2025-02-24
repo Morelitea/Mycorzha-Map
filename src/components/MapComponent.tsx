@@ -22,7 +22,7 @@ const MapComponent: React.FC<MapComponentProps> = ({ onGridClick }) => {
 
   useEffect(() => {
     const img = new Image();
-    img.src = "/map.webp";
+    img.src = "/map169nocomp.webp";
     img.onload = () => {
       setImageDimensions({ width: img.width, height: img.height });
 
@@ -85,7 +85,7 @@ const MapComponent: React.FC<MapComponentProps> = ({ onGridClick }) => {
       maxBounds={mapBounds}
       zoomControl={false}
     >
-      <ImageOverlay url="/map.webp" bounds={imageBounds} opacity={1} />
+      <ImageOverlay url="/map169nocomp.webp" bounds={imageBounds} opacity={1} />
       {createGrid()}
     </MapContainer>
   );
