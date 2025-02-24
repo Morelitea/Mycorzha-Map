@@ -84,6 +84,7 @@ const MapComponent: React.FC<MapComponentProps> = ({ onGridClick }) => {
       bounds={mapBounds}
       maxBounds={mapBounds}
       zoomControl={false}
+      attributionControl={false}
     >
       <ImageOverlay url="/map169nocomp.webp" bounds={imageBounds} opacity={1} />
       {createGrid()}
