@@ -1,11 +1,12 @@
 .headerContainer {
   position: relative;
   width: 100%;
-  min-height: 500px;
+  min-height: 300px;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 
   &:after {
     display: block;
