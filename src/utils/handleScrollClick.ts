@@ -1,3 +1,7 @@
+/**
+ * Handles scrolling to an ID smoothly
+ * @param ev React event from clicking an anchor tag
+ */
 export const handleScrollClick = (
   ev: React.MouseEvent<HTMLAnchorElement>
 ): void => {

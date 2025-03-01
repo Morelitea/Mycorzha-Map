@@ -7,6 +7,7 @@
 .regionContent {
   display: flex;
   justify-content: center;
+  padding: 20px;
 }
 
 .regionNav {
@@ -47,10 +48,9 @@
 }
 
 .regionMainContent {
-  margin-left: 100px;
+  margin-right: 20px;
   flex: 1;
-  padding: 20px;
-  max-width: 1000px;
+  max-width: 700px;
 
   .section {
     margin: 2rem 0;

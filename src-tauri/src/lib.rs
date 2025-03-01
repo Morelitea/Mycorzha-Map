@@ -7,8 +7,8 @@ pub fn run() {
         .setup(|app| {
             // allowed the given directory
             let scope = app.fs_scope();
-            let _ = scope.allow_directory("/$HOME", false);
-            dbg!(scope.is_allowed("/$HOME"));
+            let _ = scope.allow_directory("$HOME", false);
+            dbg!(scope.is_allowed("$HOME"));
 
             Ok(())
         })

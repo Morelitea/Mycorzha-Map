@@ -1,5 +1,9 @@
 import React, { useState } from "react";
-import { writeTextFile, BaseDirectory } from "@tauri-apps/plugin-fs"; // File handling with Tauri
+import { writeTextFile } from "@tauri-apps/plugin-fs"; // File handling with Tauri
+import Box from "@mui/material/Box";
+import Paper from "@mui/material/Paper";
+import Button from "@mui/material/Button";
+import { BASE_DIR, CREATURE_DATA_FILE } from "../data/consts";
 
 const ImportButton: React.FC = () => {
   const [creatureData, setCreatureData] = useState<any>(null);
@@ -24,8 +28,8 @@ const ImportButton: React.FC = () => {
 
             // Optionally, save this data in Tauri's local storage or a file
             try {
-              await writeTextFile("creatureData.json", JSON.stringify(data), {
-                baseDir: BaseDirectory.AppLocalData, // Or try other directories
+              await writeTextFile(CREATURE_DATA_FILE, JSON.stringify(data), {
+                baseDir: BASE_DIR,
               });
               setCreatureData(data);
               setError(null); // Clear any previous errors
@@ -53,16 +57,27 @@ const ImportButton: React.FC = () => {
   };
 
   return (
-    <div>
+    <Box sx={{ p: 2 }}>
       <input type="file" accept=".json" onChange={handleFileChange} />
       {error && <p style={{ color: "red" }}>{error}</p>}
       {creatureData && (
         <div>
-          <h3>Creature Data</h3>
-          <pre>{JSON.stringify(creatureData, null, 2)}</pre>
+          <Button
+            sx={{ mb: 2, mt: 2 }}
+            onClick={() => window.location.reload()}
+            variant="contained"
+          >
+            Refresh to view map
+          </Button>
+          <Paper sx={{ overflow: "auto", p: 2 }}>
+            <h3>Creature Data</h3>
+            <pre style={{ whiteSpace: "pre-wrap" }}>
+              {JSON.stringify(creatureData, null, 2)}
+            </pre>
+          </Paper>
         </div>
       )}
-    </div>
+    </Box>
   );
 };
 

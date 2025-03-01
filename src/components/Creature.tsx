@@ -111,30 +111,26 @@ export const Creature: React.FC<ICreatureProps> = ({ creature }) => {
                 <TableCell>
                   <strong>Favorite Story</strong>
                 </TableCell>
-                {spotifyPlaylist && (
-                  <TableCell>
-                    <strong>Spotify Playlist</strong>
-                  </TableCell>
-                )}
               </TableRow>
             </TableHead>
             <TableBody>
               <TableRow>
                 <TableCell>{biggestFear}</TableCell>
                 <TableCell>{favoriteStory}</TableCell>
-                {spotifyPlaylist && (
-                  <TableCell>
-                    <img
-                      src={spotifyPath}
-                      alt={`${id} spotify playlist code`}
-                      className={styles.spotifyCode}
-                    />
-                  </TableCell>
-                )}
               </TableRow>
             </TableBody>
           </Table>
         </TableContainer>
+        {spotifyPlaylist && (
+          <>
+            <h4>Spotify Playlist</h4>
+            <img
+              src={spotifyPath}
+              alt={`${id} spotify playlist code`}
+              className={styles.spotifyCode}
+            />
+          </>
+        )}
       </div>
     </Paper>
   );
