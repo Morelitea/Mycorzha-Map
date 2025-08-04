@@ -403,7 +403,101 @@
     },
     {
       "regionId": "saffron-spore-islands",
-      "creatures": []
+      "creatures": [
+        {
+          "name": "Lumi",
+          "id": "lumi",
+          "image": "lumi.png",
+          "pronouns": "She/Her",
+          "size": "Tiny",
+          "comfortSnack": "Shoo-Fly Pie",
+          "biggestFear": "Being unprepared for unannounced guests",
+          "favoriteStory": "The Courting of the Lantern Queen",
+          "spotifyPlaylist": "lumi-spotify.svg",
+          "quote": "Ain’t nobody going to be quite like yourself, sure as swamp weed swirls and fireflies glow. So don’t you go tryin’ to be someone else - it don’t work, and like as not you’ll get lost.",
+          "emotionalTies": [
+            {
+              "name": "Big Hop Beau",
+              "relationship": "Blood's as thick as swampwater here in the marshes, an’ family ties bind tighter than a coiled vine. But Big Beau means much and more to me than any, for standin’ by me when the looks my way were thicker than a cloud of gnats. He’ll have my back come rain or flood, and I’ll have his, this side of the Mysts to the other."
+            },
+            {
+              "name": "Auntie Croquese",
+              "relationship": "Auntie Croq's got quite the name 'round these parts—folks say she can sniff out hurts from a mile away, and I heard she once scared the sickness clean outta Ol’ Gus just by lookin’. Now, my sibs have had their share of calamities that’ve brought Auntie Croq to our door more'n once, and I reckon she’s more healer than swamptale, and hankerin' for a warm meal and some comfort more than most. I always make sure there's fresh crabcake bakin’ when she comes to call!"
+            },
+            {
+              "name": "The Morel Marshes",
+              "relationship": "Now, we don't get many travelin' folk down here in the marshes, and thems that do venture our way might find the swamp a mite in their side - too damp, too loud, too much squelchin’ for dry-land sensibilities. But come nightfall, when the fireflies get to dancin' and the cicadas strike up their song, when the moon sits pretty on the lilypads like butter on a biscuit - well, that's when the swamp shows its true face. That's when hearts go still as glass water, and folks can hear the Isles themselves singin' through every blessed thing that grows. Beauty’s here as sure as my mama's cornbread, if you just know how to listen!"
+            },
+            {
+              "name": "Mycorzha",
+              "relationship": "I ain't never been past the Saffron docks myself, though I've swapped a tale or two with them there 'bout what lies north of our waters. Plenty out there, I reckon - more dirt than water, like as not, which sounds mighty strange to these ears. Truth told, I can't see myself wanderin' far from the Marshes, not with all my kin and neighbors hollerin' for supper every night. But I figure thems that got the wanderin' itch got plenty to see out there, sure enough. Me? I'll keep my roots right here where the water knows my name."
+            }
+          ],
+          "bio": "The hum of cicadas, the trickling sound of slow-moving water, the mist-shrouded cyprus groves - the Morel Marshes are a place of slow but ever-changing beauty, where things are never quite what they appear above the surface. The creatures of the swamps are similarly fluid, embracing change in both themselves and their homes and day to day lives. But even in the constantly shifting silt of the bayous, some things stand fast against the rise and fall of the floods, and some folks’ hearts are as sure as the mightiest cyprus roots. Luminescence never meant to go against the grain - she just is who she is, and can’t help but be otherwise, no matter how the tides of opinion may flow.\n\nBorn deep in the swamps of southern Mycorzha, Lil’ Lumi was raised alongside more than twenty other of her siblings, doted upon by parents and extended family who raised the young tads and taught them to fish, swim, and live amongst the many twining waterways of the Marshes. Part of their parent’s final clutch, Lumi was always on the shorter side of things. Between that and their early fascination with fireflies and stories of “fools lights”, folks started calling them “Lil’ Lumi Lights” and the name stuck fast. Lumi didn’t mind none; something in the name just felt right to them, like the glow of a lantern in the depths of the night.\n\nAs they and their siblings grew, the young tads started to settle into their first roles in the community, and learning the ins and outs of how the swampfolk handle their own changeable natures. Most of the critters down in the Marshes like to keep things fluid, and gender is seen to be as fluid as the sandbars in the river. For Lumi however, the talk that they heard didn’t fit quite right - sure, it was fine and all for the rest, but she didn’t neighbor much with being a guy at any point she might think of. She declared loudly that she knew which way she was going to be, and that was that. It turned a few heads and no mistake - it t’weren’t like the marshes to be so set on being a certain way. Lumi had to deal with looks and worse, and gossip has a way of spreading out like ripples on still water. She kept her head high above the flood though, and if for a while she kept herself to herself and watched the fireflies while thinking lonely thoughts, well, there’s wisdom in patience too, and letting folks be there for you. Time came when Lumi’s older sibling Big Hop Beau came from the docklands, and he sat down with her to watch swamp lights and told her not to let the buzz and hum of talk get to her, and that she’d always be his lil’ sister. Lumi bucked up quite a bit after that, and eventually most folks came ‘round on her.\n\nNot that her cooking didn’t help! With her parents getting up there and not quite as hopsome as they once was, Lumi found herself taking on more of the cooking and the cleaning and the looking after all her siblings. She started tinkering with her ma and pa’s best recipes, nosing out what Tinyfoot wouldn’t holler about eating and the Twins could help her whip up in the kitchens. With so many mouths to feed, Lumi always found herself making a bit extra, and the noise was too much for the indoors, so meals would inevitably spill out onto the stoop. Swampfolk being the neighborly sort, neighbors and cousins would follow their nose to ascertain what the hullabaloo was about, and Lumi never was one to turn away any who came without first handing them a plate. Well, that young frog’s cooking was nothing short of a sensation, and soon enough folks from all over the swamps were coming on by to jaw and have a bite. Sweet as her favorite pie, Lumi was pleased as the bees to help feed folks, and more than happy to take leftovers around to any who couldn’t make it down to her place.\n\nThese days, Lumi’s house drowns out the cicadas themselves, full of bustle and folk moving in and out; some stopping by for a word, others drawn in by the scent of hot food and warmer company. The porch groans under the weight of locals and tagalongs passing bowls and swapping talk while little ones race underfoot with laughter and sticky fingers. Lumi smiles through it all, handing out plates, minding the simmering pots, and hollering reminders about who’s on dish duty. She doesn’t lay claim to much, doesn’t put on airs, and doesn’t fuss when folks get to asking about who she is. She hands them a soft grin over a fresh plate and says, “I’m just Lumi,” like that’s all anyone really needs to know. And truth be told, most folks reckon that’s plenty."
+        },
+        {
+          "name": "Croquese",
+          "id": "croquese",
+          "image": "croquese.png",
+          "pronouns": "",
+          "size": "",
+          "comfortSnack": "",
+          "biggestFear": "",
+          "favoriteStory": "",
+          "spotifyPlaylist": "croquese-spotify.svg",
+          "quote": "",
+          "emotionalTies": [
+            {
+              "name": "Tie 1",
+              "relationship": ""
+            },
+            {
+              "name": "Tie 2",
+              "relationship": ""
+            },
+            {
+              "name": "Tie 3",
+              "relationship": ""
+            },
+            {
+              "name": "Mycorzha",
+              "relationship": ""
+            }
+          ],
+          "bio": ""
+        },
+        {
+          "name": "Leroux",
+          "id": "leroux",
+          "image": "leroux.png",
+          "pronouns": "",
+          "size": "",
+          "comfortSnack": "",
+          "biggestFear": "",
+          "favoriteStory": "",
+          "spotifyPlaylist": "leroux-spotify.svg",
+          "quote": "",
+          "emotionalTies": [
+            {
+              "name": "Tie 1",
+              "relationship": ""
+            },
+            {
+              "name": "Tie 2",
+              "relationship": ""
+            },
+            {
+              "name": "Tie 3",
+              "relationship": ""
+            },
+            {
+              "name": "Mycorzha",
+              "relationship": ""
+            }
+          ],
+          "bio": ""
+        }
+      ]
     },
     {
       "regionId": "selene-cliffs",
@@ -446,7 +540,7 @@
       "creatures": []
     },
     {
-      "regionId": "starlit-stone-ruins",
+      "regionId": "sun-dried-sands",
       "creatures": []
     }
   ]
