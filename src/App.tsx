@@ -5,7 +5,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import MapComponent from "./components/MapComponent";
 import RegionPage from "./components/RegionPage";
 import useIdleNavigation from "./utils/useIdleNavigation";
-import useThreeFingerTap from "./utils/useThreeFingerTap";
+import useFullscreenGesture from "./utils/useFullscreenGesture";
 import { regionDefinitions } from "./data/regionDefinitions";
 import { Region } from "./types/Regions";
 import { CreatureData } from "./types/Creatures";
@@ -34,7 +34,7 @@ export const getRegionFromCoordinates = (
 
 const App: React.FC = () => {
   useIdleNavigation();
-  useThreeFingerTap();
+  useFullscreenGesture();
   const navigate = useNavigate();
   const [creatureFileExists, setCreatureFileExists] = useState<boolean>(false); // State to track if the file exists
   const [creatureData, setCreatureData] = useState<CreatureData>({

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export const useThreeFingerTap = () => {
+export const useFullscreenGesture = () => {
   const [isFullscreen, setIsFullscreen] = useState(false);
 
   useEffect(() => {
@@ -61,4 +61,4 @@ export const useThreeFingerTap = () => {
   return isFullscreen;
 };
 
-export default useThreeFingerTap;
+export default useFullscreenGesture;
