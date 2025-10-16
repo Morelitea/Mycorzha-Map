@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { MapContainer, ImageOverlay, Rectangle } from "react-leaflet";
+import { MapContainer, ImageOverlay, Rectangle, Tooltip } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
+
+const MAP_IMAGE = "/MycorzhaWorldMap4k.webp";
+const SHOW_GRID = false;
 
 interface ImageDimensions {
   width: number;
@@ -22,7 +25,7 @@ const MapComponent: React.FC<MapComponentProps> = ({ onGridClick }) => {
 
   useEffect(() => {
     const img = new Image();
-    img.src = "/map169nocomp.webp";
+    img.src = MAP_IMAGE;
     img.onload = () => {
       setImageDimensions({ width: img.width, height: img.height });
 
@@ -55,18 +58,34 @@ const MapComponent: React.FC<MapComponentProps> = ({ onGridClick }) => {
           [y, x],
           [y + gridSize, x + gridSize],
         ];
+        const gridXIndex = x / gridSize;
+        const gridYIndex = y / gridSize;
         rectangles.push(
           <Rectangle
             key={`${x}-${y}`}
             bounds={bounds}
-            pathOptions={{
-              weight: 0,
-              fillOpacity: 0,
-            }}
+            pathOptions={
+              SHOW_GRID
+                ? {
+                    weight: 0.5,
+                    color: "rgba(255, 255, 255, 0.45)",
+                    fillOpacity: 0,
+                  }
+                : {
+                    weight: 0,
+                    fillOpacity: 0,
+                  }
+            }
             eventHandlers={{
               click: () => onGridClick({ x, y }),
             }}
-          />
+          >
+            {SHOW_GRID && (
+              <Tooltip permanent direction="center" className="grid-label">
+                {`${gridXIndex}, ${gridYIndex}`}
+              </Tooltip>
+            )}
+          </Rectangle>
         );
       }
     }
@@ -86,7 +105,7 @@ const MapComponent: React.FC<MapComponentProps> = ({ onGridClick }) => {
       zoomControl={false}
       attributionControl={false}
     >
-      <ImageOverlay url="/map169nocomp.webp" bounds={imageBounds} opacity={1} />
+      <ImageOverlay url={MAP_IMAGE} bounds={imageBounds} opacity={1} />
       {createGrid()}
     </MapContainer>
   );
