@@ -120,6 +120,21 @@ h2 {
   font-size: 1.5em;
 }
 
+.leaflet-tooltip.grid-label {
+  background: rgba(0, 0, 0, 0.45);
+  border: none;
+  border-radius: 2px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.7rem;
+  line-height: 1;
+  padding: 2px 4px;
+  box-shadow: none;
+}
+
+.leaflet-tooltip.grid-label::before {
+  display: none;
+}
+
 h3 {
   color: #555;
   font-size: 1.2em;

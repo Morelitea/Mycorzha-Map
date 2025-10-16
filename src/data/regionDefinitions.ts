@@ -11,11 +11,12 @@ import saffronSporeIslands from "./regionData/saffronSporeIslands";
 import seleneCliffs from "./regionData/seleneCliffs";
 import shadowMossCaves from "./regionData/shadowMossCaves";
 import starlitStoneRuins from "./regionData/starlitStoneRuins";
+import sunDriedSands from "./regionData/sunDriedSands";
 
 export const regionDefinitions: RegionDefinition[] = [
   {
-    xRange: [800, 1000] as [number, number],
-    yRange: [2600, 2700] as [number, number],
+    xRange: [700, 800] as [number, number],
+    yRange: [2500, 2600] as [number, number],
     region: {
       name: "Cove City",
       id: "cove-city",
@@ -24,8 +25,48 @@ export const regionDefinitions: RegionDefinition[] = [
     regionData: coveCity,
   },
   {
-    xRange: [0, 700] as [number, number],
-    yRange: [3200, 3400] as [number, number],
+    xRange: [1100, 1200] as [number, number],
+    yRange: [2800, 2900] as [number, number],
+    region: {
+      name: "Selene Cliffs",
+      id: "selene-cliffs",
+      bannerImage: "/images/banners/selene-cliffs-banner.png",
+    },
+    regionData: seleneCliffs,
+  },
+  {
+    xRange: [800, 800] as [number, number],
+    yRange: [2900, 2900] as [number, number],
+    region: {
+      name: "Shadow Moss Caves",
+      id: "shadow-moss-caves",
+      bannerImage: "/images/banners/shadow-moss-caves-banner.png",
+    },
+    regionData: shadowMossCaves,
+  },
+  {
+    xRange: [700, 1200] as [number, number],
+    yRange: [2500, 3000] as [number, number],
+    region: {
+      name: "Luna Valley",
+      id: "luna-valley",
+      bannerImage: "/images/banners/luna-valley-banner.png",
+    },
+    regionData: lunaValley,
+  },
+  {
+    xRange: [0, 600] as [number, number],
+    yRange: [2500, 3200] as [number, number],
+    region: {
+      name: "Crescent Mountains and the White Plateau",
+      id: "crescent-mountains",
+      bannerImage: "/images/banners/crescent-mountains-banner.png",
+    },
+    regionData: crescentMountains,
+  },
+  {
+    xRange: [700, 1200] as [number, number],
+    yRange: [3000, 3200] as [number, number],
     region: {
       name: "Crescent Mountains and the White Plateau",
       id: "crescent-mountains",
@@ -44,8 +85,8 @@ export const regionDefinitions: RegionDefinition[] = [
     regionData: dreamerTree,
   },
   {
-    xRange: [1500, 2100] as [number, number],
-    yRange: [2600, 3200] as [number, number],
+    xRange: [1300, 2100] as [number, number],
+    yRange: [2500, 3000] as [number, number],
     region: {
       name: "Fern Leaf Forest",
       id: "fern-leaf-forest",
@@ -54,8 +95,18 @@ export const regionDefinitions: RegionDefinition[] = [
     regionData: fernLeafForest,
   },
   {
-    xRange: [1400, 2100] as [number, number],
-    yRange: [3300, 3900] as [number, number],
+    xRange: [1000, 1200] as [number, number],
+    yRange: [3300, 3300] as [number, number],
+    region: {
+      name: "Starlit Stone Ruins",
+      id: "starlit-stone-ruins",
+      bannerImage: "/images/banners/starlit-stone-ruins-banner.png",
+    },
+    regionData: starlitStoneRuins,
+  },
+  {
+    xRange: [1300, 2100] as [number, number],
+    yRange: [3100, 3800] as [number, number],
     region: {
       name: "Frostfire Forest",
       id: "frostfire-forest",
@@ -64,8 +115,8 @@ export const regionDefinitions: RegionDefinition[] = [
     regionData: frostfireForest,
   },
   {
-    xRange: [400, 1300] as [number, number],
-    yRange: [1300, 1800] as [number, number],
+    xRange: [400, 1000] as [number, number],
+    yRange: [1500, 1600] as [number, number],
     region: {
       name: "Hazelmoss Woods",
       id: "hazelmoss-woods",
@@ -74,18 +125,18 @@ export const regionDefinitions: RegionDefinition[] = [
     regionData: hazelmossWoods,
   },
   {
-    xRange: [800, 1200] as [number, number],
-    yRange: [2800, 3000] as [number, number],
+    xRange: [400, 900] as [number, number],
+    yRange: [1100, 1500] as [number, number],
     region: {
-      name: "Luna Valley",
-      id: "luna-valley",
-      bannerImage: "/images/banners/luna-valley-banner.png",
+      name: "Hazelmoss Woods",
+      id: "hazelmoss-woods",
+      bannerImage: "/images/banners/hazelmoss-woods-banner.png",
     },
-    regionData: lunaValley,
+    regionData: hazelmossWoods,
   },
   {
-    xRange: [300, 600] as [number, number],
-    yRange: [3500, 3800] as [number, number],
+    xRange: [300, 700] as [number, number],
+    yRange: [3300, 3800] as [number, number],
     region: {
       name: "Mossy Cup Lagoon",
       id: "mossy-cup-lagoon",
@@ -94,8 +145,8 @@ export const regionDefinitions: RegionDefinition[] = [
     regionData: mossyCupLagoon,
   },
   {
-    xRange: [100, 1400] as [number, number],
-    yRange: [700, 1200] as [number, number],
+    xRange: [1100, 1400] as [number, number],
+    yRange: [1300, 1500] as [number, number],
     region: {
       name: "Saffron Spore Islands and the Morel Marsh",
       id: "saffron-spore-islands",
@@ -104,33 +155,53 @@ export const regionDefinitions: RegionDefinition[] = [
     regionData: saffronSporeIslands,
   },
   {
-    xRange: [1300, 1400] as [number, number],
-    yRange: [2700, 3100] as [number, number],
+    xRange: [1000, 1400] as [number, number],
+    yRange: [1200, 1300] as [number, number],
     region: {
-      name: "Selene Cliffs",
-      id: "selene-cliffs",
-      bannerImage: "/images/banners/selene-cliffs-banner.png",
+      name: "Saffron Spore Islands and the Morel Marsh",
+      id: "saffron-spore-islands",
+      bannerImage: "/images/banners/saffron-spore-islands-banner.png",
     },
-    regionData: seleneCliffs,
+    regionData: saffronSporeIslands,
   },
   {
-    xRange: [800, 900] as [number, number],
-    yRange: [3100, 3100] as [number, number],
+    xRange: [800, 1400] as [number, number],
+    yRange: [1000, 1200] as [number, number],
     region: {
-      name: "Shadow Moss Caves",
-      id: "shadow-moss-caves",
-      bannerImage: "/images/banners/shadow-moss-caves-banner.png",
+      name: "Saffron Spore Islands and the Morel Marsh",
+      id: "saffron-spore-islands",
+      bannerImage: "/images/banners/saffron-spore-islands-banner.png",
     },
-    regionData: shadowMossCaves,
+    regionData: saffronSporeIslands,
   },
   {
-    xRange: [1200, 1300] as [number, number],
-    yRange: [3500, 3600] as [number, number],
+    xRange: [0, 1400] as [number, number],
+    yRange: [600, 1000] as [number, number],
     region: {
-      name: "Starlit Stone Ruins",
-      id: "starlit-stone-ruins",
-      bannerImage: "/images/banners/starlit-stone-ruins-banner.png",
+      name: "Saffron Spore Islands and the Morel Marsh",
+      id: "saffron-spore-islands",
+      bannerImage: "/images/banners/saffron-spore-islands-banner.png",
     },
-    regionData: starlitStoneRuins,
+    regionData: saffronSporeIslands,
+  },
+  {
+    xRange: [1400, 2100] as [number, number],
+    yRange: [1400, 1600] as [number, number],
+    region: {
+      name: "Sun Dried Sands",
+      id: "sun-dried-sands",
+      bannerImage: "/images/banners/sun-dried-sands-banner.png",
+    },
+    regionData: sunDriedSands,
+  },
+  {
+    xRange: [1500, 2100] as [number, number],
+    yRange: [600, 1300] as [number, number],
+    region: {
+      name: "Sun Dried Sands",
+      id: "sun-dried-sands",
+      bannerImage: "/images/banners/sun-dried-sands-banner.png",
+    },
+    regionData: sunDriedSands,
   },
 ];
