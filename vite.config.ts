@@ -1,8 +1,11 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-// @ts-expect-error process is a nodejs global
 const host = process.env.TAURI_DEV_HOST;
+const shouldUsePolling =
+  process.env.VITE_USE_POLLING === "true" ||
+  typeof process.env.WSL_DISTRO_NAME === "string" ||
+  typeof process.env.WSLENV === "string";
 
 // https://vitejs.dev/config/
 export default defineConfig(async () => ({
@@ -26,6 +29,8 @@ export default defineConfig(async () => ({
     watch: {
       // 3. tell vite to ignore watching `src-tauri`
       ignored: ["**/src-tauri/**"],
+      usePolling: shouldUsePolling,
+      interval: shouldUsePolling ? 500 : undefined,
     },
   },
 }));
