@@ -56,6 +56,60 @@ jobs:
         if: matrix.target == 'aarch64-unknown-linux-gnu'
         run: |
           sudo dpkg --add-architecture arm64
+          sudo python3 - <<'PY'
+          import pathlib, re
+
+          paths = [pathlib.Path("/etc/apt/sources.list")]
+          sources_dir = pathlib.Path("/etc/apt/sources.list.d")
+          if sources_dir.exists():
+              for candidate in sorted(sources_dir.glob("*.list")):
+                  if candidate.name == "arm64.list":
+                      continue
+                  paths.append(candidate)
+
+          pattern = re.compile(r'^(\s*deb\s+\[)([^\]]+)(\]\s+.*)$')
+
+          for path in paths:
+              text = path.read_text()
+              changed = False
+              new_lines = []
+              for raw_line in text.splitlines():
+                  stripped = raw_line.strip()
+                  if not stripped or stripped.startswith("#"):
+                      new_lines.append(raw_line)
+                      continue
+
+                  prefix_len = len(raw_line) - len(raw_line.lstrip())
+                  prefix = raw_line[:prefix_len]
+
+                  if stripped.startswith("deb-src "):
+                      new_lines.append(f"{prefix}# {stripped}")
+                      changed = True
+                      continue
+
+                  match = pattern.match(raw_line)
+                  if match:
+                      options = match.group(2)
+                      if "arch=" not in options:
+                          sep = "," if options.strip() else ""
+                          new_line = f"{match.group(1)}{options}{sep}arch=amd64{match.group(3)}"
+                          new_lines.append(new_line)
+                          changed = True
+                      else:
+                          new_lines.append(raw_line)
+                      continue
+
+                  if stripped.startswith("deb "):
+                      rest = stripped[4:].strip()
+                      new_lines.append(f"{prefix}deb [arch=amd64] {rest}")
+                      changed = True
+                      continue
+
+                  new_lines.append(raw_line)
+
+              if changed:
+                  path.write_text("\n".join(new_lines) + "\n")
+          PY
           sudo tee /etc/apt/sources.list.d/arm64.list > /dev/null <<'EOF'
           deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports jammy main restricted universe multiverse
           deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports jammy-updates main restricted universe multiverse
