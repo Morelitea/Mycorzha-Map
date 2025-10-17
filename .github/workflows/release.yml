@@ -26,19 +26,16 @@ jobs:
             platform: "ubuntu-22.04" # x86_64 build
             args: ""
             target: ""
-            bundle_appimage: "true"
 
           - label: "linux-arm64"
             platform: "ubuntu-22.04" # Raspberry Pi / ARM64 build (cross-compiled)
-            args: "--target aarch64-unknown-linux-gnu"
+            args: "--target aarch64-unknown-linux-gnu --bundles deb rpm"
             target: "aarch64-unknown-linux-gnu"
-            bundle_appimage: "false"
 
           - label: "windows-x64"
             platform: "windows-latest"
             args: ""
             target: ""
-            bundle_appimage: "true"
 
     runs-on: ${{ matrix.platform }}
     steps:
@@ -158,7 +155,6 @@ jobs:
       - uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          TAURI_BUNDLE_APPIMAGE: ${{ matrix.bundle_appimage }}
         with:
           tagName: map-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version.
           releaseName: "Mycorzha Map v__VERSION__"
