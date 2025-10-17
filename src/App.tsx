@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import { exists, readTextFile } from "@tauri-apps/plugin-fs";
 import { ThemeProvider } from "@mui/material/styles";
@@ -40,28 +40,42 @@ const App: React.FC = () => {
   const [creatureData, setCreatureData] = useState<CreatureData>({
     regions: [],
   }); // State to store file data
+  const [showImportPanel, setShowImportPanel] = useState<boolean>(false);
 
-  const initialize = async () => {
+  const initialize = useCallback(async () => {
     if (DEV) {
       setCreatureFileExists(true);
       setCreatureData(sampleData);
-    } else {
-      const doesExist = await exists(CREATURE_DATA_FILE, { baseDir: BASE_DIR });
-      if (doesExist) {
-        setCreatureFileExists(doesExist);
-        const data = await readTextFile(CREATURE_DATA_FILE, {
-          baseDir: BASE_DIR,
-        });
-        setCreatureData(JSON.parse(data));
-      }
+      return;
     }
-  };
+
+    const doesExist = await exists(CREATURE_DATA_FILE, { baseDir: BASE_DIR });
+    if (doesExist) {
+      setCreatureFileExists(true);
+      const data = await readTextFile(CREATURE_DATA_FILE, {
+        baseDir: BASE_DIR,
+      });
+      setCreatureData(JSON.parse(data));
+    }
+  }, []);
 
   useEffect(() => {
     if (!creatureFileExists) {
       initialize();
     }
   }, [creatureFileExists, initialize]);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.altKey && event.key.toLowerCase() === "i") {
+        event.preventDefault();
+        setShowImportPanel(true);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   const handleGridClick = (gridCoordinates: { x: number; y: number }) => {
     const region = getRegionFromCoordinates(
@@ -78,12 +92,18 @@ const App: React.FC = () => {
     }
   };
 
+  const shouldShowImporter = !creatureFileExists || showImportPanel;
+
   return (
     <ThemeProvider theme={theme}>
       <div className="appContainer">
-        {!creatureFileExists ? (
-          // Display import button if file doesn't exist
-          <ImportButton />
+        {shouldShowImporter ? (
+          <ImportButton
+            onClose={
+              creatureFileExists ? () => setShowImportPanel(false) : undefined
+            }
+            canClose={creatureFileExists}
+          />
         ) : (
           // If the file exists, render the map
           <Routes>
