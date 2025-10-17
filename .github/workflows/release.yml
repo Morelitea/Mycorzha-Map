@@ -28,9 +28,9 @@ jobs:
             target: ""
 
           - label: "linux-arm64"
-            platform: "ubuntu-22.04" # Raspberry Pi / ARM64 build (cross-compiled)
-            args: "--target aarch64-unknown-linux-gnu"
-            target: "aarch64-unknown-linux-gnu"
+            platform: "ubuntu-22.04-arm64" # Raspberry Pi / ARM64 build (native runner)
+            args: ""
+            target: ""
 
           - label: "windows-x64"
             platform: "windows-latest"
@@ -58,10 +58,6 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf
         # webkitgtk 4.0 is for Tauri v1 - webkitgtk 4.1 is for Tauri v2.
-
-      - name: install arm cross-compilation toolchain
-        if: matrix.target == 'aarch64-unknown-linux-gnu'
-        run: sudo apt-get install -y gcc-aarch64-linux-gnu
 
       - name: install frontend dependencies
         run: npm install # change this to npm, pnpm or bun depending on which one you use.
