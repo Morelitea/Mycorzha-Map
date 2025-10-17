@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import classNames from "classnames";
 import ReactMarkdown from "react-markdown";
 import Paper from "@mui/material/Paper";
@@ -8,6 +8,8 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
+import { convertFileSrc } from "@tauri-apps/api/core";
+import { appDataDir, join } from "@tauri-apps/api/path";
 import { TCreature } from "../types/Creatures";
 import styles from "./Creature.module.scss";
 
@@ -16,6 +18,14 @@ interface ICreatureProps {
 }
 export const Creature: React.FC<ICreatureProps> = ({ creature }) => {
   const [showMore, setShowMore] = useState<boolean>(false);
+  const [imageSrc, setImageSrc] = useState<string>(
+    `/images/creatures/${creature.image}`
+  );
+  const [spotifySrc, setSpotifySrc] = useState<string | null>(
+    creature.spotifyPlaylist
+      ? `/images/spotify/${creature.spotifyPlaylist}`
+      : null
+  );
 
   const {
     id,
@@ -31,8 +41,53 @@ export const Creature: React.FC<ICreatureProps> = ({ creature }) => {
     favoriteStory,
     spotifyPlaylist,
   } = creature;
-  const imagePath = `/images/creatures/${image}`;
-  const spotifyPath = `/images/spotify/${spotifyPlaylist}`;
+  useEffect(() => {
+    const isTauri =
+      typeof window !== "undefined" && Boolean((window as any).__TAURI__);
+
+    if (!isTauri) {
+      setImageSrc(`/images/creatures/${image}`);
+      setSpotifySrc(
+        spotifyPlaylist ? `/images/spotify/${spotifyPlaylist}` : null
+      );
+      return;
+    }
+
+    let isMounted = true;
+
+    const resolveAssets = async () => {
+      try {
+        const baseDir = await appDataDir();
+        const creaturePath = await join(baseDir, "images", "creatures", image);
+        const resolvedCreature = convertFileSrc(creaturePath);
+
+        const resolvedSpotify = spotifyPlaylist
+          ? convertFileSrc(
+              await join(baseDir, "images", "spotify", spotifyPlaylist)
+            )
+          : null;
+
+        if (isMounted) {
+          setImageSrc(resolvedCreature);
+          setSpotifySrc(resolvedSpotify);
+        }
+      } catch (err) {
+        console.error("Failed to resolve local asset path:", err);
+        if (isMounted) {
+          setImageSrc(`/images/creatures/${image}`);
+          setSpotifySrc(
+            spotifyPlaylist ? `/images/spotify/${spotifyPlaylist}` : null
+          );
+        }
+      }
+    };
+
+    resolveAssets();
+
+    return () => {
+      isMounted = false;
+    };
+  }, [image, spotifyPlaylist]);
 
   return (
     <Paper
@@ -45,7 +100,7 @@ export const Creature: React.FC<ICreatureProps> = ({ creature }) => {
         onClick={() => setShowMore(!showMore)}
       >
         <h3 className={styles.creatureName}>{name}</h3>
-        <img src={imagePath} alt={name} className={styles.creatureImage} />
+        <img src={imageSrc} alt={name} className={styles.creatureImage} />
         {showMore ? (
           <span>Tap to hide info.</span>
         ) : (
@@ -121,11 +176,11 @@ export const Creature: React.FC<ICreatureProps> = ({ creature }) => {
             </TableBody>
           </Table>
         </TableContainer>
-        {spotifyPlaylist && (
+        {spotifyPlaylist && spotifySrc && (
           <>
             <h4>Spotify Playlist</h4>
             <img
-              src={spotifyPath}
+              src={spotifySrc}
               alt={`${id} spotify playlist code`}
               className={styles.spotifyCode}
             />

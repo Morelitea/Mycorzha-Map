@@ -1,71 +1,114 @@
 import React, { useState } from "react";
-import { writeTextFile } from "@tauri-apps/plugin-fs"; // File handling with Tauri
+import { readTextFile } from "@tauri-apps/plugin-fs";
+import { invoke } from "@tauri-apps/api/core";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
 import { BASE_DIR, CREATURE_DATA_FILE } from "../data/consts";
+import { CreatureData } from "../types/Creatures";
 
-const ImportButton: React.FC = () => {
-  const [creatureData, setCreatureData] = useState<any>(null);
+type ImportSummary = {
+  creatureCount: number;
+  imageCount: number;
+};
+
+interface ImportButtonProps {
+  onClose?: () => void;
+  canClose?: boolean;
+}
+
+const ImportButton: React.FC<ImportButtonProps> = ({ onClose, canClose }) => {
+  const [creatureData, setCreatureData] = useState<CreatureData | null>(null);
+  const [summary, setSummary] = useState<ImportSummary | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [isImporting, setIsImporting] = useState<boolean>(false);
 
   const handleFileChange = async (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
-    const file = event.target.files?.[0];
+    const fileInput = event.target;
+    const file = fileInput.files?.[0];
 
-    if (file) {
-      try {
-        // Use FileReader to read the file content
-        const reader = new FileReader();
+    if (!file) {
+      return;
+    }
 
-        reader.onload = async () => {
-          const fileContent = reader.result as string; // The content of the file
+    if (!file.name.toLowerCase().endsWith(".zip")) {
+      setError(
+        "Please select a .zip archive containing creatureData.json and a creatures folder."
+      );
+      fileInput.value = "";
+      return;
+    }
 
-          try {
-            // Parse the file content as JSON
-            const data = JSON.parse(fileContent);
+    setIsImporting(true);
+    setError(null);
+    setSummary(null);
 
-            // Optionally, save this data in Tauri's local storage or a file
-            try {
-              await writeTextFile(CREATURE_DATA_FILE, JSON.stringify(data), {
-                baseDir: BASE_DIR,
-              });
-              setCreatureData(data);
-              setError(null); // Clear any previous errors
-              console.log("Data loaded successfully:", data);
-            } catch (writeError) {
-              setError(`Failed to write the file. Error: ${writeError}`);
-              console.error("Write error:", writeError);
-            }
-          } catch (err) {
-            setError("Failed to parse JSON. Please check the file format.");
-            console.error("Error parsing file:", err);
-          }
-        };
+    try {
+      const buffer = await file.arrayBuffer();
+      const archive = Array.from(new Uint8Array(buffer));
+      const result = await invoke<ImportSummary>("import_creature_package", {
+        archive,
+      });
 
-        reader.onerror = () => {
-          setError("Error reading the file. Please try again.");
-        };
+      const fileContent = await readTextFile(CREATURE_DATA_FILE, {
+        baseDir: BASE_DIR,
+      });
+      const data = JSON.parse(fileContent) as CreatureData;
 
-        reader.readAsText(file); // Read the file content as text
-      } catch (err) {
-        setError("Failed to read file. Please try again.");
-        console.error("Error reading file:", err);
-      }
+      setCreatureData(data);
+      setSummary(result);
+    } catch (err) {
+      console.error("Failed to import archive:", err);
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Unable to import archive. Please try again."
+      );
+      setCreatureData(null);
+      setSummary(null);
+    } finally {
+      setIsImporting(false);
+      fileInput.value = "";
     }
   };
 
   return (
     <Box sx={{ p: 2 }}>
-      <input type="file" accept=".json" onChange={handleFileChange} />
+      <input type="file" accept=".zip" onChange={handleFileChange} />
+      <p>
+        Select a zip file that includes <code>creatureData.json</code> and a
+        <code>creatures/</code> folder with the updated images.
+      </p>
+      {isImporting && <p>Importing archive…</p>}
       {error && <p style={{ color: "red" }}>{error}</p>}
+      {summary && (
+        <Paper sx={{ overflow: "auto", p: 2, mb: 2 }}>
+          <h3>Import Summary</h3>
+          <p>
+            Updated creature data with {summary.creatureCount} creatures and{" "}
+            {summary.imageCount} image files.
+          </p>
+        </Paper>
+      )}
       {creatureData && (
         <div>
+          {canClose && onClose && (
+            <Button
+              sx={{ mb: 1 }}
+              onClick={onClose}
+              disabled={isImporting}
+              variant="outlined"
+            >
+              Back to map
+            </Button>
+          )}
           <Button
             sx={{ mb: 2, mt: 2 }}
             onClick={() => window.location.reload()}
             variant="contained"
+            disabled={isImporting}
           >
             Refresh to view map
           </Button>
