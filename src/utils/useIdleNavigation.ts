@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
  */
 export const useIdleNavigation = (idleTimeMs = 180000) => {
   const navigate = useNavigate();
-  let idleTimerRef: NodeJS.Timeout | undefined = undefined;
+  let idleTimerRef: ReturnType<typeof setTimeout> | undefined = undefined;
 
   const resetIdleTimer = () => {
     clearTimeout(idleTimerRef);
