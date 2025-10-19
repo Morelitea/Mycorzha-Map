@@ -1,10 +1,8 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, lazy, Suspense } from "react";
 import { AnimatePresence } from "framer-motion";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import { exists, readTextFile } from "@tauri-apps/plugin-fs";
 import { ThemeProvider } from "@mui/material/styles";
-import MapComponent from "./components/MapComponent";
-import RegionPage from "./components/RegionPage";
 import useIdleNavigation from "./utils/useIdleNavigation";
 import useFullscreenGesture from "./utils/useFullscreenGesture";
 import { regionDefinitions } from "./data/regionDefinitions";
@@ -13,8 +11,11 @@ import { CreatureData } from "./types/Creatures";
 import sampleData from "./data/creatureData.json";
 import { BASE_DIR, CREATURE_DATA_FILE } from "./data/consts";
 import theme from "./theme";
-import ImportButton from "./components/ImportButton";
 import PageTransition from "./components/PageTransition";
+
+const ImportButton = lazy(() => import("./components/ImportButton"));
+const MapComponent = lazy(() => import("./components/MapComponent"));
+const RegionPage = lazy(() => import("./components/RegionPage"));
 
 const { DEV } = import.meta.env;
 
@@ -103,30 +104,34 @@ const App: React.FC = () => {
         <AnimatePresence mode="wait" initial={false}>
           {shouldShowImporter ? (
             <PageTransition key="importer">
-              <ImportButton
-                onClose={
-                  creatureFileExists
-                    ? () => setShowImportPanel(false)
-                    : undefined
-                }
-                canClose={creatureFileExists}
-              />
+              <Suspense fallback={<div>Loading importer...</div>}>
+                <ImportButton
+                  onClose={
+                    creatureFileExists
+                      ? () => setShowImportPanel(false)
+                      : undefined
+                  }
+                  canClose={creatureFileExists}
+                />
+              </Suspense>
             </PageTransition>
           ) : (
             <PageTransition key={location.pathname}>
-              <Routes location={location}>
-                <Route
-                  path="/"
-                  element={<MapComponent onGridClick={handleGridClick} />}
-                />
-                {regionDefinitions.map(({ region }) => (
+              <Suspense fallback={<div>Loading region...</div>}>
+                <Routes location={location}>
                   <Route
-                    key={region.id}
-                    path={`region/:regionId`}
-                    element={<RegionPage creatureData={creatureData} />}
+                    path="/"
+                    element={<MapComponent onGridClick={handleGridClick} />}
                   />
-                ))}
-              </Routes>
+                  {regionDefinitions.map(({ region }) => (
+                    <Route
+                      key={region.id}
+                      path={`region/:regionId`}
+                      element={<RegionPage creatureData={creatureData} />}
+                    />
+                  ))}
+                </Routes>
+              </Suspense>
             </PageTransition>
           )}
         </AnimatePresence>
