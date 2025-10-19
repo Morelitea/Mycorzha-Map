@@ -1,18 +1,21 @@
-import React, { useState, useEffect, useCallback } from "react";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import React, { useState, useEffect, useCallback, lazy, Suspense } from "react";
+import { AnimatePresence } from "framer-motion";
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import { exists, readTextFile } from "@tauri-apps/plugin-fs";
 import { ThemeProvider } from "@mui/material/styles";
-import MapComponent from "./components/MapComponent";
-import RegionPage from "./components/RegionPage";
 import useIdleNavigation from "./utils/useIdleNavigation";
 import useFullscreenGesture from "./utils/useFullscreenGesture";
 import { regionDefinitions } from "./data/regionDefinitions";
 import { Region } from "./types/Regions";
 import { CreatureData } from "./types/Creatures";
-import ImportButton from "./components/ImportButton";
 import sampleData from "./data/creatureData.json";
 import { BASE_DIR, CREATURE_DATA_FILE } from "./data/consts";
 import theme from "./theme";
+import PageTransition from "./components/PageTransition";
+
+const ImportButton = lazy(() => import("./components/ImportButton"));
+const MapComponent = lazy(() => import("./components/MapComponent"));
+const RegionPage = lazy(() => import("./components/RegionPage"));
 
 const { DEV } = import.meta.env;
 
@@ -36,6 +39,7 @@ const App: React.FC = () => {
   useIdleNavigation();
   useFullscreenGesture();
   const navigate = useNavigate();
+  const location = useLocation();
   const [creatureFileExists, setCreatureFileExists] = useState<boolean>(false); // State to track if the file exists
   const [creatureData, setCreatureData] = useState<CreatureData>({
     regions: [],
@@ -97,29 +101,40 @@ const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <div className="appContainer">
-        {shouldShowImporter ? (
-          <ImportButton
-            onClose={
-              creatureFileExists ? () => setShowImportPanel(false) : undefined
-            }
-            canClose={creatureFileExists}
-          />
-        ) : (
-          // If the file exists, render the map
-          <Routes>
-            <Route
-              path="/"
-              element={<MapComponent onGridClick={handleGridClick} />}
-            />
-            {regionDefinitions.map(({ region }) => (
-              <Route
-                key={region.id}
-                path={`region/:regionId`}
-                element={<RegionPage creatureData={creatureData} />}
-              />
-            ))}
-          </Routes>
-        )}
+        <AnimatePresence mode="wait" initial={false}>
+          {shouldShowImporter ? (
+            <PageTransition key="importer">
+              <Suspense fallback={<div>Loading importer...</div>}>
+                <ImportButton
+                  onClose={
+                    creatureFileExists
+                      ? () => setShowImportPanel(false)
+                      : undefined
+                  }
+                  canClose={creatureFileExists}
+                />
+              </Suspense>
+            </PageTransition>
+          ) : (
+            <PageTransition key={location.pathname}>
+              <Suspense fallback={<div>Loading region...</div>}>
+                <Routes location={location}>
+                  <Route
+                    path="/"
+                    element={<MapComponent onGridClick={handleGridClick} />}
+                  />
+                  {regionDefinitions.map(({ region }) => (
+                    <Route
+                      key={region.id}
+                      path={`region/:regionId`}
+                      element={<RegionPage creatureData={creatureData} />}
+                    />
+                  ))}
+                </Routes>
+              </Suspense>
+            </PageTransition>
+          )}
+        </AnimatePresence>
       </div>
     </ThemeProvider>
   );
