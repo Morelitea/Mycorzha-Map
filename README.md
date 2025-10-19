@@ -1,7 +1,98 @@
-# Tauri + Vanilla TS
+# Mycorzha Map
 
-This template should help get you started developing with Tauri in vanilla HTML, CSS and Typescript.
+Mycorzha Map is an interactive exploration companion for the fungal realms of Mycorzha. The app pairs a richly illustrated React interface with a Tauri desktop shell so you can browse regional lore, track creatures, and manage local data whether you are online or off.
 
-## Recommended IDE Setup
+## Features
 
-- [VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+- **Interactive regional atlas** driven by `react-leaflet`, custom SVG layers, and animated navigation.
+- **Creature compendium** sourced from `src/data/creatureData.json`, with desktop access to local saves via the Tauri file-system plugin.
+- **Smooth navigation & gestures** including idle auto-advance and fullscreen support optimized for kiosks.
+- **Cross-platform desktop build** powered by Tauri 2.0 for Windows, macOS, and Linux, alongside a Vite-powered browser experience.
+
+## Tech Stack
+
+| Layer         | Technologies                                                |
+| ------------- | ----------------------------------------------------------- |
+| Frontend      | React 19, TypeScript, Vite 6, Emotion, Sass, Framer Motion  |
+| Mapping       | Leaflet 1.9, React Leaflet 5, custom assets in `src/assets` |
+| Desktop Shell | Tauri 2, Rust, plugins for dialog, filesystem, and opener   |
+
+## Prerequisites
+
+- Node.js ≥ 18 (LTS recommended)
+- npm ≥ 9
+- Rust toolchain (stable) with `cargo`
+- Tauri CLI: `cargo install tauri-cli` or `npm install --global @tauri-apps/cli`
+- Git LFS (optional, but recommended if you add large media assets)
+
+## Getting Started
+
+```bash
+git clone https://github.com/Morelitea/Mycorzha-Map.git
+cd Mycorzha-Map
+npm install
+```
+
+### Run in the browser
+
+```bash
+npm run dev
+```
+
+Visit the printed local URL (usually `http://localhost:1420`). Hot-module reloading keeps React changes instant.
+
+### Run the desktop app
+
+```bash
+npm run tauri dev
+```
+
+This launches the integrated Tauri shell, unlocking filesystem access for importing `creatureData.json` from local storage.
+
+## Scripts
+
+| Command               | Description                                                     |
+| --------------------- | --------------------------------------------------------------- |
+| `npm run dev`         | Start the Vite development server for the browser build.        |
+| `npm run tauri dev`   | Launch the Tauri desktop shell with live reload.                |
+| `npm run build`       | Type-check and create a production bundle in `dist/`.           |
+| `npm run preview`     | Serve the production bundle locally for validation.             |
+| `npm run tauri build` | Package platform-specific binaries (requires platform tooling). |
+
+## Project Structure
+
+```
+Mycorzha-Map/
+├── src/                 # React UI source
+│   ├── components/      # UI components (Creature cards, navigation, accordions...)
+│   ├── data/            # Region definitions and bundled sample creature data
+│   ├── types/           # Shared TypeScript types for regions, creatures, etc.
+│   ├── utils/           # Custom hooks and helpers (idle navigation, gestures)
+│   └── assets/          # Map banners, region art, icons, and other static media
+├── src-tauri/           # Rust workspace for Tauri commands and configuration
+├── public/              # Static files served as-is by Vite
+└── dist/                # Production output (generated)
+```
+
+## Data & Configuration Notes
+
+- The desktop app reads creature data from Tauri’s `AppLocalData/creatureData.json`. Keep the bundled sample in `src/data/creatureData.json` aligned with the runtime schema defined in `src/types/Critters.ts` and `src/types/Regions.ts`.
+- Regional metadata lives in `src/data/regionDefinitions.ts` with per-region narrative files in `src/data/regionData/`. Route IDs must match the `/region/:regionId` pattern to keep navigation stable.
+- Update `src-tauri/tauri.conf.json` if you add new Tauri capabilities (filesystem scopes, protocol handlers, etc.).
+
+## Contributing
+
+1. Create a feature branch from `main`.
+2. Run `npm run dev` (browser) and `npm run tauri dev` (desktop) to sanity check your changes.
+3. Ensure `npm run build` and `npm run tauri build` succeed before opening a pull request.
+4. Describe region or data changes clearly, and attach screenshots or screen recordings of new map interactions whenever possible.
+
+## Troubleshooting
+
+- **Missing Rust dependencies**: Install the platform-specific build toolchain (e.g., `build-essential` on Debian/Ubuntu, Xcode tools on macOS, MSVC on Windows).
+- **Assets not loading**: Confirm filenames in `src/assets` match imports exactly; Vite is case-sensitive on non-Windows hosts.
+- **Creature data import issues**: Validate JSON against the type definitions. When testing desktop-only flows, use `npm run tauri dev` so the filesystem plugin is available.
+
+## Acknowledgements
+
+Built by the Morelitea team to bring the mushroom realms to life in both browser and desktop experiences.
