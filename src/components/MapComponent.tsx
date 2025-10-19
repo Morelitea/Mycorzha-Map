@@ -205,7 +205,7 @@ const MapComponent: React.FC<MapComponentProps> = ({ onGridClick }) => {
       minZoom={baseZoom}
       maxZoom={Math.min(baseZoom + 2, MAX_ALLOWED_ZOOM)}
       crs={L.CRS.Simple}
-      style={{ height: "100vh", width: "100%" }}
+      style={{ height: "100vh", width: "100%", background: "#a0b8b2" }}
       bounds={mapBounds}
       maxBounds={mapBounds}
       zoomControl={false}
