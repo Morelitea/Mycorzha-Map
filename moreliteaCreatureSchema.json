@@ -3,6 +3,10 @@
   "title": "Character",
   "type": "object",
   "properties": {
+    "$schema": {
+      "type": "string",
+      "format": "uri"
+    },
     "name": {
       "type": "string"
     },
