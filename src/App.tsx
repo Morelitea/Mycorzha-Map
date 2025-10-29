@@ -1,15 +1,15 @@
 import React, { useState, useEffect, useCallback, lazy, Suspense } from "react";
 import { AnimatePresence } from "framer-motion";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
-import { exists, readTextFile } from "@tauri-apps/plugin-fs";
+import { exists } from "@tauri-apps/plugin-fs";
 import { ThemeProvider } from "@mui/material/styles";
 import useIdleNavigation from "./utils/useIdleNavigation";
 import useFullscreenGesture from "./utils/useFullscreenGesture";
 import { regionDefinitions } from "./data/regionDefinitions";
 import { Region } from "./types/Regions";
-import { CreatureData } from "./types/Creatures";
-import sampleData from "./data/creatureData.json";
-import { BASE_DIR, CREATURE_DATA_FILE } from "./data/consts";
+import { BASE_DIR, CREATURES_DIR } from "./data/consts";
+import type { CreaturesByRegion } from "./types/Creatures";
+import { loadCreaturesFromDisk } from "./utils/creatureData";
 import theme from "./theme";
 import PageTransition from "./components/PageTransition";
 
@@ -40,34 +40,40 @@ const App: React.FC = () => {
   useFullscreenGesture();
   const navigate = useNavigate();
   const location = useLocation();
-  const [creatureFileExists, setCreatureFileExists] = useState<boolean>(false); // State to track if the file exists
-  const [creatureData, setCreatureData] = useState<CreatureData>({
-    regions: [],
-  }); // State to store file data
+  const [creatureSourceAvailable, setCreatureSourceAvailable] =
+    useState<boolean>(false);
+  const [creatureData, setCreatureData] = useState<CreaturesByRegion>({});
   const [showImportPanel, setShowImportPanel] = useState<boolean>(false);
 
   const initialize = useCallback(async () => {
-    if (DEV) {
-      setCreatureFileExists(true);
-      setCreatureData(sampleData);
+    const directoryExists = await exists(CREATURES_DIR, {
+      baseDir: BASE_DIR,
+    });
+
+    if (!directoryExists) {
+      if (DEV) {
+        setCreatureSourceAvailable(false);
+      }
       return;
     }
 
-    const doesExist = await exists(CREATURE_DATA_FILE, { baseDir: BASE_DIR });
-    if (doesExist) {
-      setCreatureFileExists(true);
-      const data = await readTextFile(CREATURE_DATA_FILE, {
-        baseDir: BASE_DIR,
-      });
-      setCreatureData(JSON.parse(data));
+    try {
+      const grouped = await loadCreaturesFromDisk();
+      setCreatureData(grouped);
+      setCreatureSourceAvailable(true);
+    } catch (err) {
+      console.error("Failed to load creature data", err);
+      if (DEV) {
+        setCreatureSourceAvailable(false);
+      }
     }
   }, []);
 
   useEffect(() => {
-    if (!creatureFileExists) {
+    if (!creatureSourceAvailable) {
       initialize();
     }
-  }, [creatureFileExists, initialize]);
+  }, [creatureSourceAvailable, initialize]);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -96,7 +102,7 @@ const App: React.FC = () => {
     }
   };
 
-  const shouldShowImporter = !creatureFileExists || showImportPanel;
+  const shouldShowImporter = !creatureSourceAvailable || showImportPanel;
 
   return (
     <ThemeProvider theme={theme}>
@@ -107,11 +113,11 @@ const App: React.FC = () => {
               <Suspense fallback={<div>Loading importer...</div>}>
                 <ImportButton
                   onClose={
-                    creatureFileExists
+                    creatureSourceAvailable
                       ? () => setShowImportPanel(false)
                       : undefined
                   }
-                  canClose={creatureFileExists}
+                  canClose={creatureSourceAvailable}
                 />
               </Suspense>
             </PageTransition>

@@ -4,11 +4,13 @@ import Paper from "@mui/material/Paper";
 import styles from "./VerticalNav.module.scss";
 import { regionDefinitions } from "../data/regionDefinitions";
 import { RegionDefinition, Subsection } from "../types/Regions";
-import { TCreature, CreatureData } from "../types/Creatures";
+import { TCreature, CreaturesByRegion } from "../types/Creatures";
 import handleScrollClick from "../utils/handleScrollClick";
 
+type TCreaturesByRegion = CreaturesByRegion;
+
 interface IVerticalNavProps {
-  creatureData: CreatureData;
+  creatureData: TCreaturesByRegion;
 }
 
 const VerticalNav: React.FC<IVerticalNavProps> = ({ creatureData }) => {
@@ -23,13 +25,13 @@ const VerticalNav: React.FC<IVerticalNavProps> = ({ creatureData }) => {
     if (region) {
       setRegionData(region);
     }
-    const regionCreatures = creatureData.regions.find(
-      (region) => region.regionId === regionId
-    );
-    if (regionCreatures) {
-      setCreatures(regionCreatures.creatures);
+    if (!regionId) {
+      setCreatures([]);
+      return;
     }
-  }, [regionId]);
+
+    setCreatures(creatureData[regionId] ?? []);
+  }, [regionId, creatureData]);
 
   if (!regionData || !regionData.regionData.subsections.length) {
     return null;

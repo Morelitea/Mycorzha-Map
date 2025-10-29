@@ -1,0 +1,32 @@
+{
+  "name": "Midge",
+  "id": "midge",
+  "regionId": "hazelmoss-woods",
+  "image": "midge.png",
+  "pronouns": "She/They",
+  "size": "Small",
+  "comfortSnack": "Spicy Fried Okra",
+  "biggestFear": "Too old to be scared of anything anymore",
+  "favoriteStory": "The Long Way Home",
+  "spotifyPlaylist": "midge-spotify.svg",
+  "quote": "Stop, stop before you make a spores-cursed fool of yourself. Here in the Wood we know what it means to be family, and to respect our traditions. So don’t think you can come here and make a fuss. Now get gone, I’m in the middle of my knitting.",
+  "emotionalTies": [
+    {
+      "name": "Fiona",
+      "relationship": "A spirited young fox, with a head on her shoulders and steel in her spine. All the insecurities of youth, of course, but she’ll plot a fine course for the Asterias, and possibly the Wood itself. She’ll need that sister of hers to really see it through of course, but I’ve every confidence that the roots of the Wood run deep in them both."
+    },
+    {
+      "name": "Glinda",
+      "relationship": "The pride of the Wood once, but even the deepest of roots may be pulled by a stronger storm. Ms. Nelinsce has left us for good I fear, but she has found her own way and for that I’m grateful. Thorn and bramble, but the force she could have been… aah, but she is content with her letters and her children, and so I must be as well."
+    },
+    {
+      "name": "Hazelmoss Woods",
+      "relationship": "Moss and sapling, thorn and root, branch and bough. The Woods are home, and we are the Wood, and that is just how it is. You can’t escape it, no matter how hard you try or how far you run. Ancestors take me, but I tried! And if I couldn’t, then it’s best you don’t even bother."
+    },
+    {
+      "name": "Mycorzha",
+      "relationship": "Look, I’ve seen enough over a decade at sea to know that these Isles of ours are special, and I don’t mean that in any sort of flowery, poetic way. I mean special in the same way the Wood at night will raise the spines on your neck at the same time as it’ll move you to tears, as the ocean will chill and charm you in equal measure. These Isles are powerful, old, and not to be taken lightly."
+    }
+  ],
+  "bio": "No discussion of Hazelmoss Woods or the creatures there can be complete without mention of Margerie Theacen Bristlebark, known by all within the Wood or without as Midge, Grandma, or The Old Matron. One of if not the oldest living resident of the Isles, Midge has seen, in her own words, “more seasons and hardships than I care to recount, and more’n anyone should stomach!” Widely considered by the residents of Hazelmoss as the Matriarch of the Wood, most major decisions that affect the region wind their way to Midge’s favorite rocking chair, along with those coming with gossip or seeking advice on everything from the season’s harvest to what color to wear to the next festival day. Most are shoo’d on their way with a grumpy comment on the behavior of “youngsters”, but Midge has her favorites who she takes into her care and confidences.\n\nNobody except Midge herself can now recall a much, much younger porcupine, just setting out to find her place in a world wider and more awe-inspiring than she ever could have guessed. Drawn onward by a wanderlust nobody now would ever ascribe to her, Midge set out from her home in Hazelmoss aboard one of her family’s merchant ships setting out with a hold full of tea leaves to parts Beyond. The way Midge tells it, what followed was nigh on a decade of trial and hardship, from facing the rage of ocean storms to the attention of pirates and other, stranger encounters. How much of her tales are real and how much are made up to scare the younger generations is unclear; her children and grandchildren are pretty sure that her story of being shipwrecked for nearly three months is exaggerated, and nobody has ever seen the metal vessels that she describes haunting her crew through the Mysts. Midge swears by every word however, and grouses at any who question her about respecting their ancestors.\n\nWeary after long travels, Midge returned home to oversee her family’s ancestral homesteads and to rest and support her family. She quickly found herself the focus of the Theacen clan’s attention, her wisdom and experience combined with her sharp wit and blunt, stubborn nature slicing through complications and obstacles. Wielding respect for the traditions of the Wood and plain ornery go-gettedness in equal measure, Midge steered her family, then her community, and then the whole of the Wood with the same steady hand with which she captained her ships.\n\nHaving passed the bulk of her responsibilities to her relations and others who have impressed her with their effort and skill, Midge spends most of her current days sitting in the warm sun by the family shrine, knitting in her favorite rocking chair while others come to pay their respects. Those who approach might hear her carrying on a spirited conversation with her siblings or mentors who have passed on, grousing at someone for wasting her time, or pulling one of a horde of youngsters onto her lap to tell them tales of the Woods and hills and trees. While she has no intention of leaving before her time, she knows the day will soon come when the Isles were call to her, and she feels nothing but comfort in knowing she will soon be able to rest."
+}

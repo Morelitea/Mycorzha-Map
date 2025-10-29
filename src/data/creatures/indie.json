@@ -1,0 +1,32 @@
+{
+  "name": "Indie",
+  "id": "indie",
+  "regionId": "selene-cliffs",
+  "image": "indie.png",
+  "pronouns": "He/Him",
+  "size": "Tiny",
+  "comfortSnack": "Chocolate covered crickets",
+  "biggestFear": "Getting stuck in a cave and not being able to move",
+  "favoriteStory": "The Boy Who Raced the Mountain",
+  "spotifyPlaylist": "indie-spotify.svg",
+  "quote": "The world is alive and full of energy, adventure; amazing places to go and people to meet! And I won't stop until I've seen it all!",
+  "emotionalTies": [
+    {
+      "name": "Parents",
+      "relationship": "Ugh! I mean, family is important, I know, but do they have to always think they know what's best for me? I can't wait to move out."
+    },
+    {
+      "name": "Amani",
+      "relationship": "My best-best-best friend on all Mycorzha! She really just gets me, you know?"
+    },
+    {
+      "name": "Persephone",
+      "relationship": "She can be kiiiinda a little mean sometimes, but it's just because she's stuck inside all the time, with her nose in a book! Once Amani and I got her outside, it turns out she's really funny! And I love her stories, really!"
+    },
+    {
+      "name": "Mycorzha",
+      "relationship": "So many places! So many people! I want to explore every nook and cranny that it has to offer."
+    }
+  ],
+  "bio": "Born of the bird clans of the Selene Cliffs above Luna Valley, Indie was out the door nearly as soon as he was hatched. His parents, with much chagrin, always note that he was \"first out of the egg\"; something Indie takes great pride in, despite the disapproving looks from the elders of the Cliffs. Even before he could fly, he was climbing up and down the ropes and ladders which span his home; once he had grown his flight feathers, he became unstoppable.\n\nTaking to the wing, Indie spent as much time as he could out of doors. When his parents protested his \"absent minded\" wanderings and \"crazy\" games, he took a job as a messenger bird, delivering missives and notes all over Luna Valley. The official nature of the job got his parents to begrudgingly loosen his reins, and he reveled in his new freedom to explore (all in the name of the job, of course!).\n\nDetermined to see all he could see, and to meet everyone he could, Indie spent more and more time on the wing. His errands took him further and further afield, eventually sending him to the trade meet at Dreamer's Lake. Here he landed (crashed, really) upon Amani, and the two became fast friends. Amani, in her quiet and thoughtful way, encouraged Indie to embrace who he was as a unique and individual person. Indie in turn inspired the gentle doe with his passion and energy. Though he still lives with his extended family clan on the Cliffs, Indie yearns to break free and live his life as he wills it."
+}

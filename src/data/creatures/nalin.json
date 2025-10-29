@@ -1,0 +1,32 @@
+{
+  "name": "Nalin",
+  "id": "nalin",
+  "regionId": "cove-city",
+  "image": "nalin.png",
+  "pronouns": "They/Them",
+  "size": "Small",
+  "comfortSnack": "Ants-on-a-log",
+  "biggestFear": "The ocean",
+  "favoriteStory": "The City of Starlight and Shadow",
+  "spotifyPlaylist": "nalin-spotify.svg",
+  "quote": "In our busy lives, it is easy to become distracted, disconnected from the world around us. Take a moment in the present; not looking forward, or behind, but here, at this tree, this flower. Share this moment with me, and allow yourself to feel the peace of the Isles.",
+  "emotionalTies": [
+    {
+      "name": "Amani",
+      "relationship": "I first encountered Amani during one of her visits to the Parks, curled up beneath one of my favorite trees and quietly sketching the spring landscape. I sat down nearby, and we shared a quiet, pleasant morning over tea and silent companionship. I very much look forward to our next meeting."
+    },
+    {
+      "name": "Preston",
+      "relationship": "Oh sure, I've seen him around. Always hurrying, like everyone else in this city, involved in whatever's in his head. I've tried to convince him to take some time in the parks, that it'll be good for him, but off he goes again, on the move. Ah well, perhaps some other time."
+    },
+    {
+      "name": "Cove City",
+      "relationship": "The City That Is Never Asleep, or so they term themselves. I can vouch for it, having been here long enough to know that there's always hustle and bustle going on no matter the hour. As overwhelming as it can be, the City folks love the Parks as much as any Mycorzhan loves the Isles, and it gladdens me. And it's my job to make sure that their connection to the Isles, to nature, remains even in this busy city."
+    },
+    {
+      "name": "Mycorzha",
+      "relationship": "The Isles are our home, all of us; they shelter us, nurture us, keep us fed, housed, and uplifted in spirit. We all know this, although some of us need occasional reminders, lest we become disconnected from the living nature all around us."
+    }
+  ],
+  "bio": "A lover of nature, Nalin grew up surrounded by the natural beauty of the Isles. A child of the Isles, adopted into one of the nomadic clans who move about Mycorzha's interior, the young rabbit was awe-struck at diversity and vibrancy of the world around them. As they grew and learned, they also taught, shepherding the younger children and pointing out aspects of flora and fungi, re-telling the stories of the clan, and guiding their charges as best they could. As the clan moved, and Nalin came into contact with other, less transitory denizens of the Isles, they began to puzzle over questions; how did other young children learn, so tied to one place as they were? Did they understand the vast web of life that encompassed the Isles? Nalin had discovered a quiet joy in teaching, both the children in their care as well as others who sought them out for counsel or advice. Always seeking to go where they felt most needed, when Cove City sent out a call for creatures who truly knew the Isles, Nalin decided to answer, packing up and heading to the place where the connection to the nature of the Isles was most tenuous. Upon arriving, the Cove City Council detailed an incredibly ambitious plan – to design and build the seven Great Parks, to bring the wonder of the land to the citizens. Nalin was awed at the shear scale of the project, but set themselves to work.\n\nThe rural rabbit was quickly overwhelmed by the hustle and bustle of Cove City, finding themselves anxious, on edge, jumping at sudden noises and strange smells. Only in their work on the great city Parks did they feel at peace, and with their usual quiet enthusiasm they poured themselves and their love for the Isles into every inch of them. Once completed, the Parks filled them with the same wonder they always felt, but also mild dismay - the Parks lacked for caretakers who truly knew and understood them, and while some few knew the land and its growing things, fewer still could teach the city-dwelling children of their heritage, or guide them in the ways of the Isles. Without care and patience, the Parks would become mere attractions, entertaining but pale reflections of the Isles. Filled with resolve, Nalin set to the task.\n\nNow, Nalin is one of the most well known, and most sought, natural guides and caretakers of the Parks. They teach children and adults alike the love of nature, and the care that citizens of the Isles must show their home in order to nurture and support it, as it does them. Often found sitting in quiet contemplation, Nalin encourages all who come to them to take time to pause, to breathe, to let go the worries and cares of tomorrow to find quiet joy in the now."
+}

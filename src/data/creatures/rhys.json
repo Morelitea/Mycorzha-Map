@@ -1,0 +1,32 @@
+{
+  "name": "Rhys",
+  "id": "rhys",
+  "regionId": "cove-city",
+  "image": "rhys.png",
+  "pronouns": "She/They",
+  "size": "Small",
+  "comfortSnack": "Anchovy Pizza",
+  "biggestFear": "Spiders",
+  "favoriteStory": "The Three Foxes & the Flood",
+  "spotifyPlaylist": "rhys-spotify.svg",
+  "quote": "Ain't no time like the present! Daydreaming didn't get anyone nowhere, and she who seals the deal, gets the goods! By which I mean, of course, me! Now, welcome to my shop, and what can I get you?",
+  "emotionalTies": [
+    {
+      "name": "Fiona",
+      "relationship": "You'll never find two peas from one pod less alike than me and my sister! She was always the girly girl, you know? I was all scraped knees and scuff marks, while she was flowers and perfume. Pfahahaha! Fools the best of 'em, doesn't she? She's a wily devil, with her flowers and her bees, though you didn't hear that from me. I visit her often, although she never comes up thisaway. Her loss!"
+    },
+    {
+      "name": "Jack",
+      "relationship": "That old cat! Hah, I've known him since he was fresh arrived in the City! Yeaaaah, he was one of the folks, you know? Let him crash a time or two and all, like you do, and we swapped talk. Had a lot of crazy ideas then, same as he does now, only he ain't no city cat, so off he went. We meet and talk shop, you know, when he shows; always gives me the first look, for old time's sake!"
+    },
+    {
+      "name": "Cove City",
+      "relationship": "Aaaaah, the City! Ain't no place like it, and never will be here or anywhere Beyond! The sights, the smells - breathe deep now, don't choke! - this here hustle and bustle settles my bones. Wherever I go, Cove City has my black and shriveled heart, pahaha!"
+    },
+    {
+      "name": "Mycorzha",
+      "relationship": "The Isles are fierce, mysterious, and all that claptrap, sure. But they're also full of potential, and a smart business-fox can turn that potential into opportunity! From north to south, there's folks wanting for something, and you better believe that Rhys is going to make sure they get it!"
+    }
+  ],
+  "bio": "Born in the shade of the great trees of Hazelmoss Woods, Rhys spent her youth climbing, leaping, a flash of motion and a shouted remark to her sister's quiet yet steady reply. Rhys always felt a little bit out of place in Hazelmoss, wanting to push beyond the bounds of quiet life. She had acquired a reputation for disruption by the time she decided to visit an old friend, and fell head over heels for the bustle and sights of Cove City.\n\nRhys immediately moved herself northward, with all of her usual spontaneity and much to the absolute chagrin of her family. She set up shop, as it were, on a street corner selling packs of cards and souvenirs to whoever passed her by. Her keen eyes (and keener nose) led her to markets all across Cove City, where she perused wares, haggled, and networked until suddenly all the traders and merchants knew her, and her spice shop opened its doors - or hatches, rather - as if it had always existed, a cornerstone of the Docks neighborhood and a draw for merchants from all points Beyond. Rhys quickly expanded her inventory and regular customers, and was one of the first to jump on opportunities presented by a certain dramatic feline who was becoming the talk of the town.\n\nOperating out of a houseboat has its perks, and as her horizons grew, Rhys eyed new markets and new potential all across the Isles. She regularly undocks and roves out to trade at other harbors across Mycorzha, somehow arriving at meets she has no business knowing about, nor being able to reach in time from where she started. If this puzzles some, they shake their head and mark it down to the old fox's business sense and connections, because, well, what else could it be?"
+}

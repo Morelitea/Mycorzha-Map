@@ -16,11 +16,7 @@ export type TCreature = {
   quote: string;
   emotionalTies: EmotionalTie[];
   bio: string;
+  regionId: string;
 };
 
-export type CreatureData = {
-  regions: {
-    creatures: TCreature[];
-    regionId: string;
-  }[];
-};
+export type CreaturesByRegion = Record<string, TCreature[]>;

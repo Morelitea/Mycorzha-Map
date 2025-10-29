@@ -7,13 +7,13 @@ import Creature from "./Creature";
 import { regionDefinitions } from "../data/regionDefinitions";
 import { RegionDefinition, Subsection } from "../types/Regions";
 import styles from "./RegionPage.module.scss";
-import { TCreature, CreatureData } from "../types/Creatures";
+import { TCreature, CreaturesByRegion } from "../types/Creatures";
 import Subculture from "./Subculture";
 import SubsectionTabs from "./SubsectionTabs";
 import SubsectionAccordion from "./SubsectionAccordion";
 
 interface IRegionPageProps {
-  creatureData: CreatureData;
+  creatureData: CreaturesByRegion;
 }
 const RegionPage: React.FC<IRegionPageProps> = ({ creatureData }) => {
   const { regionId } = useParams<{ regionId: string }>();
@@ -27,13 +27,13 @@ const RegionPage: React.FC<IRegionPageProps> = ({ creatureData }) => {
     if (region) {
       setRegionData(region);
     }
-    const regionCreatures = creatureData.regions.find(
-      (region) => region.regionId === regionId
-    );
-    if (regionCreatures) {
-      setCreatures(regionCreatures.creatures);
+    if (!regionId) {
+      setCreatures([]);
+      return;
     }
-  }, [regionId]);
+
+    setCreatures(creatureData[regionId] ?? []);
+  }, [regionId, creatureData]);
 
   if (!regionData) {
     return <div className={styles.loading}>Loading...</div>;

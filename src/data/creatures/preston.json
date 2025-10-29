@@ -1,0 +1,32 @@
+{
+  "name": "Preston",
+  "id": "preston",
+  "regionId": "cove-city",
+  "image": "preston.png",
+  "pronouns": "He/They",
+  "size": "Small",
+  "comfortSnack": "Shoot, I forgot to eat again. Chips!",
+  "biggestFear": "Being forgotten",
+  "favoriteStory": "City Magic",
+  "spotifyPlaylist": "preston-spotify.svg",
+  "quote": "Aren't ideas just the most wonderful things? Also sometimes frustrating, yes, it's a shame about the whole sleeping thing, alas. But let me tell you about my newest invention!",
+  "emotionalTies": [
+    {
+      "name": "Glinda",
+      "relationship": "Oh, I absolutely love receiving missives and essays from Ms. Tortuga! She doesn't write as frequently anymore - I think she moved out of the City? But yes, always lovely to share ideas with!"
+    },
+    {
+      "name": "Mystveil Academy",
+      "relationship": "I owe everything to the Academy, and if my work and my ideas can brighten the lives of the students there, support them and bring them joy, then I will be the happiest raccoon on the Isles."
+    },
+    {
+      "name": "Cove City",
+      "relationship": "My home! It is a wonderful place, full of so many sights, and sounds. And you can get anything here, anything! Which reminds me, I still need some spare lumber, andand a copper tube, and..."
+    },
+    {
+      "name": "Mycorzha",
+      "relationship": "The Isles! I hear great things, yes, marvelous things! The stories, the discoveries! All very exciting to read about! I have a number of papers in the works, you know."
+    }
+  ],
+  "bio": "A native of Cove City, Preston grew up amidst a pile of blocks, spare parts, and a general air of puttering from even the youngest age. Preston's fixation with his tinkering and inattentiveness to his surroundings were both very notable, and his attendance at the Academy was all but assumed by his family and those around him. Preston's brilliance did not disappoint, and it was with breath-taking excitement that he started attending his first classes.\n\nPreston absolutely shone during his studies at the Academy, his radical thinking and fixation on detail catapulting his ideas into the spotlight. Meanwhile, the academic structure and the support of the faculty provided Preston with much needed insight into who he was and what he needed in order to feel at ease with himself and others. Preston thrived, and his inventions, if small, began making big waves both within the Academy and without.\n\nNow graduated, Preston devotes much of his time to study and tinkering, absent-mindedly collecting and discarding ideas as the whimsy strikes him. Foremost in his mind is always the Academy however, and many of his projects are designed to help the institution and its students, whom he loves deeply. Preston's latest studies have been focused on accessibility, and the needs of the many other students who, like him, either move, sense, or think differently; the recent invention of his \"press\" has caused an absolute uproar in academic circles. This has led to Preston gaining quite a bit of prominence in Cove City, a fact which he, seemingly, is unaware of. He spends his time \"pressing\" every book, treatise, and essay he can get his paws on, tinkering on his inventions, and rummaging through local garbage bins, on the hunt for parts and materials for whatever he's cooking up next."
+}

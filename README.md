@@ -5,7 +5,7 @@ Mycorzha Map is an interactive exploration companion for the fungal realms of My
 ## Features
 
 - **Interactive regional atlas** driven by `react-leaflet`, custom SVG layers, and animated navigation.
-- **Creature compendium** sourced from `src/data/creatureData.json`, with desktop access to local saves via the Tauri file-system plugin.
+- **Creature compendium** sourced from individual JSON files in `src/data/creatures/`, with desktop access to local saves via the Tauri file-system plugin.
 - **Smooth navigation & gestures** including idle auto-advance and fullscreen support optimized for kiosks.
 - **Cross-platform desktop build** powered by Tauri 2.0 for Windows, macOS, and Linux, alongside a Vite-powered browser experience.
 
@@ -65,7 +65,7 @@ This launches the integrated Tauri shell, unlocking filesystem access for import
 Mycorzha-Map/
 ├── src/                 # React UI source
 │   ├── components/      # UI components (Creature cards, navigation, accordions...)
-│   ├── data/            # Region definitions and bundled sample creature data
+│   ├── data/            # Region definitions, per-creature sample JSON, utilities
 │   ├── types/           # Shared TypeScript types for regions, creatures, etc.
 │   ├── utils/           # Custom hooks and helpers (idle navigation, gestures)
 │   └── assets/          # Map banners, region art, icons, and other static media
@@ -76,7 +76,7 @@ Mycorzha-Map/
 
 ## Data & Configuration Notes
 
-- The desktop app reads creature data from Tauri’s `AppLocalData/creatureData.json`. Keep the bundled sample in `src/data/creatureData.json` aligned with the runtime schema defined in `src/types/Critters.ts` and `src/types/Regions.ts`.
+- The desktop app reads creature data from per-creature JSON files stored under `AppData/creatures/`. Keep the bundled samples in `src/data/creatures/` aligned with the runtime schema defined in `src/types/Creatures.ts` and `src/types/Regions.ts`.
 - Regional metadata lives in `src/data/regionDefinitions.ts` with per-region narrative files in `src/data/regionData/`. Route IDs must match the `/region/:regionId` pattern to keep navigation stable.
 - Update `src-tauri/tauri.conf.json` if you add new Tauri capabilities (filesystem scopes, protocol handlers, etc.).
 

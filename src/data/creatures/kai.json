@@ -1,0 +1,28 @@
+{
+  "name": "Kai",
+  "id": "kai",
+  "regionId": "mossy-cup-lagoon",
+  "image": "kai.png",
+  "pronouns": "He/Him",
+  "size": "Huge",
+  "comfortSnack": "Fresh seal liver",
+  "biggestFear": "Being embarrassed",
+  "favoriteStory": "Chief Tamaroa Challenged the Sea",
+  "spotifyPlaylist": "kai-spotify.svg",
+  "quote": "Life’s tough, and you’ve got to be tough enough to meet it head on! If you’ve got the strength, nobody can tell you what to do, or how to be.",
+  "emotionalTies": [
+    {
+      "name": "Kanoa",
+      "relationship": "That old turtle thinks I still have the time to give him, but he’s washed up and washed away! I’m the pilot of the Lagoon now, and he can just go ahead and rest all comfy-like in the mess, make sure those fins of his don’t ache too bad. I’ve got things handled!"
+    },
+    {
+      "name": "Mossy Cup Lagoon",
+      "relationship": "This bunch of sea-scum don’t have more than the brains of a bottom worm all put together, and they’d be lost without me - literally! Aaah, but it’s good to come back to port after a long day, share a bite and a mug, and maybe listen to Ol’ Teef tell one of his stories. Ocean take the rest of the sea, and we’ll take the rest!"
+    },
+    {
+      "name": "Mycorzha",
+      "relationship": "Pfft, lubbers the lot of ‘em. Sure, one of these days I might stretch my flukes and go see some of the other ports - let them know who their betters are, more like it! But I’ve got my fins full already keeping this lot out of trouble, and keeping trouble out of our waters!"
+    }
+  ],
+  "bio": "A young orca, striking out on his own. A lone wolf, ready to take on anything and anyone who comes his way. Able to handle anything! All these things are true, but almost despite himself, Kai has found his own place and his own people, as much as he would never admit it.\n\nIn keeping with tradition, Kai was kicked out of his home pod as a young male and forced to fend for himself. One of the largest predators in the seas, Kai at first tried to throw his weight around, but he quickly found that even an orca had to watch his flukes, alone in the big wide sea. Chased off by dolphin gangs, testy giant turtles, and once by an enraged shrimp and their mates, Kai was starting to lose a bit of his bluster when he happened upon the entrance to a small, rocky cove. A ship full of land-folk was attempting to make passage, and Kai puffed up immediately, claiming to know the waters. Taking charge, he guided the ship into the rocky inlet only to discover the way twisted, turned, and was criss-crossed with odd currents that threatened to dash his charge on the rocks. Through a mixture of his skills in navigating, persuasive words, and a dash of pure dumb luck, Kai eventually guided the ship true. They arrived in a sheltered lagoon of twisting coral and shaggy algae growths, and Kai came nose to nose with the pirates of Mossy Cup.\n\nWhile that first meeting started off on the wrong fin, Kai’s bravado held the crews at bay long enough for an elderly and ailing leatherback turtle to shove aside all the “young hot-heads” to get a look at the orca. The turtle introduced himself as Kanoa, and gave grudging respect to Kai’s skills - indeed, nobody had ever navigated the route from sea to Lagoon on their first try! Kai’s bluster at the accomplishment was short-lived enough, as Kanoa cuffed him smartly and told him to “batten it down” if he was going to be the old turtle’s new mate. Kai startled but accepted the offer to join the crews, mindful of the loneliness that had plagued his journey thus far.\n\nYears on now, Kai is a fixture of life in Mossy Cup Lagoon, and has taken over piloting duties from Kanoa. While he denies it, it’s an open secret amongst all the crews that Kai dotes on the old turtle, seeking approval with nets full of jellyfish and tales of his new record times in navigating the reefs and rocks. To everyone else, Kai is the image of a hulking apex predator, and is happy to throw his weight around."
+}

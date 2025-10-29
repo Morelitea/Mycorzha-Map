@@ -2,7 +2,8 @@ use std::fs::{self, File};
 use std::io::{Cursor, Read};
 use std::path::{Path, PathBuf};
 
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
+use std::collections::HashMap;
 use tauri::Manager;
 use tauri_plugin_fs::FsExt;
 use zip::ZipArchive;
@@ -14,15 +15,20 @@ pub struct ImportSummary {
     image_count: usize,
 }
 
+#[derive(Debug, Deserialize)]
+struct CreatureFile {
+    id: Option<String>,
+    region_id: Option<String>,
+    #[serde(flatten)]
+    rest: serde_json::Map<String, serde_json::Value>,
+}
+
 #[tauri::command]
 async fn import_creature_package(
     app: tauri::AppHandle,
     archive: Vec<u8>,
 ) -> Result<ImportSummary, String> {
-    let base_dir = app
-        .path()
-        .app_data_dir()
-        .map_err(|err| err.to_string())?;
+    let base_dir = app.path().app_data_dir().map_err(|err| err.to_string())?;
 
     tauri::async_runtime::spawn_blocking(move || import_archive(base_dir, archive))
         .await
@@ -30,18 +36,19 @@ async fn import_creature_package(
 }
 
 fn import_archive(base_dir: PathBuf, archive: Vec<u8>) -> Result<ImportSummary, String> {
-    let data_path = base_dir.join("creatureData.json");
+    let data_root = base_dir.join("creatures");
     let images_root = base_dir.join("images");
     let creatures_dir = images_root.join("creatures");
     let spotify_dir = images_root.join("spotify");
 
+    fs::create_dir_all(&data_root).map_err(|err| err.to_string())?;
     fs::create_dir_all(&creatures_dir).map_err(|err| err.to_string())?;
     fs::create_dir_all(&spotify_dir).map_err(|err| err.to_string())?;
 
     let cursor = Cursor::new(archive);
     let mut zip = ZipArchive::new(cursor).map_err(|err| err.to_string())?;
 
-    let mut json_contents: Option<String> = None;
+    let mut creature_files: HashMap<String, CreatureFile> = HashMap::new();
     let mut creature_count = 0usize;
     let mut image_count = 0usize;
 
@@ -60,30 +67,24 @@ fn import_archive(base_dir: PathBuf, archive: Vec<u8>) -> Result<ImportSummary, 
             continue;
         };
 
-        if is_creature_data(&path) {
+        if let Some(creature_id) = is_creature_file(&path) {
             let mut contents = String::new();
             entry
                 .read_to_string(&mut contents)
                 .map_err(|err| err.to_string())?;
 
-            let parsed: serde_json::Value =
-                serde_json::from_str(&contents).map_err(|err| err.to_string())?;
-            creature_count = parsed["regions"]
-                .as_array()
-                .map(|regions| {
-                    regions
-                        .iter()
-                        .map(|region| {
-                            region["creatures"]
-                                .as_array()
-                                .map(|creatures| creatures.len())
-                                .unwrap_or_default()
-                        })
-                        .sum()
-                })
-                .unwrap_or_default();
+            let parsed: CreatureFile = serde_json::from_str(&contents)
+                .map_err(|err| format!("Failed to parse {creature_id}.json: {err}"))?;
 
-            json_contents = Some(contents);
+            creature_files.insert(
+                creature_id.clone(),
+                CreatureFile {
+                    id: Some(creature_id.clone()),
+                    ..parsed
+                },
+            );
+
+            creature_count += 1;
             continue;
         }
 
@@ -98,11 +99,29 @@ fn import_archive(base_dir: PathBuf, archive: Vec<u8>) -> Result<ImportSummary, 
         }
     }
 
-    let contents = json_contents.ok_or_else(|| {
-        "Archive did not include a creatureData.json at the root level.".to_string()
-    })?;
+    if creature_files.is_empty() {
+        return Err("Archive did not include any creature JSON files.".to_string());
+    }
 
-    fs::write(&data_path, contents).map_err(|err| err.to_string())?;
+    for (id, creature) in creature_files {
+        let filename = format!("{id}.json");
+        let path = data_root.join(filename);
+        let mut value = serde_json::Value::Object(creature.rest);
+        if let serde_json::Value::Object(map) = &mut value {
+            map.insert(
+                "id".to_string(),
+                serde_json::Value::String(creature.id.unwrap_or(id.clone())),
+            );
+            if !map.contains_key("regionId") {
+                if let Some(region_id) = creature.region_id {
+                    map.insert("regionId".to_string(), serde_json::Value::String(region_id));
+                }
+            }
+        }
+
+        let serialized = serde_json::to_string_pretty(&value).map_err(|err| err.to_string())?;
+        fs::write(path, serialized).map_err(|err| err.to_string())?;
+    }
 
     Ok(ImportSummary {
         creature_count,
@@ -110,23 +129,20 @@ fn import_archive(base_dir: PathBuf, archive: Vec<u8>) -> Result<ImportSummary, 
     })
 }
 
-fn is_creature_data(path: &Path) -> bool {
-    if path
-        .file_name()
-        .map(|name| name.eq_ignore_ascii_case("creaturedata.json"))
-        .unwrap_or(false)
-    {
-        return path.components().count() == 1;
+fn is_creature_file(path: &Path) -> Option<String> {
+    if path.extension().map(|ext| ext.eq_ignore_ascii_case("json")) != Some(true) {
+        return None;
     }
 
-    false
+    let stem = path.file_stem()?.to_string_lossy();
+    if stem.is_empty() {
+        return None;
+    }
+
+    Some(stem.to_string())
 }
 
-fn resolve_asset_path(
-    path: &Path,
-    creatures_dir: &Path,
-    spotify_dir: &Path,
-) -> Option<PathBuf> {
+fn resolve_asset_path(path: &Path, creatures_dir: &Path, spotify_dir: &Path) -> Option<PathBuf> {
     let segments: Vec<String> = path
         .iter()
         .map(|segment| segment.to_string_lossy().to_string())
