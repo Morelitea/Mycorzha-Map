@@ -1,0 +1,32 @@
+{
+  "name": "Hercules",
+  "id": "hercules",
+  "regionId": "hazelmoss-woods",
+  "image": "hercules.png",
+  "pronouns": "He/Him",
+  "size": "Large",
+  "comfortSnack": "Smoked Salmon Bites",
+  "biggestFear": "Being hated by his loved ones",
+  "favoriteStory": "",
+  "spotifyPlaylist": "hercules-spotify.svg",
+  "quote": "Life is full of both joys and sorrows, but what matters most is the people we care about, the actions we take, and the memories that we hold close to our hearts.",
+  "emotionalTies": [
+    {
+      "name": "Kova",
+      "relationship": "The light of my life, the one who got me through the darkest hours when I so wanted to just give up. I wouldn’t be here without him, as sure as branch and bough, and I know he’ll be with me no matter what. He’s going to be such an amazing dad!"
+    },
+    {
+      "name": "Midge",
+      "relationship": "They say that, much like the threads of the mushrooms, Granny Midge winds her way through everything that happens in the Woods. They say that, when Mom and ‘Delia were fading away, that it was her who made sure the doctors and speakers and such made their way here. All I know is, she’s been kind and a hardass to me in equal measure, and I wouldn’t be where I’ve gotten to without her (or her spines up my backside)."
+    },
+    {
+      "name": "Mom & ’Delia",
+      "relationship": "I miss them so much. At first it was like drowning, struggling every day with such an immense deadfall of feeling that I wished it would just crush me, that I could just let go. Nowadays… it still hurts just as much, and the weight of that old tree isn’t any lighter. But I can get up in the mornings, and that will have to be enough."
+    },
+    {
+      "name": "Mycorzha",
+      "relationship": "An idyllic place, I heard one of the visiting healers say once, some odd Beyonder from up in the city. Maybe so, but every flower has its shadow, and every tree goes down deep into the dark. The Isles are beautiful, that’s true, but they’re no miracle or paradise. They’re just home."
+    }
+  ],
+  "bio": "The Rubeus family is one of the older clans of Hazelmoss, and over the seasons and various misfortunes dwindled away until all that remains is the last remaining scion, Hercules Rubeus Bramblecup. Hercules, or “Herc” to some, grew up in a warm and happy home, and if it was small (consisting of only him, his mother, and his sister), still it never lacked for support or the camaraderie of the local community, who pulled together to make sure that Hercules’s mother never lacked assistance in the raising of her children. Nothing, however, could have prepared the family or their community for the disaster that was to come.\n\nAs Hercules and his sister entered early adulthood, and his sister was being guided and taught the ways of the Hazelmoss matriarchy, a wasting disease crept into the Rubeus household. First his mother, then his sister fell ill, confined to bed as an increasingly frantic Hercules fought to care for them. Messages flew fast and thick between the homestead and points north; experts consulted, visited, shook their heads. As hope dwindled, many in the community tried to take Herc aside, comfort and console him, but ultimately discuss what was to come. Refusal on Hercules’s part gave way to pleading, and finally despair as his family was called back by the Isles.\n\nWhat followed was a period of desolation; Hercules attended the funeral in a daze, numb to the world around him and the sudden weight of responsibility as the last of the family line. He shut himself away from the world, refusing to leave his bed or his home even as the Wood began to reclaim it around him. Most agree that he would have swiftly followed his mother and sister down into the dark and the loam, if not for Kova. A resident of Cove City and Speaker for the Isles, Kova had been one of many called upon to consult on the Rubeus family illness. At a loss to help the mother and daughter, Kova turned to the son in an attempt to provide comfort in such a difficult time. Even when it became clear that there was nothing to be done, Kova stayed. Through the darkest time in Hercules’s life, Kova was there every day - making sure he ate, slept, helping him through the enormity of his grief. The other bear’s steady presence meant everything to Hercules, and eventually friendship, companionship, and loved blossomed between the two of them.\n\nAs the two settled into their new lives, now several years on from the tragedy that brought them together, Hercules has begun to think more and more of family, and of continuing the Rubeus name. Unsure of himself, and striking out against the matriarchal traditions of the Wood, Hercules is nonetheless determined to become the new head of the Rubeus homestead, and to raise children of his own. With Kova’s full support, the two have begun to forge social connections within the Wood and without, tackling the daunting task of growing a family from the barest, tiniest seed."
+}

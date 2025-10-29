@@ -1,0 +1,65 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Morelitea/Mycorzha-Map/refs/heads/main/moreliteaCreatureSchema.json",
+  "name": "Amani",
+  "id": "amani",
+  "regionId": "luna-valley",
+  "image": "amani.png",
+  "pronouns": "she/her",
+  "size": "Medium",
+  "comfortSnack": "Spiced, dried berries",
+  "biggestFear": "Being trapped in a building that's on fire",
+  "favoriteStory": "The Fisher Who Pulled Up the Island",
+  "favoriteStoryLink": "the-fisher-who-pulled-up-the-island",
+  "spotifyPlaylist": "amani-spotify.svg",
+  "spotifyPlaylistLink": "https://spotify.link/Sgo5J4KyJXb",
+  "quote": "Life becomes experiences, experience becomes story, and story becomes inspiration.",
+  "emotionalTies": [
+    {
+      "name": "Parents",
+      "relationship": "While we don't agree on everything, they are my strength and support."
+    },
+    {
+      "name": "Indie",
+      "relationship": "Energy given physical form; I can always count on him to find adventure or inspiration."
+    },
+    {
+      "name": "Mycorzha",
+      "relationship": "My home, my island; it protects and shelters us, and I am thankful for it."
+    }
+  ],
+  "bio": "Amani is a dreamer, a thinker, and an artist. Growing up as a member of one of the many nomadic tribes on the vast plains of Mycorzha, her childhood introduced her to the many incredible sights and experiences that are the essence of her island home. Her parents were spinners, of both tales and thread; her father creating beautiful tapestries and her mother sharing with her the epic songs and sagas of Mycorzhan life. Inheriting their artistic bent, and fascinated by the world around her, Amani still holds a deep reverence for her island home and its flora and fauna.\n\nDuring her many wanderings as a youngster, her daydreamings wound up being crash-landed upon by a peculiar little bird named Indie. Making fast friends with the talkative messenger, she found her horizons and interests expanding, and the next step of her life had her moving to Luna Valley, where she became a painter and pictograph artist. She loves to create in all kind of forms, and has a rich, internal life that those close to her are always joyful to participate in.",
+  "bio_excerpt": "Amani is a dreamer, a thinker, and an artist. Growing up as a member of one of the many nomadic tribes in the inlands of Mycorzha, her childhood introduced her to the many incredible sights and experiences that are the essence of her island home. Her parents were spinners, of both tales and thread; her father creating beautiful tapestries and her mother sharing with her the epic songs and sagas of Mycorzhan life. Inheriting their artistic bent, and fascinated by the world around her, Amani still holds a deep reverence for her island home and its flora and fauna. During her many wanderings as a youngster, her daydreamings wound up being crash-landed upon by a peculiar little bird named Indie. Making fast friends with the talkative messenger, she found her horizons and interests expanding, and the next step of her life had her moving to Luna Valley, where she became a painter and pictograph artist. She loves to create in all kind of forms, and has a rich, internal life that those close to her are always joyful to participate in.",
+  "seoMetaDescription": "Amani is a painter, artist, and poet; a quiet dreamer with deep emotions and big dreams.",
+  "extraDescription": "Amani is a dreamer and an artist, full of quiet musings and deep currents of creativity.",
+  "locationDescription": "Residing in the Moonbrush Hallow Artist's Den of Luna Valley",
+  "locationLink": "https://morelitea.com/pages/luna-valley",
+  "productMetadata": {
+    "productSubtitle": "Amani",
+    "teaCharacter": "Amani is a quiet soul, a dreamer and artist who finds joy in the magical worlds of fantasy and fiction. Often found napping or joining friends on gentle adventures, Amani cherishes the beauty of the forest and the power of a good story. With a heart full of imagination and a penchant for relaxation, Amani has created a tea blend that captures the essence of a dreamy forest night and her favorite Fly Amanita mushrooms that match her spots, while lulling you to a comfortable rest.",
+    "characterTag": "Amani",
+    "regionTag": "Luna Valley",
+    "blogArticleTag": "Luna Valley",
+    "teaVariety": "herbal-tea",
+    "brewingRitual": {
+      "waterTemperature": "175°F (80°C)",
+      "steepingTime": "1-3 minutes",
+      "additionalNotes": "Amani enjoys her tea with a touch of honey."
+    },
+    "tastingNotes": [
+      "Floral",
+      "Aromatic",
+      "Sour"
+    ],
+    "ingredients": [
+      "Red Rooibos",
+      "Jasmine Blossoms",
+      "Schisandra Berries",
+      "Valerian Root",
+      "Cinnamon Chips"
+    ],
+    "caffeineLevel": "None",
+    "allergenInformation": [
+      "None"
+    ]
+  }
+}

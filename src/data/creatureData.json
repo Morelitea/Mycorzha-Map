@@ -131,6 +131,7 @@
         {
           "name": "Midge",
           "id": "midge",
+          "regionId": "hazelmoss-woods",
           "image": "midge.png",
           "pronouns": "She/They",
           "size": "Small",
@@ -167,6 +168,7 @@
         {
           "name": "Rhys",
           "id": "rhys",
+          "regionId": "cove-city",
           "image": "rhys.png",
           "pronouns": "She/They",
           "size": "Small",
@@ -198,6 +200,7 @@
         {
           "name": "Preston",
           "id": "preston",
+          "regionId": "cove-city",
           "image": "preston.png",
           "pronouns": "He/They",
           "size": "Small",
@@ -229,6 +232,7 @@
         {
           "name": "Nalin",
           "id": "nalin",
+          "regionId": "cove-city",
           "image": "nalin.png",
           "pronouns": "They/Them",
           "size": "Small",
@@ -277,6 +281,7 @@
         {
           "name": "Jack",
           "id": "jack",
+          "regionId": "frostfire-forest",
           "image": "jack.png",
           "pronouns": "He/Him",
           "size": "Small",
@@ -313,6 +318,7 @@
         {
           "name": "Kai",
           "id": "kai",
+          "regionId": "mossy-cup-lagoon",
           "image": "kai.png",
           "pronouns": "He/Him",
           "size": "Huge",
@@ -340,6 +346,7 @@
         {
           "name": "Scarlet",
           "id": "scarlet",
+          "regionId": "mossy-cup-lagoon",
           "image": "scarlet.png",
           "pronouns": "She/Her",
           "size": "Large",
@@ -371,6 +378,7 @@
         {
           "name": "Auric",
           "id": "auric",
+          "regionId": "mossy-cup-lagoon",
           "image": "auric.png",
           "pronouns": "He/They",
           "size": "Small",
@@ -407,6 +415,7 @@
         {
           "name": "Lumi",
           "id": "lumi",
+          "regionId": "saffron-spore-islands",
           "image": "lumi.png",
           "pronouns": "She/Her",
           "size": "Tiny",
@@ -438,6 +447,7 @@
         {
           "name": "Croquese",
           "id": "croquese",
+          "regionId": "saffron-spore-islands",
           "image": "croquese.png",
           "pronouns": "she/they",
           "size": "Large",
@@ -469,6 +479,7 @@
         {
           "name": "Leroux",
           "id": "leroux",
+          "regionId": "saffron-spore-islands",
           "image": "leroux.png",
           "pronouns": "They/Them",
           "size": "Tiny",
@@ -505,6 +516,7 @@
         {
           "name": "Indie",
           "id": "indie",
+          "regionId": "selene-cliffs",
           "image": "indie.png",
           "pronouns": "He/Him",
           "size": "Tiny",

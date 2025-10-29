@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { readTextFile } from "@tauri-apps/plugin-fs";
 import { invoke } from "@tauri-apps/api/core";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
-import { BASE_DIR, CREATURE_DATA_FILE } from "../data/consts";
-import { CreatureData } from "../types/Creatures";
+import { CreaturesByRegion } from "../types/Creatures";
+import { loadCreaturesFromDisk } from "../utils/creatureData";
 
 type ImportSummary = {
   creatureCount: number;
@@ -18,7 +17,9 @@ interface ImportButtonProps {
 }
 
 const ImportButton: React.FC<ImportButtonProps> = ({ onClose, canClose }) => {
-  const [creatureData, setCreatureData] = useState<CreatureData | null>(null);
+  const [creatureData, setCreatureData] = useState<CreaturesByRegion | null>(
+    null
+  );
   const [summary, setSummary] = useState<ImportSummary | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [isImporting, setIsImporting] = useState<boolean>(false);
@@ -35,7 +36,7 @@ const ImportButton: React.FC<ImportButtonProps> = ({ onClose, canClose }) => {
 
     if (!file.name.toLowerCase().endsWith(".zip")) {
       setError(
-        "Please select a .zip archive containing creatureData.json and a creatures folder."
+        "Please select a .zip archive containing per-creature JSON files and image folders."
       );
       fileInput.value = "";
       return;
@@ -52,12 +53,8 @@ const ImportButton: React.FC<ImportButtonProps> = ({ onClose, canClose }) => {
         archive,
       });
 
-      const fileContent = await readTextFile(CREATURE_DATA_FILE, {
-        baseDir: BASE_DIR,
-      });
-      const data = JSON.parse(fileContent) as CreatureData;
-
-      setCreatureData(data);
+      const groupedCreatures = await loadCreaturesFromDisk();
+      setCreatureData(groupedCreatures);
       setSummary(result);
     } catch (err) {
       console.error("Failed to import archive:", err);
@@ -78,8 +75,9 @@ const ImportButton: React.FC<ImportButtonProps> = ({ onClose, canClose }) => {
     <Box sx={{ p: 2 }}>
       <input type="file" accept=".zip" onChange={handleFileChange} />
       <p>
-        Select a zip file that includes <code>creatureData.json</code> and a
-        <code>creatures/</code> folder with the updated images.
+        Select a zip file that includes per-creature <code>.json</code> files
+        along with updated <code>creatures/</code> and <code>spotify/</code>
+        image folders.
       </p>
       {isImporting && <p>Importing archive…</p>}
       {error && <p style={{ color: "red" }}>{error}</p>}

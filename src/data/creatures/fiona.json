@@ -1,0 +1,32 @@
+{
+  "name": "Fiona",
+  "id": "fiona",
+  "regionId": "hazelmoss-woods",
+  "image": "fiona.png",
+  "pronouns": "She/Her",
+  "size": "Small",
+  "comfortSnack": "Egg & Cress Tea Sandwiches",
+  "biggestFear": "Being kidnapped away from everyone she knows",
+  "favoriteStory": "A Farewell on Faelivrin",
+  "spotifyPlaylist": "fiona-spotify.svg",
+  "quote": "We’re all a little bit like gardens, darling, in that yes, we could just let them grow all higgledy piggle, and they’d do fine – Isle knows that the flowers don’t need us. But a spot of water here, a bit of pruning there, and everything blooms that much brighter!",
+  "emotionalTies": [
+    {
+      "name": "Rhys",
+      "relationship": "By branch and bough, I love my sister more dearly than anything… but she can be absolutely infuriating when the mood strikes her. Galloping off on wild adventures, settling down in the city of all places. Doesn’t she know how much she could be, to our family?"
+    },
+    {
+      "name": "Midge",
+      "relationship": "Grammama Spikey, I used to call her. And still there are days where she still feels the same, taking me to her knee and teaching me something new, something even in all my seasons I had yet to think of. The local matriarch of the Wood, and her guidance still steers me well."
+    },
+    {
+      "name": "Hercules",
+      "relationship": "Poor, dear Herc! We’ve had him and his lovely partner over several times of late, and it’s all I can bear to see the worry behind his eyes. He really has no need of it; I just know he and Nellis will make fine parents, and so does everyone else in the Wood. I shall have to send them some flowers and honey."
+    },
+    {
+      "name": "Mycorzha",
+      "relationship": "Ask me about our Isles, and I find I have little to say beyond the boughs of the Wood. Ask me about home though, and, why we shall have to sit over tea, if I am to ever find the time. How can one put the concept of “home” into just a few words?"
+    }
+  ],
+  "bio": "“The quiet one,” is how many referred to Fiona, during her childhood in Hazelmoss, and indeed compared to her sister she generally was. Something about the woods and the fields spoke to her, and where her sister was headstrong and brash, Fiona quickly learned how to listen – to the woods, to her family and those around her. Where Rhys found herself pulled away from the Wood, Fiona found herself drawn back towards it.\n\nWhen Rhys left, Fiona of course knew it was a long time in coming, and was there to soothe the upset and the concern of the greater family and relations. With her older sister now on poor terms with her relatives, everyone started to look to Fiona to take up the mantle of the family, and she settled into it with a comfortable grace, directing the care of the ancestral wood with skill and patience. Under her care, her family’s tending of the woodland flowers and beehives bloomed and blossomed – quite literally! – and the hives buzzed with activity just the same as her homestead.\n\nNow firmly settled into her budding role of the next family matriarch, Fiona finds herself musing more and more on what it means to be family. Despite concerns she has reached out to her sister once again, their relationship a tumultuous but loving one, and Rhys has even visited a time or two, tempting Fiona to do the same. Fiona has thus far declined, unsure of herself and her place beyond the woods in which she has lived her entire life. Here she moves with confidence and surety in herself and her place in things, and shows just as much cunning as her sister ever has, deftly hidden behind the blooms and blossoms of her personality."
+}
