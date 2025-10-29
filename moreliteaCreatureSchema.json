@@ -1,0 +1,242 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Character",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "regionId": {
+      "type": "string"
+    },
+    "image": {
+      "type": "string"
+    },
+    "pronouns": {
+      "type": "string",
+      "pattern": "^(he/him|she/her|they/them|he/they|she/they)$"
+    },
+    "size": {
+      "type": "string",
+      "enum": [
+        "Tiny",
+        "Small",
+        "Medium",
+        "Large",
+        "Huge"
+      ]
+    },
+    "comfortSnack": {
+      "type": "string"
+    },
+    "biggestFear": {
+      "type": "string"
+    },
+    "favoriteStory": {
+      "type": "string"
+    },
+    "favoriteStoryLink": {
+      "type": "string"
+    },
+    "spotifyPlaylist": {
+      "type": "string"
+    },
+    "spotifyPlaylistLink": {
+      "type": "string",
+      "format": "uri"
+    },
+    "quote": {
+      "type": "string"
+    },
+    "emotionalTies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "relationship": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "relationship"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "bio": {
+      "type": "string"
+    },
+    "bio_excerpt": {
+      "type": "string"
+    },
+    "seoMetaDescription": {
+      "type": "string"
+    },
+    "extraDescription": {
+      "type": "string"
+    },
+    "locationDescription": {
+      "type": "string"
+    },
+    "locationLink": {
+      "type": "string",
+      "format": "uri"
+    },
+    "productMetadata": {
+      "type": "object",
+      "properties": {
+        "productSubtitle": {
+          "type": "string"
+        },
+        "teaCharacter": {
+          "type": "string"
+        },
+        "characterTag": {
+          "type": "string"
+        },
+        "regionTag": {
+          "type": "string"
+        },
+        "blogArticleTag": {
+          "type": "string"
+        },
+        "teaVariety": {
+          "type": "string",
+          "enum": [
+            "herbal-tea",
+            "black-tea",
+            "green-tea",
+            "oolong-tea",
+            "pu-erh",
+            "yerba-mate"
+          ]
+        },
+        "brewingRitual": {
+          "type": "object",
+          "properties": {
+            "waterTemperature": {
+              "type": "string"
+            },
+            "steepingTime": {
+              "type": "string"
+            },
+            "additionalNotes": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "waterTemperature",
+            "steepingTime",
+            "additionalNotes"
+          ],
+          "additionalProperties": false
+        },
+        "tastingNotes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "Floral",
+              "Aromatic",
+              "Sour",
+              "Woody",
+              "Spicy",
+              "Fruity",
+              "Smoky",
+              "Mint",
+              "Earthy",
+              "Lavender",
+              "Citrus",
+              "Citrusy",
+              "Ginger",
+              "Blueberry",
+              "Vannila",
+              "Rose",
+              "Coffee",
+              "Cherry",
+              "Chocolate",
+              "Peach",
+              "Melon",
+              "Dessert",
+              "Creamy",
+              "Nutty"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "ingredients": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 0
+        },
+        "caffeineLevel": {
+          "type": "string",
+          "enum": [
+            "None",
+            "Regular"
+          ]
+        },
+        "allergenInformation": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "None",
+              "Nuts",
+              "Milk"
+            ]
+          },
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "productSubtitle",
+        "teaCharacter",
+        "characterTag",
+        "regionTag",
+        "blogArticleTag",
+        "teaVariety",
+        "brewingRitual",
+        "tastingNotes",
+        "ingredients",
+        "caffeineLevel",
+        "allergenInformation"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "name",
+    "id",
+    "regionId",
+    "image",
+    "pronouns",
+    "size",
+    "comfortSnack",
+    "biggestFear",
+    "favoriteStory",
+    "favoriteStoryLink",
+    "spotifyPlaylist",
+    "spotifyPlaylistLink",
+    "quote",
+    "emotionalTies",
+    "bio",
+    "bio_excerpt",
+    "seoMetaDescription",
+    "extraDescription",
+    "locationDescription",
+    "locationLink",
+    "productMetadata"
+  ],
+  "additionalProperties": false
+}
