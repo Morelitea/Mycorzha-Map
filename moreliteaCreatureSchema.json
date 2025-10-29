@@ -73,7 +73,7 @@
         ],
         "additionalProperties": false
       },
-      "minItems": 0
+      "minItems": 4
     },
     "bio": {
       "type": "string"
