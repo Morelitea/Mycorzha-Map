@@ -13,7 +13,7 @@ Mycorzha Map is an interactive exploration companion for the fungal realms of My
 
 | Layer         | Technologies                                                |
 | ------------- | ----------------------------------------------------------- |
-| Frontend      | React 19, TypeScript, Vite 6, Emotion, Sass, Framer Motion  |
+| Frontend      | React 19, TypeScript, Vite 7, Emotion, Sass, Framer Motion  |
 | Mapping       | Leaflet 1.9, React Leaflet 5, custom assets in `src/assets` |
 | Desktop Shell | Tauri 2, Rust, plugins for dialog, filesystem, and opener   |
 
