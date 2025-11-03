@@ -19,7 +19,7 @@ Mycorzha Map is an interactive exploration companion for the fungal realms of My
 
 ## Prerequisites
 
-- Node.js ≥ 18 (LTS recommended)
+- Node.js ≥ 22 (LTS recommended)
 - pnpm (recommended) — see https://pnpm.io/installation; this repo pins `pnpm@8.11.0` via `packageManager` in `package.json`
 - Rust toolchain (stable) with `cargo`
 - Tauri CLI: `cargo install tauri-cli` or `pnpm add -g @tauri-apps/cli`
