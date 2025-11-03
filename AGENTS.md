@@ -9,12 +9,12 @@
 
 ## Build, Test, and Development Commands
 
-- `npm install` installs Node dependencies and ensures the matching Tauri CLI version is fetched.
-- `npm run dev` starts the Vite dev server for browser-based iteration; hot reload keeps React edits fast.
-- `npm run tauri dev` launches the desktop shell with Tauri plugins, enabling filesystem reads under the `creatures/` data directory.
-- `npm run build` performs a TypeScript type-check and produces optimized assets in `dist/`.
-- `npm run preview` serves the production bundle locally; use it to validate routing and static asset loading.
-- `npm run tauri build` packages platform binaries; confirm the Rust toolchain and target-specific dependencies are installed first.
+- `pnpm install` installs Node dependencies and ensures the matching Tauri CLI version is fetched.
+- `pnpm run dev` starts the Vite dev server for browser-based iteration; hot reload keeps React edits fast.
+- `pnpm run tauri dev` launches the desktop shell with Tauri plugins, enabling filesystem reads under the `creatures/` data directory.
+- `pnpm run build` performs a TypeScript type-check and produces optimized assets in `dist/`.
+- `pnpm run preview` serves the production bundle locally; use it to validate routing and static asset loading.
+- `pnpm run tauri build` packages platform binaries; confirm the Rust toolchain and target-specific dependencies are installed first.
 
 ## Coding Style & Naming Conventions
 
@@ -26,7 +26,8 @@
 ## Testing Guidelines
 
 - No automated suite is present yet; manually verify map navigation, import flows, and gesture hooks in both `npm run dev` and `npm run tauri dev`.
-- When introducing Vitest, store specs in `src/__tests__/Name.test.tsx` and mock Tauri APIs so desktop-only paths remain deterministic.
+  -- When introducing Vitest, store specs in `src/__tests__/Name.test.tsx` and mock Tauri APIs so desktop-only paths remain deterministic.
+  -- Use `pnpm` to run scripts (e.g., `pnpm run dev`) and prefer `pnpm install` for dependency management to take advantage of pnpm's disk and network efficiency.
 - Capture OS-specific quirks (Windows vs. macOS packaging, file paths) in PR notes until coverage exists.
 
 ## Commit & Pull Request Guidelines
