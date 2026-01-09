@@ -19,6 +19,21 @@
     "image": {
       "type": "string"
     },
+    "species": {
+      "type": "string"
+    },
+    "mushroom": {
+      "type": "string"
+    },
+    "prideFlag": {
+      "type": "string"
+    },
+    "tea": {
+      "type": "string"
+    },
+    "quip": {
+      "type": "string"
+    },
     "pronouns": {
       "type": "string",
       "pattern": "^(he/him|she/her|they/them|he/they|she/they)$"
@@ -74,6 +89,12 @@
         "additionalProperties": false
       },
       "minItems": 4
+    },
+    "summary": {
+      "type": "string"
+    },
+    "cardText": {
+      "type": "string"
     },
     "bio": {
       "type": "string"
@@ -224,6 +245,11 @@
     "id",
     "regionId",
     "image",
+    "species",
+    "mushroom",
+    "prideFlag",
+    "tea",
+    "quip",
     "pronouns",
     "size",
     "comfortSnack",
@@ -234,6 +260,8 @@
     "spotifyPlaylistLink",
     "quote",
     "emotionalTies",
+    "summary",
+    "cardText",
     "bio",
     "bio_excerpt",
     "seoMetaDescription",
