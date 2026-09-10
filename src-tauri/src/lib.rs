@@ -203,16 +203,8 @@ pub fn run() {
         .invoke_handler(tauri::generate_handler![import_creature_package])
         .plugin(tauri_plugin_fs::init())
         .setup(|app| {
-            // The filesystem scope is what capabilities/default.json declares —
-            // the app data directory and nothing else. This used to widen it
-            // here with allow_directory("$HOME", false), which made the manifest
-            // a description of what the app asks for rather than what it holds,
-            // and anyone auditing the capability file reached the wrong answer.
-            //
-            // Nothing needed it. Creature data is read from AppData through
-            // BaseDirectory, and the zip import reads its file through the
-            // webview's own <input type="file"> — the bytes reach the Rust
-            // command directly and never touch the fs plugin's scope.
+            // Keep the runtime asset scope aligned with the manifest: imported
+            // creature data is served only from this application's data folder.
             let scope = app.fs_scope();
 
             if let Ok(app_data_dir) = app.path().app_data_dir() {
