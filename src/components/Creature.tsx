@@ -8,7 +8,7 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import { convertFileSrc } from "@tauri-apps/api/core";
+import { convertFileSrc, isTauri } from "@tauri-apps/api/core";
 import { appDataDir, join } from "@tauri-apps/api/path";
 import { TCreature } from "../types/Creatures";
 import styles from "./Creature.module.scss";
@@ -42,10 +42,10 @@ export const Creature: React.FC<ICreatureProps> = ({ creature }) => {
     spotifyPlaylist,
   } = creature;
   useEffect(() => {
-    const isTauri =
-      typeof window !== "undefined" && Boolean((window as any).__TAURI__);
-
-    if (!isTauri) {
+    // `isTauri()` rather than sniffing `window.__TAURI__`, so the detection no
+    // longer depends on the whole IPC surface being injected onto `window` for
+    // every script in the page to reach. Same answer, without the side effect.
+    if (!isTauri()) {
       setImageSrc(`/images/creatures/${image}`);
       setSpotifySrc(
         spotifyPlaylist ? `/images/spotify/${spotifyPlaylist}` : null
