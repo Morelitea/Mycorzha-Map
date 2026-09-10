@@ -42,9 +42,8 @@ export const Creature: React.FC<ICreatureProps> = ({ creature }) => {
     spotifyPlaylist,
   } = creature;
   useEffect(() => {
-    // `isTauri()` rather than sniffing `window.__TAURI__`, so the detection no
-    // longer depends on the whole IPC surface being injected onto `window` for
-    // every script in the page to reach. Same answer, without the side effect.
+    // Use the supported runtime check so detection still works when the public
+    // `window.__TAURI__` compatibility global is disabled.
     if (!isTauri()) {
       setImageSrc(`/images/creatures/${image}`);
       setSpotifySrc(
