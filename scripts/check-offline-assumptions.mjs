@@ -18,12 +18,38 @@
  * Run: node scripts/check-offline-assumptions.mjs
  */
 
-import {readFileSync, readdirSync, statSync} from 'node:fs';
+import {existsSync, readFileSync, readdirSync, statSync} from 'node:fs';
 import {join, extname} from 'node:path';
 
 const CONFIG = 'src-tauri/tauri.conf.json';
-const SOURCE_ROOT = 'src';
-const SOURCE_EXTENSIONS = new Set(['.ts', '.tsx', '.js', '.jsx']);
+const CARGO = 'src-tauri/Cargo.toml';
+const CAPABILITIES = 'src-tauri/capabilities';
+/**
+ * Both halves of the app.
+ *
+ * The invariant is that neither half reaches the network. Network access is
+ * enabled on the Rust side -- a crate in Cargo.toml and a permission in a
+ * capability file -- so both are read here. See T82.
+ */
+const SOURCE_ROOTS = ['src', 'src-tauri/src'];
+const SOURCE_EXTENSIONS = new Set(['.ts', '.tsx', '.js', '.jsx', '.rs']);
+
+/**
+ * Crates that are network access, or that hand it to the frontend.
+ *
+ * Named rather than pattern-matched, so the list is necessarily incomplete.
+ * The remote-host and permission checks stand alongside it for that reason,
+ * not instead of it.
+ */
+const NETWORK_CRATES = [
+  'reqwest', 'ureq', 'hyper', 'isahc', 'surf', 'curl', 'attohttpc', 'awc',
+  'tungstenite', 'tokio-tungstenite', 'websocket',
+  'tauri-plugin-http', 'tauri-plugin-updater', 'tauri-plugin-websocket',
+  'tauri-plugin-upload',
+];
+
+/** Permission namespaces that grant the frontend a way off the machine. */
+const NETWORK_PERMISSIONS = ['http:', 'websocket:', 'updater:', 'upload:'];
 
 /** Hosts that are not network access: schema references and documentation. */
 const NOT_NETWORK = [
@@ -62,8 +88,8 @@ for (const [index, window] of windows.entries()) {
   }
 }
 
-// 3. Network access from the app itself.
-for (const file of sourceFiles(SOURCE_ROOT)) {
+// 3. Network access from the app itself, in either language.
+for (const file of SOURCE_ROOTS.filter(existsSync).flatMap(sourceFiles)) {
   const source = readFileSync(file, 'utf8');
   for (const [lineNumber, line] of source.split('\n').entries()) {
     const url = line.match(/https?:\/\/[^\s'"`)]+/);
@@ -76,10 +102,41 @@ for (const file of sourceFiles(SOURCE_ROOT)) {
   }
 }
 
-// 4. The http plugin is network access by definition.
+// 4. The http plugin is network access by definition. This is the JavaScript
+//    binding; the crate in (5) is what enables the plugin.
 const deps = JSON.parse(readFileSync('package.json', 'utf8')).dependencies ?? {};
 if (deps['@tauri-apps/plugin-http']) {
   findings.push('package.json: @tauri-apps/plugin-http is a dependency');
+}
+
+// 5. A crate that reaches the network. Read as text rather than parsed: a TOML
+//    parser is another dependency for a file we only need to find names in, and
+//    a dependency key always starts its line.
+if (existsSync(CARGO)) {
+  for (const [lineNumber, line] of readFileSync(CARGO, 'utf8').split('\n').entries()) {
+    const declared = line.match(/^\s*([A-Za-z0-9_-]+)\s*=/);
+    if (declared && NETWORK_CRATES.includes(declared[1])) {
+      findings.push(`${CARGO}:${lineNumber + 1}: ${declared[1]} is a dependency`);
+    }
+  }
+}
+
+// 6. A capability granting the frontend the network. Without this a plugin is
+//    compiled in and unreachable, so the grant is the moment the surface opens.
+if (existsSync(CAPABILITIES)) {
+  for (const entry of readdirSync(CAPABILITIES)) {
+    if (extname(entry) !== '.json') continue;
+    const file = join(CAPABILITIES, entry);
+    const capability = JSON.parse(readFileSync(file, 'utf8'));
+    for (const permission of capability.permissions ?? []) {
+      // A permission is either a bare string or an object with an identifier.
+      const identifier = typeof permission === 'string' ? permission : permission?.identifier;
+      if (typeof identifier !== 'string') continue;
+      if (NETWORK_PERMISSIONS.some((prefix) => identifier.startsWith(prefix))) {
+        findings.push(`${file}: grants ${identifier}`);
+      }
+    }
+  }
 }
 
 // Recorded, not failed. These describe how wide the surface is, which is the
@@ -105,4 +162,7 @@ if (findings.length > 0) {
   process.exit(1);
 }
 
-console.log(`\nok: offline assumption holds (${windows.length} window(s), no network access found)`);
+console.log(
+  `\nok: offline assumption holds (${windows.length} window(s), no network ` +
+    `access found in either half)`,
+);

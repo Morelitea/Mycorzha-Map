@@ -23,6 +23,12 @@ function sandbox() {
   cpSync('src-tauri/tauri.conf.json', join(dir, 'src-tauri/tauri.conf.json'));
   cpSync('package.json', join(dir, 'package.json'));
   cpSync('src', join(dir, 'src'), {recursive: true});
+  // The Rust half, where network access is enabled: a crate in Cargo.toml and
+  // a permission in a capability file. The sandbox needs both to exercise the
+  // whole assumption.
+  cpSync('src-tauri/Cargo.toml', join(dir, 'src-tauri/Cargo.toml'));
+  cpSync('src-tauri/src', join(dir, 'src-tauri/src'), {recursive: true});
+  cpSync('src-tauri/capabilities', join(dir, 'src-tauri/capabilities'), {recursive: true});
   return dir;
 }
 
@@ -94,6 +100,34 @@ expectFails('the http plugin is added', (dir) => {
   pkg.dependencies['@tauri-apps/plugin-http'] = '^2.0.0';
   writeFileSync(path, JSON.stringify(pkg, null, 2));
 }, 'plugin-http');
+
+// The Rust half. `@tauri-apps/plugin-http` in package.json is the optional
+// JavaScript binding; the crate and the capability grant are what enable the
+// plugin, and Rust reaches the network with no Tauri plugin at all.
+
+expectFails('a network crate is added to Cargo.toml', (dir) => {
+  const path = join(dir, 'src-tauri/Cargo.toml');
+  writeFileSync(path, readFileSync(path, 'utf8') + '\nreqwest = { version = "0.12" }\n');
+}, 'reqwest');
+
+expectFails('the http plugin crate is added to Cargo.toml', (dir) => {
+  const path = join(dir, 'src-tauri/Cargo.toml');
+  writeFileSync(path, readFileSync(path, 'utf8') + '\ntauri-plugin-http = "2"\n');
+}, 'tauri-plugin-http');
+
+expectFails('a capability grants the http permission', (dir) => {
+  const path = join(dir, 'src-tauri/capabilities/default.json');
+  const capability = JSON.parse(readFileSync(path, 'utf8'));
+  capability.permissions.push('http:default');
+  writeFileSync(path, JSON.stringify(capability, null, 2));
+}, 'http:default');
+
+expectFails('the rust source names a remote host', (dir) =>
+  writeFileSync(
+    join(dir, 'src-tauri/src/added.rs'),
+    'pub const HOST: &str = "https://tiles.example.test";\n',
+  ),
+  'remote url');
 
 if (failures > 0) {
   console.error(`\n${failures} check(s) failed`);
