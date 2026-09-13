@@ -1,0 +1,32 @@
+# The conditions this app's security posture is accepted under.
+#
+# The wide IPC surface was accepted rather than narrowed, because this ships as
+# an offline convention display, with one condition: revisit before adding
+# remote content, network connectivity, or an update channel. That condition
+# was a sentence in a review; this is the same sentence running on every change.
+#
+# Actions are pinned to commit SHAs. Unpinned Actions is a finding recorded
+# across this estate; this workflow does not get to be an exception.
+name: checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  offline-assumptions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '22'
+
+      # The guard's own test first: it passes on this tree, so without proof
+      # that it can fail it would be indistinguishable from asserting nothing.
+      - run: node scripts/check-offline-assumptions.test.mjs
+      - run: node scripts/check-offline-assumptions.mjs

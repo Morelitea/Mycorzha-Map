@@ -1,0 +1,168 @@
+/**
+ * The conditions this app's security posture is accepted under.
+ *
+ * Mycorzha Map runs as an offline convention display. On that basis the wide
+ * IPC surface was accepted rather than narrowed, with one condition attached:
+ * revisit before adding remote content, network connectivity, or an update
+ * channel.
+ *
+ * That condition was a sentence in a review. This is the same sentence as a
+ * check, so the day one of those arrives is the day somebody is told, rather
+ * than the day somebody happens to re-read the review.
+ *
+ * It asserts the ASSUMPTIONS, not a hardening posture. Nothing here asks the
+ * app to be locked down — that was considered and deliberately not done. What
+ * it refuses to let happen quietly is the ground shifting underneath that
+ * decision.
+ *
+ * Run: node scripts/check-offline-assumptions.mjs
+ */
+
+import {existsSync, readFileSync, readdirSync, statSync} from 'node:fs';
+import {join, extname} from 'node:path';
+
+const CONFIG = 'src-tauri/tauri.conf.json';
+const CARGO = 'src-tauri/Cargo.toml';
+const CAPABILITIES = 'src-tauri/capabilities';
+/**
+ * Both halves of the app.
+ *
+ * The invariant is that neither half reaches the network. Network access is
+ * enabled on the Rust side -- a crate in Cargo.toml and a permission in a
+ * capability file -- so both are read here. See T82.
+ */
+const SOURCE_ROOTS = ['src', 'src-tauri/src'];
+const SOURCE_EXTENSIONS = new Set(['.ts', '.tsx', '.js', '.jsx', '.rs']);
+
+/**
+ * Crates that are network access, or that hand it to the frontend.
+ *
+ * Named rather than pattern-matched, so the list is necessarily incomplete.
+ * The remote-host and permission checks stand alongside it for that reason,
+ * not instead of it.
+ */
+const NETWORK_CRATES = [
+  'reqwest', 'ureq', 'hyper', 'isahc', 'surf', 'curl', 'attohttpc', 'awc',
+  'tungstenite', 'tokio-tungstenite', 'websocket',
+  'tauri-plugin-http', 'tauri-plugin-updater', 'tauri-plugin-websocket',
+  'tauri-plugin-upload',
+];
+
+/** Permission namespaces that grant the frontend a way off the machine. */
+const NETWORK_PERMISSIONS = ['http:', 'websocket:', 'updater:', 'upload:'];
+
+/** Hosts that are not network access: schema references and documentation. */
+const NOT_NETWORK = [
+  'https://schema.tauri.app',
+  'http://www.w3.org',
+  'https://www.w3.org',
+];
+
+const findings = [];
+const notes = [];
+
+function sourceFiles(dir) {
+  const out = [];
+  for (const entry of readdirSync(dir)) {
+    const full = join(dir, entry);
+    if (statSync(full).isDirectory()) out.push(...sourceFiles(full));
+    else if (SOURCE_EXTENSIONS.has(extname(entry))) out.push(full);
+  }
+  return out;
+}
+
+const config = JSON.parse(readFileSync(CONFIG, 'utf8'));
+
+// 1. An update channel. Reaching out for a new version is network access, and
+//    it is the specific case the acceptance named.
+if (config.plugins?.updater || config.bundle?.createUpdaterArtifacts) {
+  findings.push(`${CONFIG}: an updater is configured`);
+}
+
+// 2. Remote content in the window. `frontendDist` is the bundle; a devUrl is
+//    the development server and is not what ships.
+const windows = config.app?.windows ?? [];
+for (const [index, window] of windows.entries()) {
+  if (window.url && /^https?:/i.test(window.url)) {
+    findings.push(`${CONFIG}: window ${index} loads a remote url (${window.url})`);
+  }
+}
+
+// 3. Network access from the app itself, in either language.
+for (const file of SOURCE_ROOTS.filter(existsSync).flatMap(sourceFiles)) {
+  const source = readFileSync(file, 'utf8');
+  for (const [lineNumber, line] of source.split('\n').entries()) {
+    const url = line.match(/https?:\/\/[^\s'"`)]+/);
+    if (url && !NOT_NETWORK.some((allowed) => url[0].startsWith(allowed))) {
+      findings.push(`${file}:${lineNumber + 1}: a remote url (${url[0]})`);
+    }
+    if (/\bfetch\s*\(|\bXMLHttpRequest\b|new WebSocket\(/.test(line)) {
+      findings.push(`${file}:${lineNumber + 1}: an outbound request`);
+    }
+  }
+}
+
+// 4. The http plugin is network access by definition. This is the JavaScript
+//    binding; the crate in (5) is what enables the plugin.
+const deps = JSON.parse(readFileSync('package.json', 'utf8')).dependencies ?? {};
+if (deps['@tauri-apps/plugin-http']) {
+  findings.push('package.json: @tauri-apps/plugin-http is a dependency');
+}
+
+// 5. A crate that reaches the network. Read as text rather than parsed: a TOML
+//    parser is another dependency for a file we only need to find names in, and
+//    a dependency key always starts its line.
+if (existsSync(CARGO)) {
+  for (const [lineNumber, line] of readFileSync(CARGO, 'utf8').split('\n').entries()) {
+    const declared = line.match(/^\s*([A-Za-z0-9_-]+)\s*=/);
+    if (declared && NETWORK_CRATES.includes(declared[1])) {
+      findings.push(`${CARGO}:${lineNumber + 1}: ${declared[1]} is a dependency`);
+    }
+  }
+}
+
+// 6. A capability granting the frontend the network. Without this a plugin is
+//    compiled in and unreachable, so the grant is the moment the surface opens.
+if (existsSync(CAPABILITIES)) {
+  for (const entry of readdirSync(CAPABILITIES)) {
+    if (extname(entry) !== '.json') continue;
+    const file = join(CAPABILITIES, entry);
+    const capability = JSON.parse(readFileSync(file, 'utf8'));
+    for (const permission of capability.permissions ?? []) {
+      // A permission is either a bare string or an object with an identifier.
+      const identifier = typeof permission === 'string' ? permission : permission?.identifier;
+      if (typeof identifier !== 'string') continue;
+      if (NETWORK_PERMISSIONS.some((prefix) => identifier.startsWith(prefix))) {
+        findings.push(`${file}: grants ${identifier}`);
+      }
+    }
+  }
+}
+
+// Recorded, not failed. These describe how wide the surface is, which is the
+// thing that was accepted — printing them keeps the acceptance honest without
+// turning a decision somebody made into a failing build.
+if (config.app?.security?.csp == null) {
+  notes.push('no Content-Security-Policy is set (security.csp is null)');
+}
+if (config.app?.withGlobalTauri) {
+  notes.push('withGlobalTauri is true: the API is reachable as window.__TAURI__');
+}
+
+for (const note of notes) console.log(`note: ${note}`);
+
+if (findings.length > 0) {
+  console.error('\nThe offline assumption no longer holds:\n');
+  for (const finding of findings) console.error(`  - ${finding}`);
+  console.error(
+    '\nThe IPC surface was left wide because this ships as an offline display.\n' +
+      'Any of the above changes that. Re-examine the posture before shipping,\n' +
+      'then update this check to match what was decided.\n',
+  );
+  process.exit(1);
+}
+
+console.log(
+  `\nok: offline assumption holds (${windows.length} window(s), no network ` +
+    `access found in either half)`,
+);
