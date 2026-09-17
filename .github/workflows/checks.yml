@@ -18,15 +18,40 @@ permissions:
   contents: read
 
 jobs:
-  offline-assumptions:
-    runs-on: ubuntu-latest
+  production-checks:
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4
+        with:
+          run_install: false
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: '22'
+          cache: pnpm
+      - uses: dtolnay/rust-toolchain@6bed0761d98439e5a578e2877258200ad565ba87 # stable
+
+      - run: pnpm install --frozen-lockfile
 
       # The guard's own test first: it passes on this tree, so without proof
       # that it can fail it would be indistinguishable from asserting nothing.
       - run: node scripts/check-offline-assumptions.test.mjs
       - run: node scripts/check-offline-assumptions.mjs
+      - run: pnpm build
+      - run: pnpm audit --audit-level high
+      - run: cargo check --locked
+        working-directory: src-tauri
+      - run: cargo test --locked --lib
+        working-directory: src-tauri
+
+  rust-audit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      checks: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: rustsec/audit-check@69366f33c96575abad1ee0dba8212993eecbe998 # v2.0.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          working-directory: src-tauri

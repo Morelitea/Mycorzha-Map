@@ -1,9 +1,7 @@
-# Watch this repository's dependencies for published advisories.
+# Propose routine dependency version updates for review.
 #
-# Without this file the repository is not watched, and "not watched" reads
-# the same as "nothing found": an alert count of zero is what both look like
-# from the outside. Three repositories in this organisation had alerts off
-# entirely and answered 403 to anything that asked.
+# Vulnerability alerts and automated security updates are repository settings;
+# this schedule neither enables nor replaces them.
 #
 # Grouped and on a weekly cadence deliberately. One pull request a week that
 # a person reads beats five a day that nobody does, and an update nobody
